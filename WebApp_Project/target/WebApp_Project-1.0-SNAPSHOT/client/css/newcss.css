@@ -1,0 +1,87 @@
+/* 
+    Document   : newcss
+    Created on : 2012-sep-04, 09:38:25
+    Author     : Hampus
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+header, section, acticle, footer, aside, nav {
+    border-style: solid;
+    border-width: 1px;
+}
+body{
+    margin:auto;
+    width: 40em;
+}
+header{
+    color: darkgoldenrod;
+    font-family: fantasy;
+    font-size: 2.5em;
+    font-style: italic;
+    font-style: oblique;
+    text-shadow: 10px 10px 2px #de5dde;
+filter: dropshadow(color=#de5dde, offx=10, offy=10);
+}
+h1{
+   text-align: center; 
+}
+section{
+    float: left;
+    clear: right;
+    width: 65%;
+    color: red;
+    z-index: 1;  /* Depth */ 
+    margin-bottom: 30px; /* All these also have impact for layout */
+    margin-top: 10px;
+}
+aside{
+    float: right;
+    width: 30%;      /* compare 65% for section, a floated box must have width */
+    z-index: 1;  /* Depth */ 
+    margin-bottom: 30px; /* All these also have impact for layout */
+    margin-top: 10px;
+    background-color: darkgray;
+}
+nav{
+    color: blue;
+}
+
+#pageNav ul{
+    margin: 0; /* Must have */
+    padding: 0;
+}
+
+#pageNav ul li{
+    display: inline;
+}
+
+.dialog {
+    background-color: #a89090;
+    border-style: double;
+    position: absolute;   /* must have */
+    z-index: 3;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 30%;
+}
+
+.table tr:hover {
+   background-color: #d7e1ee;
+}
+menu{
+    color: aqua;
+}
+footer{
+    float: bottom;
+    clear: right;
+}
+
+
