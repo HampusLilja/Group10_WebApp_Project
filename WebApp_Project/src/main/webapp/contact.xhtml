@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE xhtml>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
+	<link rel="stylesheet" href="coin-slider-styles.css" type="text/css"/>
+	
+        <title>Grupp 10</title>
+	
+        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
+        
+    </head>
+    <!-- body -->
+	<body>
+		<!-- HEADER -->
+		<div id="header">
+                    <img src="client/img/logo.png"/>
+		</div>
+		<!-- ENDS HEADER -->	
+  
+  		<!-- Menu -->
+			<menu>
+				<!-- Navigation -->
+					<nav>
+                                        	<ul>
+						<li><a href="index.xhtml">Home</a></li>
+						<li><a href="index.xhtml">Shop</a></li>
+						<li><a href="contact.xhtml">Contact</a></li>
+						</ul>
+					</nav>
+				<!-- Navigation -->
+					
+			</menu>
+		<!-- ENDS Menu -->
+
+		<!-- MAIN -->
+			<div id="main">
+                                <img src="client/img/contact.jpg" alt="map"/>
+                            
+                            <!-- content -->
+					<div id="content">
+			
+							
+						<!-- column (left)-->
+						<div class="one-column">
+							<!-- form -->
+							<h2>Contact Form</h2>
+							<form id="contactForm" action="#" method="post">
+								
+									<div>
+										<label>Name:</label><br/>
+										<input name="name"  id="name" type="text" title="Enter your full name" />
+									</div>
+									<div>
+										<label>Email:</label><br/>
+										<input name="email"  id="email" type="text" title="Enter your email address" />
+									</div>
+									<div>
+										<label>Website:</label><br/>
+										<input name="web"  id="web" type="text" title="Enter your website" />
+									</div>
+									<div>
+										<label>Comments:</label><br/>
+										<textarea  name="comments"  id="comments" rows="5" cols="20" title="Enter your comments"></textarea>
+									</div>
+									
+									<!-- send mail configuration -->
+									<input type="hidden" value="youremail@yourserver.com" name="to" id="to" />
+									<input type="hidden" value="youremail@yourserver.com" name="from" id="from" />
+									<input type="hidden" value="From torn wordpress online" name="subject" id="subject" />
+									<input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
+									<!-- ENDS send mail configuration -->
+									
+									<p><input type="button" value="SEND" name="submit" id="submit" /></p>
+								
+							</form>
+							<!-- ENDS form -->
+						</div>
+						<!-- ENDS column -->
+						
+						<!-- column (right)-->
+						<div class="one-column">
+							<!-- content -->
+							<p><img src="client/img/map.png" alt="map"/></p>
+							<p>Pellentesque habitant morbi tristique senectus et netus.</p>					
+							<p>Chalmers Gata 32 Goteborg<br/>
+							Sverige 445 11<br/>
+                                                        (+46) 070-321 24 49<br/>
+                                                        email@server.com</p>
+							<!-- ENDS content -->
+						</div>
+						<!-- ENDS column -->							
+		
+					</div>
+					<!-- ENDS content -->
+
+		
+			</div>
+		<!-- ENDS MAIN -->
+  
+		
+        <!-- FOOTER -->
+		<footer>
+                    <p> Footer content goes here </p>
+                    <p>&#169; Grupp 10 Webbapplikationer</p>
+		</footer>
+		<!-- ENDS FOOTER -->
+
+    </body>
+	<!-- ENDS body -->
+</html>

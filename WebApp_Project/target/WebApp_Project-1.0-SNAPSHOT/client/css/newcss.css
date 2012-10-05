@@ -1,7 +1,7 @@
 /* 
     Document   : newcss
     Created on : 2012-sep-04, 09:38:25
-    Author     : Hampus
+    Author     : Hampus, Mattias
     Description:
         Purpose of the stylesheet follows.
 */
@@ -9,79 +9,98 @@
 root { 
     display: block;
 }
-header, section, acticle, footer, aside, nav {
-    border-style: solid;
-    border-width: 1px;
+* {
+margin: 0;
+padding: 0;
 }
+
 body{
-    margin:auto;
-    width: 40em;
+    margin: 0 auto;
+    width: 906px;
+    height: 100%;
+    line-height: 1;
+    color: #51565B;
+    background: #F1F1F1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
 }
-header{
-    color: darkgoldenrod;
-    font-family: fantasy;
-    font-size: 2.5em;
-    font-style: italic;
-    font-style: oblique;
-    text-shadow: 10px 10px 2px #de5dde;
-filter: dropshadow(color=#de5dde, offx=10, offy=10);
+#header{
+    margin: 0 auto;
+    background-color: grey;
+    position: relative; 
 }
-h1{
-   text-align: center; 
+menu {
+    
+    text-align: center;
+    margin: 0 auto;
+    height: 30px;
+    background: url(../img/menu-bg.png) repeat-x;
 }
-section{
-    float: left;
-    clear: right;
-    width: 65%;
-    color: red;
-    z-index: 1;  /* Depth */ 
-    margin-bottom: 30px; /* All these also have impact for layout */
-    margin-top: 10px;
+menu li{
+    display:inline;
 }
-aside{
-    float: right;
-    width: 30%;      /* compare 65% for section, a floated box must have width */
-    z-index: 1;  /* Depth */ 
-    margin-bottom: 30px; /* All these also have impact for layout */
-    margin-top: 10px;
-    background-color: darkgray;
+ul{
+    list-style-type:none;
+    margin:0;   
+    padding:0;
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+li a{ 
+    margin: 0 2.3em; 
+}
+li a:hover{ 
+    background-color:grey;
 }
 nav{
-    color: blue;
+    color: white;
+    padding-top: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#main{
+    
+}
+#slider{
+    
+}
+#content{
+    margin-top: 30px;
+    min-height: 400px;
+    overflow: hidden;
+    margin-bottom: 150px;
+    font-size: 14px;
+    line-height: 1.5em;     
+}
+.one-column{
+    width: 420px;
+    float: left;
+    margin-left: 30px;
+}
+.one-third{ 
+    margin-top: 10px;
+    width: 300px; 
+    float:left;
+    position:relative;
+}
+.one-third li{
+    margin: 1.3em 0;
+}
+.line-divider{
+	clear: both;
+	border-bottom: 1px solid #d7d7d7;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-#pageNav ul{
-    margin: 0; /* Must have */
-    padding: 0;
+footer {
+    background: #2A2D30;
+    color: white;
+    width: 100%;
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 40px;
+    clear:both;
 }
-
-#pageNav ul li{
-    display: inline;
-}
-
-.dialog {
-    background-color: #a89090;
-    border-style: double;
-    position: absolute;   /* must have */
-    z-index: 3;
-    -moz-box-shadow:    3px 3px 5px 6px #ccc;
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-    box-shadow:         3px 3px 5px 6px #ccc;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    width: 30%;
-}
-
-.table tr:hover {
-   background-color: #d7e1ee;
-}
-menu{
-    color: aqua;
-}
-footer{
-    float: bottom;
-    clear: right;
-}
-
-
