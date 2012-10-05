@@ -64,13 +64,13 @@ nav{
     
 }
 #slider{
-    
+    min-height: 100px;
 }
 #content{
     margin-top: 30px;
     min-height: 400px;
     overflow: hidden;
-    margin-bottom: 150px;
+    margin-bottom: 170px;
     font-size: 14px;
     line-height: 1.5em;     
 }
@@ -88,6 +88,14 @@ nav{
 .one-third li{
     margin: 1.3em 0;
 }
+.one-sixth{ 
+    margin-top: 10px;
+    width: 151px; 
+    float:left;
+    position:relative;
+    height: 300px;
+}
+    
 .line-divider{
 	clear: both;
 	border-bottom: 1px solid #d7d7d7;
@@ -100,7 +108,8 @@ footer {
     color: white;
     width: 100%;
     position: relative;
-    margin-top: -150px; /* negative value of footer height */
+    margin-top: -170px; /* negative value of footer height */
     height: 40px;
     clear:both;
 }
+
