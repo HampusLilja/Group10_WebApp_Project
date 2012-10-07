@@ -19,7 +19,7 @@ public class ShoppingCart {
     
     public void addProduct(Product product, int quantity){
         if(purchaseOrder.containsKey(product)){
-            setQuantity(product, quantity);
+            addToQuantity(product, quantity);
         }
         else{
             purchaseOrder.put(product, quantity);
@@ -31,8 +31,11 @@ public class ShoppingCart {
     public HashMap<Product, Integer> getPurchaseOrder(){
         return purchaseOrder;
     }
-    public void setQuantity(Product product, int quantity){
+    public void addToQuantity(Product product, int quantity){
         purchaseOrder.put(product, getQuantity(product)+quantity);
+    }
+    public void editQuantity(Product product, int quantity){
+        purchaseOrder.put(product, quantity);
     }
     public int getQuantity(Product product){
         return purchaseOrder.get(product);
