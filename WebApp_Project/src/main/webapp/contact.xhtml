@@ -8,7 +8,6 @@
         <title>Grupp 10</title>
 	
         <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        
     </head>
     <!-- body -->
 	<body>
@@ -46,31 +45,18 @@
 							<!-- form -->
 							<h2>Contact Form</h2>
 							<form id="contactForm" action="#" method="post">
-								
-									<div>
-										<label>Name:</label><br/>
-										<input name="name"  id="name" type="text" title="Enter your full name" />
-									</div>
-									<div>
-										<label>Email:</label><br/>
-										<input name="email"  id="email" type="text" title="Enter your email address" />
-									</div>
-									<div>
-										<label>Website:</label><br/>
-										<input name="web"  id="web" type="text" title="Enter your website" />
-									</div>
-									<div>
+                                                                        <label>First name:</label><br/>
+                                                                        <input id="firstname" required="true"/><br/>
+                                                                        <label>Last name:</label><br/>
+                                                                        <input id="lastname" required="true"/><br/>
+                                                                        <label>Email:</label><br/>
+                                                                        <input id="email" placeholder="some@email.com" required="true"/><br/>
+                                                                        <label>Website(optional):</label><br/>
+                                                                        <input id="website" placeholder="www.yourwebsite.com" /><br/>
+									
 										<label>Comments:</label><br/>
-										<textarea  name="comments"  id="comments" rows="5" cols="20" title="Enter your comments"></textarea>
-									</div>
-									
-									<!-- send mail configuration -->
-									<input type="hidden" value="youremail@yourserver.com" name="to" id="to" />
-									<input type="hidden" value="youremail@yourserver.com" name="from" id="from" />
-									<input type="hidden" value="From torn wordpress online" name="subject" id="subject" />
-									<input type="hidden" value="send-mail.php" name="sendMailUrl" id="sendMailUrl" />
-									<!-- ENDS send mail configuration -->
-									
+										<textarea  name="comments"  id="comments" rows="5" cols="20" required="true"></textarea>
+							
 									<p><input type="button" value="SEND" name="submit" id="submit" /></p>
 								
 							</form>
