@@ -9,6 +9,7 @@ package edu.chl.group10.core;
  * @author Herzog
  */
 public class Product{
+   private long id;
    private String name;
    private int amount;  //amount of liquid in ml
    private int price;
@@ -16,13 +17,18 @@ public class Product{
    private String type; //eg. rum, vodka
    
    
-    public Product(String name, int amount,int price, int alcoholProof, String type) {
+    public Product(long id, String name, int amount,int price, int alcoholProof, String type) {
+    this.id = id;
     this.name = name;
     this.amount = amount;
     this.price = price;
     this.alcoholProof = alcoholProof; 
     this.type = type;
     }
+    public long getId(){
+        return id;
+    }
+    
     public void setName(String name){
         this.name = name;
     }
