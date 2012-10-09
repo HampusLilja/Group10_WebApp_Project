@@ -74,7 +74,7 @@ public class GroupMembersResource {
     @Path("{pnumb}")
     public MemberProxy find(@PathParam("pnumb") long pnumb) {
         for (Member m : gmem.getAll()) {
-            if (m.getPnumb().equals(pnumb)) {
+            if (m.getID().equals(pnumb)) {
                 log.log(Level.INFO, "selectByPNumb {0}", pnumb);
                 return new MemberProxy(m);
             }

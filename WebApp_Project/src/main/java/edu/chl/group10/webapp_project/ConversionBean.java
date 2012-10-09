@@ -6,20 +6,26 @@ package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.ContactInfo;
-import edu.chl.group10.core.Customer;
-import edu.chl.group10.core.CustomerList;
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.PreDestroy;
+import javax.enterprise.context.Conversation;
+import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
- *
- * @author Herzog
+ * Very useful to pass data back and forth between pages
+ * WILL SURVIVE REDIRECTS, perfect for PRG-pattern
+ * @author hampus
  */
+@Named("conversation")
+@ConversationScoped
+public class ConversionBean implements Serializable {
 
-@Named("signUp")
-@RequestScoped
-public class SignUpBB {
+    @Inject // Handled by system, don't need to create class.
+    private Conversation conv;
     private long ID;
     private String firstName;
     private String lastName;
@@ -28,27 +34,27 @@ public class SignUpBB {
     private int zip;
     private String town;
     private Address address;
-    private ContactInfo contactInfo;
     private String phoneNumber;
     private String email;
     private String website;
     private String comments;
+    private ContactInfo contactInfo;
     private String password;
-    
-    public SignUpBB(){
-        
-    }
-    @Inject
-    private CustomerListBean customerList;
-    
-    
-    public void addCustomer(String firstName, String lastName, String street, 
-            int number, int zip, String town, String phoneNumber, String email, 
-            String website, String comments, String password) {
+
+    public void actionListener(Long id, String firstName, String lastName, 
+            String street, int number, int zip, String town, String phoneNumber,
+            String email, String website, String comments, String password) {
+        if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.street = street;
+                this.street = street;
         this.number = number;
         this.zip = zip;
         this.town = town;
@@ -59,11 +65,32 @@ public class SignUpBB {
         this.comments = comments;
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
-        
-        customerList.add(new Customer(firstName, lastName, address, contactInfo, 
-                password));
+        // Find person from database...
     }
-    
+
+    public String action() {
+        if (!conv.isTransient()) {
+            conv.end();
+             Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION ENDS");
+        }
+        try {
+            return "customers?faces-redirect=true"; // Go back
+        } catch (Exception e) {
+            // Not implemented
+            //return "error?faces-redirect=true&amp;cause=" + e.getMessage();
+            return null;
+        }
+    }
+
+    @PreDestroy  // MUST HAVE back button etc.
+    public void destroy() {
+        if (conv != null) {
+            if (!conv.isTransient()) {
+                conv.end();
+            }
+        }
+    }
+
     public String getFirstName(){
         return firstName;
     }
@@ -72,13 +99,13 @@ public class SignUpBB {
         return lastName;
     }
     
-    public String getPassword(){
-        return password;
-    }
-    
     public Address getAddress(){
         setAddress();
         return address;
+    }
+    
+    public String getPassword(){
+        return password;
     }
     
     public String getStreet(){
@@ -101,50 +128,7 @@ public class SignUpBB {
         return contactInfo;
     }
     
-    public long getID(){
-        return ID;
-    }
-    
-    public void setFirstName(String firstName){
-        this.firstName = firstName;
-    }
-    
-    public void setLastName(String lastName){
-        this.lastName = lastName;
-    }
-    
-    public void setPassword(String password){
-        this.password = password;
-    }
-    
-    public void setAddress(){
-        this.address = new Address(street, number, zip, town);
-    }
-    
-    public void setStreet(String street){
-        this.street = street;
-    }
-    
-    public void setNumber(int number){
-        this.number = number;
-    }
-    
-    public void setZip(int zip){
-        this.zip = zip;
-    }
-    
-    public void setTown(String town){
-        this.town = town;
-    }
-    
-    public void setContactInfo(String firstName, String lastName, 
-            String phoneNumber, String email, String website, String comments){
-        this.contactInfo = new ContactInfo(
-                phoneNumber, email, website, comments);
-    }
-    
-    
-      public String getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
     
@@ -175,6 +159,48 @@ public class SignUpBB {
     
     public void setComments(String comments){
         this.comments = comments;
+    }
+    
+    public long getID(){
+        return ID;
+    }
+    
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+    public void setStreet(String street){
+        this.street = street;
+    }
+    
+    public void setNumber(int number){
+        this.number = number;
+    }
+    
+    public void setZip(int zip){
+        this.zip = zip;
+    }
+    
+    public void setTown(String town){
+        this.town = town;
+    }
+    
+    public void setAddress(){
+        this.address = new Address(street, number, zip, town);
+    }
+    
+    public void setContactInfo(String firstName, String lastName, 
+            String phoneNumber, String email, String website, String comments){
+        this.contactInfo = new ContactInfo(
+                phoneNumber, email, website, comments);
     }
     
     public void setID(long id){

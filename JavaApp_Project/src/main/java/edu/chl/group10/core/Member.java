@@ -16,7 +16,7 @@ public class Member implements IEntity<Long> {
     }
     
     @Override
-    public Long getPnumb() {
+    public Long getID() {
         return pnumb;
     }
 
