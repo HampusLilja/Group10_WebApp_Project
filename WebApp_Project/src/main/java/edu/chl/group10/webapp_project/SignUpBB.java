@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Address;
@@ -14,7 +10,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author Herzog
+ * @author Herzog & Lilja
  */
 
 @Named("signUp")
@@ -77,7 +73,6 @@ public class SignUpBB {
     }
     
     public Address getAddress(){
-        setAddress();
         return address;
     }
     
@@ -117,7 +112,7 @@ public class SignUpBB {
         this.password = password;
     }
     
-    public void setAddress(){
+    public void setAddress(String street, int number, int zip, String town){
         this.address = new Address(street, number, zip, town);
     }
     
@@ -137,14 +132,13 @@ public class SignUpBB {
         this.town = town;
     }
     
-    public void setContactInfo(String firstName, String lastName, 
-            String phoneNumber, String email, String website, String comments){
+    public void setContactInfo(String phoneNumber, String email, String website, 
+            String comments){
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
     }
     
-    
-      public String getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
     
@@ -162,7 +156,6 @@ public class SignUpBB {
     
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
-        
     }
     
     public void setEmail(String email){

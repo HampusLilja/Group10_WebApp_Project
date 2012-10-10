@@ -25,19 +25,6 @@ public class Address {
     public String getTown() {
         return town;
     }
-    /*
-    public void setStreet(String street){
-        this.street = street;
-    }
-    public void setNumber(int number){
-        this.number = number;
-    }
-    public void setZip(int zip){
-        this.zip = zip;
-    }
-    public void setTown(String town) {
-        this.town = town;
-    }*/
 
     @Override
     public String toString() {

@@ -56,46 +56,33 @@
 					<!-- form -->
 							<h2>Sign up</h2>
                                                         <h:body>
-                                                            <h:form id="addCustomerForm">
+                                                            <h:form id="editCustomerDetails">
 
+                                                                <h:outputLabel value="ID: " /><br/>
+                                                                <h:inputText value="#{conversation.ID}" required="true" readonly="true"/><br/>
                                                                 <h:outputLabel value="First Name: " /><br/>
-                                                                <h:inputText value="#{signUp.firstName}" required="true" /><br/>
+                                                                <h:inputText value="#{conversation.firstName}" required="true" readonly="true"/><br/>
                                                                 <h:outputLabel value="Last Name: " /><br/>
-                                                                <h:inputText value="#{signUp.lastName}" required="true" /><br/><br/>
+                                                                <h:inputText value="#{conversation.lastName}" required="true" readonly="true"/><br/><br/>
 
-
-                                                                <h:outputLabel value="Password: " /><br/>
-                                                                <h:inputSecret value="#{signUp.password}" required="true"/><br/><br/>
-
-                                                                <h:head>Address</h:head><br/>
-                                                                <h:outputLabel value="Street: " /><br/>
-                                                                <h:inputText value="#{signUp.street}" /><br/>
-                                                                <h:outputLabel value="Number: " /><br/>
-                                                                <h:inputText value="#{signUp.number}" /><br/>
-                                                                <h:outputLabel value="Zip: " /><br/>
-                                                                <h:inputText value="#{signUp.zip}" /><br/>
-                                                                <h:outputLabel value="Town: " /><br/>
-                                                                <h:inputText value="#{signUp.town}" /><br/><br/>
-
-                                                                <h:head>Login Info</h:head><br/>
+                                                                <h:head>Contact Info</h:head><br/>
                                                                 <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{signUp.email}" required="true"/><br/>
+                                                                <h:inputText value="#{conversation.email}" required="true"/><br/>
 
                                                                 <h:outputLabel value="Phone: " /><br/>
-                                                                <h:inputText value="#{signUp.phoneNumber}" /><br/>
+                                                                <h:inputText value="#{conversation.phoneNumber}" /><br/>
                                                                 <h:outputLabel value="Website: " /><br/>
-                                                                <h:inputText value="#{signUp.website}" /><br/>
+                                                                <h:inputText value="#{conversation.website}" /><br/>
                                                                 <h:outputLabel value="Comments: " /><br/>
-                                                                <h:inputText value="#{signUp.comments}" /><br/>
+                                                                <h:inputText value="#{conversation.comments}" /><br/>
 
                                                                 <h:commandButton 
-                                                                    id="submitButton"
-                                                                    value="Submit"
-                                                                    actionListener="#{signUp.addCustomer(signUp.getFirstName(), signUp.getLastName(), 
-                                                                                      signUp.getStreet(), signUp.getNumber(), signUp.getZip(), 
-                                                                                      signUp.getTown(), signUp.getPhoneNumber(), signUp.getEmail(), 
-                                                                                      signUp.getWebsite(), signUp.getComments(), signUp.getPassword())}"
-                                                                    action="customers?faces-redirect=true" />
+                                                                    id="updateContactButton"
+                                                                    value="Update"
+                                                                    actionListener="#{editContactDetails.editContactDetails(conversation.ID, conversation.getFirstName(), 
+                                                                                      conversation.getLastName(), conversation.getPhoneNumber(), conversation.getEmail(), 
+                                                                                      conversation.getWebsite(), conversation.getComments())}"
+                                                                    action="#{conversation.action()}" />
 
                                                             </h:form>
                                                         </h:body>

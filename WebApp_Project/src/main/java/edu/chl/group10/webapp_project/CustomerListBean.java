@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Customer;
@@ -30,6 +26,10 @@ public class CustomerListBean implements Serializable {
         return clist.getAll();
     }
     
+    public Customer find(long id){
+        return clist.find(id);
+    }
+    
     public void add(Customer c){
         clist.update(c);
     }
@@ -38,15 +38,9 @@ public class CustomerListBean implements Serializable {
         clist.remove(id);
     }
     
-    public String getCustomerFirstNameByID(long id) {
+    public String getCustomerNameByID(long id) {
         Customer customer = clist.find(id);
-        return customer.getFirstName();
+        return customer.getFirstName() + customer.getLastName();
     }
-    
-    public double getProductPriceByID(long id) {
-        Customer customer = clist.find(id);
-        return customer.getID();
-    }
-
     
 }

@@ -44,23 +44,48 @@
                         <h:dataTable var="customer" value="#{customers.all}" border="1" >
                             <h:column>
                                 <f:facet name="header">ID</f:facet>
-                        #{customer.ID}
+                                #{customer.ID}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">First Name</f:facet>
-                        #{customer.firstName}
+                                #{customer.firstName}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Last Name</f:facet>
-                        #{customer.lastName}
+                                #{customer.lastName}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Address</f:facet>
-                        #{customer.address.toString()}
+                                #{customer.address.toString()}
+                                <h:form>
+                                    <h:commandLink actionListener="#{conversation.addressActionListener(
+                                                                     customer.ID, customer.firstName,
+                                                                     customercustomer.lastName, customer.address.street,
+                                                                     customer.address.number, customer.address.zip,
+                                                                     customer.address.town)}"
+                                    action="editAddressDetails" >Edit</h:commandLink>
+                                </h:form>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Contact Info</f:facet>
-                        #{customer.contactInfo.toString()}
+                                #{customer.contactInfo.toString()}
+                                <h:form>
+                                    <h:commandLink actionListener="#{conversation.contactActionListener(
+                                                                     customer.ID, customer.firstName,
+                                                                     customercustomer.lastName, customer.contactInfo.phoneNumber, 
+                                                                     customer.contactInfo.email, customer.contactInfo.website,
+                                                                     customer.contactInfo.comments)}"
+                                    action="editContactDetails" >Edit</h:commandLink>
+                                </h:form>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Delete</f:facet>
+                                <h:form>
+                                    <h:commandLink actionListener="#{conversation.deleteActionListener(
+                                                                     customer.ID, customer.firstName, customer.lastName,
+                                                                     customer.contactInfo.email)}"
+                                    action="deleteCustomer" >Delete</h:commandLink>
+                                </h:form>
                             </h:column>
 
                         </h:dataTable></h:body>

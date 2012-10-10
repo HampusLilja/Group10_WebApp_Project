@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Address;
@@ -46,7 +42,7 @@ public class ConversionBean implements Serializable {
             String email, String website, String comments, String password) {
         if (conv.isTransient()) {
             conv.begin();
-             Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION BEGINS: "
+             Logger.getAnonymousLogger().log(Level.INFO, "SIGNUP CONVERSATION BEGINS: "
                      + "Got id {0}", id);
         }else{
             
@@ -54,7 +50,7 @@ public class ConversionBean implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-                this.street = street;
+        this.street = street;
         this.number = number;
         this.zip = zip;
         this.town = town;
@@ -66,6 +62,62 @@ public class ConversionBean implements Serializable {
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
         // Find person from database...
+    }
+    
+    public void contactActionListener(Long id, String firstName, String lastName, 
+            String phoneNumber, String email, String website, String comments) {
+        if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "CONTACT CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.website = website;
+        this.comments = comments;
+        this.contactInfo = new ContactInfo(
+                phoneNumber, email, website, comments);
+        // Find person from database...
+    }
+    
+    public void addressActionListener(Long id, String firstName, String lastName, 
+            String street, int number, int zip, String town) {
+        if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "ADDRESS CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.number = number;
+        this.zip = zip;
+        this.town = town;
+        this.address = new Address(street, number, zip, town);
+        // Find person from database...
+    }
+    
+    public void deleteActionListener(Long id, String firstName, String lastName, 
+            String email) {
+                if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "DELETE CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public String action() {
@@ -100,7 +152,6 @@ public class ConversionBean implements Serializable {
     }
     
     public Address getAddress(){
-        setAddress();
         return address;
     }
     
@@ -193,12 +244,12 @@ public class ConversionBean implements Serializable {
         this.town = town;
     }
     
-    public void setAddress(){
+    public void setAddress(String street, int number, int zip, String town){
         this.address = new Address(street, number, zip, town);
     }
     
-    public void setContactInfo(String firstName, String lastName, 
-            String phoneNumber, String email, String website, String comments){
+    public void setContactInfo(String phoneNumber, String email, String website,
+            String comments){
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
     }
