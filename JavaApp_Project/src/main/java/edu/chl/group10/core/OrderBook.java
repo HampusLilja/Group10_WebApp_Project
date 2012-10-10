@@ -4,10 +4,6 @@ package edu.chl.group10.core;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * All orders
- * @author hajo
- */
 public final class OrderBook extends AbstractEntityContainer<PurchaseOrder, Long> implements IOrderBook{
 
     public static IOrderBook newInstance() {

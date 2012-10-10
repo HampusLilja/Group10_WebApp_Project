@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE xhtml>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
     <head>
+
         <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
 	
         <title>Grupp 10</title>
 	
         <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <!-- body -->
 	<body>
@@ -54,22 +55,51 @@
                                 <div class="one-half">
 					<!-- form -->
 							<h2>Sign up</h2>
-							<form id="signUpForm" action="#" method="post">
-                                                           
-                                                                        <label>First name:</label><br/>
-                                                                        <input id="firstName" required="true"/><br/>
-                                                                        <label>Last name:</label><br/>
-                                                                        <input id="lastName" required="true"/><br/>
-                                                                        <label>Address:</label><br/>
-                                                                        <input id="address" required="true"/><br/>
-                                                                        <label>Email:</label><br/>
-                                                                        <input id="email" placeholder="some@email.com" required="true"/><br/>
-                                                                        <label>Phone number:</label><br/>
-                                                                        <input id="phoneNumber" required="true" /><br/>
-                                                                        <label>Password</label><br/>
-                                                                        <input id="password" type="password" required="true" /><br/>
-									
-							</form>
+                                                        <h:body>
+                                                            <h:form id="addCustomerForm">
+
+                                                                <h:outputLabel value="First Name: " /><br/>
+                                                                <h:inputText value="#{signUp.firstName}" required="true" /><br/>
+                                                                <h:outputLabel value="Last Name: " /><br/>
+                                                                <h:inputText value="#{signUp.lastName}" required="true" /><br/><br/>
+
+
+                                                                <h:outputLabel value="Password: " /><br/>
+                                                                <h:inputSecret value="#{signUp.password}" required="true"/><br/><br/>
+
+                                                                <h:head>Address</h:head><br/>
+                                                                <h:outputLabel value="Street: " /><br/>
+                                                                <h:inputText value="#{signUp.street}" /><br/>
+                                                                <h:outputLabel value="Number: " /><br/>
+                                                                <h:inputText value="#{signUp.number}" /><br/>
+                                                                <h:outputLabel value="Zip: " /><br/>
+                                                                <h:inputText value="#{signUp.zip}" /><br/>
+                                                                <h:outputLabel value="Town: " /><br/>
+                                                                <h:inputText value="#{signUp.town}" /><br/><br/>
+
+                                                                <h:head>Login Info</h:head><br/>
+                                                                <h:outputLabel value="Email: " /><br/>
+                                                                <h:inputText value="#{signUp.email}" required="true"/><br/>
+
+                                                                <h:outputLabel value="Phone: " /><br/>
+                                                                <h:inputText value="#{signUp.phoneNumber}" /><br/>
+                                                                <h:outputLabel value="Website: " /><br/>
+                                                                <h:inputText value="#{signUp.website}" /><br/>
+                                                                <h:outputLabel value="Comments: " /><br/>
+                                                                <h:inputText value="#{signUp.comments}" /><br/>
+
+                                                                <h:commandButton 
+                                                                    id="submitButton"
+                                                                    value="Submit"
+                                                                    actionListener="#{signUp.addCustomer(signUp.getFirstName(), signUp.getLastName(), 
+                                                                                      signUp.getStreet(), signUp.getNumber(), signUp.getZip(), 
+                                                                                      signUp.getTown(), signUp.getPhoneNumber(), signUp.getEmail(), 
+                                                                                      signUp.getWebsite(), signUp.getComments(), signUp.getPassword())}"
+                                                                    action="customers?faces-redirect=true" />
+
+                                                            </h:form>
+                                                        </h:body>
+
 							<!-- ENDS form -->
 				</div>
 				<!-- ENDS Signup -->

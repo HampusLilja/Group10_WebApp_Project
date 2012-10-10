@@ -1,4 +1,3 @@
-
 package edu.chl.group10.core;
 
 public class OrderItem {

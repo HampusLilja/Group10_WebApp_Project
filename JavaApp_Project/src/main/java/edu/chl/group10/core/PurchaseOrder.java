@@ -7,7 +7,7 @@ import java.util.*;
 public class PurchaseOrder implements IEntity<Long>{
 
     @Override
-    public Long getPnumb() {
+    public Long getID() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

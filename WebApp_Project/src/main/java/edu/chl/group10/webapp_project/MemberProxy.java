@@ -27,7 +27,7 @@ public class MemberProxy {
     
     @XmlElement(name="pnumb")
     public long getPnumb(){
-        return member.getPnumb();
+        return member.getID();
     }
     
     @XmlElement(name="name")

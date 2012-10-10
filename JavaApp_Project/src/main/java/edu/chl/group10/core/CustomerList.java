@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.core;
 
 import java.util.ArrayList;
@@ -9,19 +5,28 @@ import java.util.List;
 
 /**
  *
- * @author Herzog
+ * @author Herzog & Lilja
  */
-public class CustomerList {
+public final class CustomerList extends AbstractEntityContainer<Customer, Long> implements ICustomerList{
     private List<Customer> customerList;
-    public CustomerList(){
-        customerList = new ArrayList<>();
+    
+    public static ICustomerList newInstance() {
+        return new CustomerList();
     }
-     
-    public boolean add(Customer c) {
-        return customerList.add(c);
+    
+    private CustomerList() {
+       
     }
-    public List<Customer> getCustomerList(){
-        return customerList;
+    
+    @Override
+    public List<Customer> getByName(String name) {
+        List<Customer> found = new ArrayList<>();
+        for (Customer c : getAll()) {
+            if (c.getFirstName().equals(name) || c.getLastName().equals(name)) {
+                found.add(c);
+            }
+        }
+        return found;
     }
     
 }

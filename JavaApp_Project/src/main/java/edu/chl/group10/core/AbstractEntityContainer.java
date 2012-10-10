@@ -25,7 +25,7 @@ public abstract class AbstractEntityContainer<T extends IEntity<K>, K> implement
 
     @Override
     public void update(T t) {
-        T old = find(t.getPnumb());
+        T old = find(t.getID());
         if (t != null) {
             elems.remove(old);
             elems.add(t);
@@ -35,7 +35,7 @@ public abstract class AbstractEntityContainer<T extends IEntity<K>, K> implement
     @Override
     public T find(K id) {    
         for (T t : elems) {
-            if (t.getPnumb().equals(id)) { // NOTE: equals, not ==
+            if (t.getID().equals(id)) { // NOTE: equals, not ==
                 return t;
             }
         }

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
+	
+        <title>Grupp 10</title>
+	
+        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <!-- body -->
+	<body>
+		<!-- HEADER -->
+		<div id="header">
+                    <img src="client/img/logo.png"/>
+		</div>
+		<!-- ENDS HEADER -->	
+  
+  		<!-- Menu -->
+			<menu>
+				<!-- Navigation -->
+					<nav>
+                                        	<ul>
+						<li><a href="index.xhtml">Home</a></li>
+						<li><a href="shop.xhtml">Shop</a></li>
+						<li><a href="contact.xhtml">Contact</a></li>
+                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
+						</ul>
+					</nav>
+				<!-- Navigation -->
+					
+			</menu>
+		<!-- ENDS Menu -->
+
+		<!-- MAIN -->
+			<div id="main">
+                                <!-- SignUp -->
+                                    <div class="one-half">
+                                    <!-- form -->
+							<h2>Login</h2>
+							<form id="loginForm" action="#" method="post">
+                                                                       <label>Email:</label><br/>
+                                                                       <input id="email2" placeholder="some@email.com" required="true"/><br/>
+                                                                       <label>Password:</label><br/>
+                                                                       <input id="password" type="password" required="true" /><br/>
+                                                                        <p><input type="button" value="Login" name="submit" id="submit" /></p>
+								
+							</form>
+							<!-- ENDS form -->
+                                    </div>
+                                <div class="one-half">
+					<!-- form -->
+							<h2>Sign up</h2>
+                                                        <h:body>
+                                                            <h:form id="editCustomerDetails">
+
+                                                                <h:outputLabel value="ID: " /><br/>
+                                                                <h:inputText value="#{conversation.ID}" required="true" readonly="true"/><br/>
+                                                                <h:outputLabel value="First Name: " /><br/>
+                                                                <h:inputText value="#{conversation.firstName}" required="true" readonly="true"/><br/>
+                                                                <h:outputLabel value="Last Name: " /><br/>
+                                                                <h:inputText value="#{conversation.lastName}" required="true" readonly="true"/><br/><br/>
+
+                                                                <h:head>Contact Info</h:head><br/>
+                                                                <h:outputLabel value="Email: " /><br/>
+                                                                <h:inputText value="#{conversation.email}" required="true"/><br/>
+
+                                                                <h:outputLabel value="Phone: " /><br/>
+                                                                <h:inputText value="#{conversation.phoneNumber}" /><br/>
+                                                                <h:outputLabel value="Website: " /><br/>
+                                                                <h:inputText value="#{conversation.website}" /><br/>
+                                                                <h:outputLabel value="Comments: " /><br/>
+                                                                <h:inputText value="#{conversation.comments}" /><br/>
+
+                                                                <h:commandButton 
+                                                                    id="updateContactButton"
+                                                                    value="Update"
+                                                                    actionListener="#{editContactDetails.editContactDetails(conversation.ID, conversation.getFirstName(), 
+                                                                                      conversation.getLastName(), conversation.getPhoneNumber(), conversation.getEmail(), 
+                                                                                      conversation.getWebsite(), conversation.getComments())}"
+                                                                    action="#{conversation.action()}" />
+
+                                                            </h:form>
+                                                        </h:body>
+
+							<!-- ENDS form -->
+				</div>
+				<!-- ENDS Signup -->
+
+			</div>
+		<!-- ENDS MAIN -->
+  
+		
+        <!-- FOOTER -->
+		<footer>
+                    <p> Footer content goes here </p>
+                    <p>&#169; Grupp 10 Webbapplikationer</p>
+		</footer>
+		<!-- ENDS FOOTER -->
+
+    </body>
+	<!-- ENDS body -->
+</html>
