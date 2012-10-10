@@ -1,37 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+
+<!DOCTYPE xhtml>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Members</title>
-        <link rel="stylesheet" type="text/css" href="css/newcss.css" />
-        <!-- Order matters -->
+        <link rel="stylesheet" type="text/css" href="css/newcss.css"/>
+	
+        <title>Grupp 10</title>
+
+                <!-- Order matters -->
         <script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script> 
         <script type="text/javascript" src="js/core/members.js" ></script>
         <script type="text/javascript" src="js/gui/table.js" ></script>
         <script type="text/javascript" src="js/gui/dialog.js" ></script>
         <script type="text/javascript" src="js/ctrl/control.js" ></script>
+        
     </head>
-    <body>
-        <header id="pageHeader"><h1>Members</h1></header>   
-        <nav id="pageNav">
-            <ul> 
-                <li><input id="btnList" type="button" value="List (refresh)" /></li>
-                <li><input id="btnAdd" type="button" value="Add" /></li>
-                <li><input id="btnDel" type="button" value="Del" /></li>
-            </ul> 
-        </nav>
-        <div id="dialog"></div>
-        <section id="pageSection"></section>
-        <aside>
-            <nav>This is a nav
-                <menu>This is a menu
-                    <ul>
-                        <li><a href ="index.xhtml">Index</a></li>
-                        <li><a href ="client/members.xhtml">Members</a></li>
-                    </ul>
-                </menu>
-            </nav>
-        </aside>
-        <footer>This is the footer</footer>
+    <!-- body -->
+	<body>
+		<!-- HEADER -->
+		<div id="header">
+                    <img src="img/logo.png"/>
+		</div>
+		<!-- ENDS HEADER -->	
+  
+  		<!-- Menu -->
+			<menu>
+				<!-- Navigation -->
+					<nav>
+                                        	<ul>
+						<li><a href="index.xhtml">Home</a></li>
+						<li><a href="shop.xhtml">Shop</a></li>
+						<li><a href="contact.xhtml">Contact</a></li>
+                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
+                                                <li><a href="members.xhtml">Group Members</a></li>
+						</ul>
+					</nav>
+				<!-- Navigation -->
+					
+			</menu>
+		<!-- ENDS Menu -->
+
+		<!-- MAIN -->
+			<div id="main">
+                                <!-- Slider -->
+				<div id="slider">
+					<a href="#main"><img src="img/01.jpg" title="Main Picture!"/></a>
+				</div>
+				<!-- ENDS Slider -->
+                                
+                               <!-- 1 cols -->
+                               <div class="one-column">
+                                        <nav>
+                                            <ul>
+                                                <li><input id="btnList" type="button" value="List (refresh)" /></li>
+                                                <li><input id="btnAdd" type="button" value="Add" /></li>
+                                                <li><input id="btnDel" type="button" value="Del" /></li>
+                                            </ul>
+                                        </nav>
+                                        <div id="dialog"></div>
+                                        <section id="pageSection"></section>
+                               </div>
+                               <!-- ENDS 1 cols -->
+		
+			</div>
+		<!-- ENDS MAIN -->
+  
+		
+        <!-- FOOTER -->
+		<footer>
+                    <p> Footer content goes here </p>
+                    <p>&#169; Grupp 10 Webbapplikationer</p>
+		</footer>
+		<!-- ENDS FOOTER -->
+
     </body>
+	<!-- ENDS body -->
 </html>
