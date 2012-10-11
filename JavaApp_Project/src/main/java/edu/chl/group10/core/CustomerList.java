@@ -7,15 +7,26 @@ import java.util.List;
  *
  * @author Herzog & Lilja
  */
-public final class CustomerList extends AbstractEntityContainer<Customer, Long> implements ICustomerList{
+public final class CustomerList extends AbstractDAO<Customer, Long> implements ICustomerList{
     private List<Customer> customerList;
+    private QueryProcessor qProc = new QueryProcessor();
     
-    public static ICustomerList newInstance() {
+    /*public static ICustomerList newInstance() {
         return new CustomerList();
+    }*/
+    
+    public CustomerList(String puName) {
+        super(Customer.class, puName);
+       
     }
     
-    private CustomerList() {
-       
+    @Override
+    public List<Customer> getAll() {
+        List<Customer> pL = new ArrayList<>();
+        
+        pL = qProc.getAll();
+        return pL;
+
     }
     
     @Override

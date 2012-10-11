@@ -1,11 +1,18 @@
 package edu.chl.group10.core;
 
-public class Address {
+import java.io.Serializable;
+import javax.persistence.Embeddable;
 
-    private final String street;
-    private final int number;
-    private final int zip;
-    private final String town;
+@Embeddable
+public class Address implements Serializable {
+
+    private String street;
+    private int number;
+    private int zip;
+    private String town;
+
+    public Address() {
+    }
 
     public Address(String street, int number, int zip, String town){
         this.street = street;

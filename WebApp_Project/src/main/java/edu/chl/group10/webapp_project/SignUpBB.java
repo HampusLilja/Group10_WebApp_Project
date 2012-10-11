@@ -4,6 +4,8 @@ import edu.chl.group10.core.Address;
 import edu.chl.group10.core.ContactInfo;
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.core.CustomerList;
+import edu.chl.group10.core.Group10;
+import edu.chl.group10.core.ICustomerList;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -31,11 +33,13 @@ public class SignUpBB {
     private String comments;
     private String password;
     
+    @Inject
+    private CustomerListBean customerList;
+    
     public SignUpBB(){
         
     }
-    @Inject
-    private CustomerListBean customerList;
+
     
     
     public void addCustomer(String firstName, String lastName, String street, 
@@ -56,8 +60,12 @@ public class SignUpBB {
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
         
-        customerList.add(new Customer(firstName, lastName, address, contactInfo, 
-                password));
+       ICustomerList cl = Group10.INSTANCE.getCustomerList();
+       cl.add(new Customer(firstName, lastName, address, contactInfo,
+               password));
+       //customerList.add(new Customer(firstName, lastName, address, contactInfo,
+         //      password));
+
     }
     
     public String getFirstName(){

@@ -1,19 +1,34 @@
 package edu.chl.group10.core;
 
+import java.io.Serializable;
 import java.util.Random;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Herzog & Lilja
  */
-public class Customer implements IEntity<Long>{
-    private final long id;
-    private final String firstName;
-    private final String lastName;
-    private final Address address;
-    private final ContactInfo contactInfo;
-    private final String password;
+@Entity
+public class Customer implements Serializable{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private String firstName;
+    private String lastName;
+    private String password;
     private transient ShoppingCart cart;
+    
+    @Embedded protected Address address;
+    
+    @Embedded protected ContactInfo contactInfo;
+
+    public Customer() {
+    }
     
     public Customer(String firstName, String lastName, Address address, 
             ContactInfo contactInfo, String password){
@@ -61,10 +76,10 @@ public class Customer implements IEntity<Long>{
         return password;
     }
 
-    @Override
     public Long getID() {
         return id;
     }
+    
     
     @Override
     public String toString() {
