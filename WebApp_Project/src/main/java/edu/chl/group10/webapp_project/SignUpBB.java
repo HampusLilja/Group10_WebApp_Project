@@ -40,8 +40,6 @@ public class SignUpBB {
         
     }
 
-    
-    
     public void addCustomer(String firstName, String lastName, String street, 
             int number, int zip, String town, String phoneNumber, String email, 
             String website, String comments, String password) {
@@ -60,11 +58,8 @@ public class SignUpBB {
         this.contactInfo = new ContactInfo(
                 phoneNumber, email, website, comments);
         
-       ICustomerList cl = Group10.INSTANCE.getCustomerList();
-       cl.add(new Customer(firstName, lastName, address, contactInfo,
+       customerList.add(new Customer(firstName, lastName, address, contactInfo,
                password));
-       //customerList.add(new Customer(firstName, lastName, address, contactInfo,
-         //      password));
 
     }
     

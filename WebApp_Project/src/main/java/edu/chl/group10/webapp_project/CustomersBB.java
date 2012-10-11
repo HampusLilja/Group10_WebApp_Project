@@ -20,9 +20,9 @@ public class CustomersBB {
     private CustomerListBean customerList;
     
     public List<Customer> getAll() {
-        ICustomerList cl = Group10.INSTANCE.getCustomerList();
-        return cl.getAll();
-        //return customerList.getAll();
+        //ICustomerList cl = Group10.INSTANCE.getCustomerList();
+        //return cl.getAll();
+        return customerList.getAll();
     }
     
 }

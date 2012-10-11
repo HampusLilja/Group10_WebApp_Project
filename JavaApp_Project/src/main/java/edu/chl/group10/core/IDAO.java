@@ -1,15 +1,11 @@
-
 package edu.chl.group10.core;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Basic contract for containers of Products, Customers, etc
  * 
  * K is type of id (primary key)
- * 
- * @author hajo
  */
 public interface IDAO<T, K> {
 

@@ -18,6 +18,7 @@ public class Customer implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    
     private String firstName;
     private String lastName;
     private String password;
@@ -32,8 +33,6 @@ public class Customer implements Serializable{
     
     public Customer(String firstName, String lastName, Address address, 
             ContactInfo contactInfo, String password){
-        // For now. Later database will generate id
-        this.id = new Long(new Random().nextInt(100));
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

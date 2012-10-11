@@ -31,7 +31,7 @@ public class CustomerListBean implements Serializable {
     }
     
     public void add(Customer c){
-        clist.update(c);
+        clist.add(c);
     }
     
     public void remove(long id) {

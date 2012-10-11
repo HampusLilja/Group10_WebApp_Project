@@ -1,16 +1,11 @@
-    package edu.chl.group10.core;
+package edu.chl.group10.core;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Persistence;
 
 /**
@@ -19,7 +14,6 @@ import javax.persistence.Persistence;
  * 
  * K is type of id (primary key)
  * 
- * @author hajo
  */
     
 public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
@@ -43,13 +37,14 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
     @Override
     public void add(T t) {
         EntityManager em = null;
+        
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             em.persist(t);
             em.getTransaction().commit();
         } catch (Exception ex) {
-            //DbExceptionHandler.handle(ex);
+            ex.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();
@@ -59,25 +54,47 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
 
     @Override
     public void remove(K id) {
-        T t = find(id);
-        if (t != null) {
-            //elems.remove(t);
+        EntityManager em = null;
+        
+        try {
+            em = getEntityManager();
+            T t = em.getReference(clazz, id);
+            em.getTransaction().begin();
+            em.remove(t);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
         }
+
     }
 
     @Override
     public void update(T t) {
-        //T old = find(t.getId());
-        //if (t != null) {
-          //  elems.remove(old);
-           // elems.add(t);
-        //}
+        /*T old = find(t.getId());
+        if (t != null) {
+            elems.remove(old);
+            elems.add(t);
+        }*/
     }
 
     @Override
     public T find(K id) {
-        EntityManager em = getEntityManager();
-        T t = em.find(clazz, id);
+        EntityManager em = null;
+        T t = null;
+        try {
+            em = getEntityManager();
+            t = em.find(clazz, id);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
         return t;
     }
 

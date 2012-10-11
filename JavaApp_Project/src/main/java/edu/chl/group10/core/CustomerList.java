@@ -30,6 +30,11 @@ public final class CustomerList extends AbstractDAO<Customer, Long> implements I
     }
     
     @Override
+    public void remove(Long id) {
+        qProc.remove(id);
+    }
+    
+    @Override
     public List<Customer> getByName(String name) {
         List<Customer> found = new ArrayList<>();
         for (Customer c : getAll()) {

@@ -38,7 +38,7 @@
 		<!-- ENDS Menu -->
 
 		<!-- MAIN -->
-                <div id="main">
+                <div id="main" align="justify">
                             
                     <h:body>
                         <h:dataTable var="customer" value="#{customers.all}" border="1" >
@@ -59,10 +59,9 @@
                                 #{customer.address.toString()}
                                 <h:form>
                                     <h:commandLink actionListener="#{conversation.addressActionListener(
-                                                                     customer.ID, customer.firstName,
-                                                                     customercustomer.lastName, customer.address.street,
-                                                                     customer.address.number, customer.address.zip,
-                                                                     customer.address.town)}"
+                                                                     customer.ID, customer.firstName, customer.lastName, 
+                                                                     customer.address.street, customer.address.number, 
+                                                                     customer.address.zip, customer.address.town)}"
                                     action="editAddressDetails" >Edit</h:commandLink>
                                 </h:form>
                             </h:column>
@@ -71,10 +70,9 @@
                                 #{customer.contactInfo.toString()}
                                 <h:form>
                                     <h:commandLink actionListener="#{conversation.contactActionListener(
-                                                                     customer.ID, customer.firstName,
-                                                                     customercustomer.lastName, customer.contactInfo.phoneNumber, 
-                                                                     customer.contactInfo.email, customer.contactInfo.website,
-                                                                     customer.contactInfo.comments)}"
+                                                                     customer.ID, customer.firstName, customer.lastName, 
+                                                                     customer.contactInfo.phoneNumber, customer.contactInfo.email, 
+                                                                     customer.contactInfo.website, customer.contactInfo.comments)}"
                                     action="editContactDetails" >Edit</h:commandLink>
                                 </h:form>
                             </h:column>
