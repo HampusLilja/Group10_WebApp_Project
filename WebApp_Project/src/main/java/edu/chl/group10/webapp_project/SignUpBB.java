@@ -31,7 +31,7 @@ public class SignUpBB {
     private String email;
     private String website;
     private String comments;
-    private String password;
+    private String password = "X";
     
     @Inject
     private CustomerListBean customerList;
