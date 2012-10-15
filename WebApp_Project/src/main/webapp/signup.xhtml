@@ -43,11 +43,12 @@
                                     <div class="one-half">
                                     <!-- form -->
 							<h2>Login</h2>
-                                                        <form id="loginForm" action="#" method="POST">         
+                                                        <form id="loginForm" action="/WebApp_Project/loggedin" method="POST">
+                                                            <input type="hidden" name="action" value="login" />
                                                             <label>Email:</label><br/>
                                                                        <input id="email2" placeholder="some@email.com" required="true" name="username"/><br/>
                                                                        <label>Password:</label><br/>
-                                                                       <input id="password" type="password" required="true" name="pwd1"/><br/>
+                                                                       <input id="password" type="password" required="true" name="password"/><br/>
                                                                        <p><input type="submit" value="Login" name="submit" id="submit" /></p> 
 
                                                         </form>
@@ -57,7 +58,7 @@
 					<!-- form -->
 							<h2>Sign up</h2>
                                                         <h:body>
-                                                            <h:form id="addCustomerForm">
+                                                            <h:form id="addCustomerForm" onsubmit="return checkForm(this);">
 
                                                                 <h:outputLabel value="First Name: " /><br/>
                                                                 <h:inputText value="#{signUp.firstName}" required="true" /><br/>
@@ -67,6 +68,15 @@
                                                                 <h:outputLabel value="Password: " /><br/>
                                                                 <h:inputText value="#{signUp.password}" required="true" /><br/><br/>
 -->
+                                                                <p>Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
+                                                                                    name="pwd1" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
+                                                                                            'Password must contain at least 6 characters, including UPPER/lowercase and numbers' : '');
+                                                                                        if(this.checkValidity()) form.pwd2.pattern = this.value;" onblur="">
+                                                                        <h:inputSecret onfocus="this.value = form.pwd1.value" value="#{signUp.password}"/>
+                                                                    </input></p>
+                                                                <p>Confirm Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
+                                                                                            name="pwd2" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
+                                                                                                                            'Please enter the same Password as above' : '');"/></p><br/><br/>
                                                                 <h:head>Address</h:head><br/>
                                                                 <h:outputLabel value="Street: " /><br/>
                                                                 <h:inputText value="#{signUp.street}" /><br/>
@@ -96,7 +106,7 @@
                                                                                       signUp.getStreet(), signUp.getNumber(), signUp.getZip(), 
                                                                                       signUp.getTown(), signUp.getPhoneNumber(), signUp.getEmail(), 
                                                                                       signUp.getWebsite(), signUp.getComments(), signUp.getPassword())}"
-                                                                    action="setPassword?faces-redirect=true" />
+                                                                    action="customers?faces-redirect=true" />
 
                                                             </h:form>
                                                         </h:body>

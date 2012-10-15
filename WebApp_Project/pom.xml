@@ -16,6 +16,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>edu.chl.group10</groupId>
             <artifactId>JavaApp_Project</artifactId>
             <version>1.0-SNAPSHOT</version>
