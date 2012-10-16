@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface ICustomerList extends IDAO<Customer, Long> {
 
-    List<Customer> getByName(String name);
+    List<Customer> getByEmail(String name);
+    
+    List<Customer> getByPassword(String password); 
     
 }
