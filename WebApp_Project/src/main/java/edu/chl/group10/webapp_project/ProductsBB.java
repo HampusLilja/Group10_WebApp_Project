@@ -1,6 +1,6 @@
 package edu.chl.group10.webapp_project;
 
-import edu.chl.group10.core.Customer;
+import edu.chl.group10.core.Product;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -8,19 +8,19 @@ import javax.inject.Named;
 
 /**
  *
- * @author Hampus
+ * @author Herzog & Lilja
  */
-@Named("customers")
+
+@Named("products")
 @RequestScoped
-public class CustomersBB {
+public class ProductsBB {
     
     @Inject
-    private CustomerListBean customerList;
+    private ProductListBean productList;
     
-    public List<Customer> getAll() {
+    public List<Product> getAll() {
         //ICustomerList cl = Group10.INSTANCE.getCustomerList();
         //return cl.getAll();
-        return customerList.getAll();
+        return productList.getAll();
     }
-    
 }

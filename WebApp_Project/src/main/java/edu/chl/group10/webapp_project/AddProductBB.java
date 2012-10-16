@@ -1,46 +1,44 @@
-package edu.chl.group10.core;
+package edu.chl.group10.webapp_project;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import edu.chl.group10.core.Product;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
- * @author Herzog
+ * @author Herzog & Lilja
  */
-@Entity
-public class Product implements Serializable{
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
+
+@Named("productBB")
+@RequestScoped
+public class AddProductBB {
    private long id;
    private String name;
    private int amount;  //amount of liquid in ml
    private int price;
    private int alcoholProof;
    private String type; //eg. rum, vodka
-
-    public Product() {
+    
+    @Inject
+    private ProductListBean productList;
+            
+    public AddProductBB(){
+        
     }
-   
-    public Product(String name, int amount,int price, int alcoholProof, String type) {
+
+    public void addProduct(String name, int amount,int price, int alcoholProof, String type) {
     this.name = name;
     this.amount = amount;
     this.price = price;
     this.alcoholProof = alcoholProof; 
     this.type = type;
+        
+       productList.add(new Product(id, name, amount, price, alcoholProof, type));
+
     }
     
-    public Product(long id, String name, int amount,int price, int alcoholProof, String type) {
-    this.id = id;
-    this.name = name;
-    this.amount = amount;
-    this.price = price;
-    this.alcoholProof = alcoholProof; 
-    this.type = type;
-    }
-    public long getId(){
+   public long getId(){
         return id;
     }
     

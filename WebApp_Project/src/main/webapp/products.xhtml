@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
+	
+        <title>Grupp 10</title>
+	
+        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+    </head>
+    <!-- body -->
+	<body>
+		<!-- HEADER -->
+		<div id="header">
+                    <img src="client/img/logo.png"/>
+		</div>
+		<!-- ENDS HEADER -->	
+  
+  		<!-- Menu -->
+			<menu>
+				<!-- Navigation -->
+					<nav>
+                                        	<ul>
+						<li><a href="index.xhtml">Home</a></li>
+						<li><a href="shop.xhtml">Shop</a></li>
+						<li><a href="contact.xhtml">Contact</a></li>
+                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
+                                                <li><a href="faces/addProduct.xhtml">ADD PRODUCT</a></li>
+						</ul>
+					</nav>
+				<!-- Navigation -->
+					
+			</menu>
+		<!-- ENDS Menu -->
+
+		<!-- MAIN -->
+                <div id="main" align="justify">
+                            
+                    <h:body>
+                        <h:dataTable value="#{products.all}" var="product" border="1" >
+                            <h:column>
+                                <f:facet name="header">ID</f:facet>
+                                #{product.id}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                #{product.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Amount</f:facet>
+                                #{product.amount}ml
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Price</f:facet>
+                                #{product.price}kr
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Alcohol proof</f:facet>
+                                #{product.alcoholProof}%
+                            </h:column>
+                            <h:column>  
+                                <f:facet name="header">Type</f:facet>
+                                #{product.type}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Edit</f:facet>
+                                <h:form>
+                                    <h:commandLink actionListener="#{productconversation.actionListener(
+                                                                     product.id, product.name, product.amount, 
+                                                                     product.price, product.alcoholProof, 
+                                                                     product.type)}"
+                                    action="editProductDetails" >Edit</h:commandLink>
+                                </h:form>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Delete</f:facet>
+                                <h:form>
+                                    <h:commandLink actionListener="#{productconversation.deleteActionListener(
+                                                                     product.id)}"
+                                    action="deleteProduct" >Delete</h:commandLink>
+                                </h:form>
+                            </h:column>
+
+                        </h:dataTable></h:body>
+                    
+                    
+                </div>
+		<!-- ENDS MAIN -->
+  
+		
+        <!-- FOOTER -->
+		<footer>
+                    <p> Footer content goes here </p>
+                    <p>&#169; Grupp 10 Webbapplikationer</p>
+		</footer>
+		<!-- ENDS FOOTER -->
+
+    </body>
+	<!-- ENDS body -->
+</html>

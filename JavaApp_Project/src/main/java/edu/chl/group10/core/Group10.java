@@ -8,6 +8,7 @@ public enum Group10 {
     INSTANCE;
     private final IGroupMembers groupMembers = GroupMembers.newInstance();
     private final ICustomerList customerList = new CustomerList("group10_pu");
+    private final IProductList productList = new ProductList("group10_pu");
 
     private Group10() {
         Logger.getAnonymousLogger().log(Level.INFO, "Group alive {0}", this.hashCode());
@@ -20,5 +21,9 @@ public enum Group10 {
     
     public ICustomerList getCustomerList() {
         return customerList;
+    }
+
+    public IProductList getProductList() {
+        return productList;
     }
 }

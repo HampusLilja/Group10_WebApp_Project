@@ -47,6 +47,26 @@ public class QueryProcessor {
         return cl;
     }
     
+    public List<Product> getAllProducts(){
+        EntityManager em = null;
+        List<Product> pL = null;
+        try {
+            em = getEntityManager();
+            String query = "select p from Product p";
+            TypedQuery<Product> q = em.createQuery(query, Product.class);
+            
+            q.setMaxResults(200);
+            pL = q.getResultList();
+        } catch (Exception ex) {
+            System.out.print(ex);
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+        return pL;
+    }
+    
     public void remove(long id){
         EntityManager em = null;
         try {

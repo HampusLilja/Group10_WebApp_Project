@@ -3,6 +3,7 @@
   <persistence-unit name="group10_pu" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>edu.chl.group10.core.Customer</class>
+    <class>edu.chl.group10.core.Product</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/group10db"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
