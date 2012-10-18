@@ -72,8 +72,8 @@
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{productconversation.actionListener(
-                                                                     product.id, product.name, product.amount, 
+                                    <h:commandLink actionListener="#{productconversation.editActionListener(
+                                                                     product.name, product.amount, 
                                                                      product.price, product.alcoholProof, 
                                                                      product.type)}"
                                     action="editProductDetails" >Edit</h:commandLink>

@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
     <head>
         
         <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
@@ -28,11 +29,13 @@
 				<!-- Navigation -->
 					<nav>
                                         	<ul>
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="shop.xhtml">Shop</a></li>
-						<li><a href="contact.xhtml">Contact</a></li>
-                                                <li><a href="faces/addProduct.xhtml">ADDPRODUCT</a></li>
-                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
+						<li><a href="faces/index.xhtml">Home</a></li>
+						<li><a href="faces/shop.xhtml">Shop</a></li>
+						<li><a href="faces/contact.xhtml">Contact</a></li>
+                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
+                                                <li><a href="faces/addProduct.xhtml">Add Product</a></li>
+                                                <li><a href="faces/editProduct.xhtml">Edit Product</a></li>
+                                                <li><a href="faces/products.xhtml">Products</a></li>
 						</ul>
 					</nav>
 				<!-- Navigation -->
@@ -42,6 +45,7 @@
 
 		<!-- MAIN -->
                 <div id="main" align="justify">
+                    <div class="one-half">
                             <h:body>
                             <h:form id="addProductForm">
                             <h:outputLabel value="Name: " /><br/>
@@ -51,7 +55,11 @@
                             <h:outputLabel value="Price: " /><br/>
                             <h:inputText value="#{productBB.price}" required="true"/><br/>
                             <h:outputLabel value="Alcohol proof: " /><br/>
-                            <h:inputText value="#{productBB.alcoholProof}" required="true"/><br/>
+                            <h:selectOneMenu id="alcoholProof" value="#{productBB.alcoholProof}">
+                            <c:forEach  var="i" begin="0" end="100">    
+                            <f:selectItem itemValue="#{i}"></f:selectItem>
+                            </c:forEach>
+                            </h:selectOneMenu><br/>
                             <h:outputText value="Select a Type: "/><br/>    
 			    <h:selectOneMenu value="#{productBB.type}">
                             <f:selectItem itemValue="Whiskey"/>
@@ -69,7 +77,7 @@
 
                             </h:form>
                             </h:body>
-                    
+                    </div>
                 </div>
 		<!-- ENDS MAIN -->
   

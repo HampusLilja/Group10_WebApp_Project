@@ -41,7 +41,7 @@ public class ProductConversationBean implements Serializable {
         this.alcoholProof = alcoholProof; 
         this.type = type;
     }
-    public void editProductActionListener(String name, int  amount, 
+    public void editActionListener(String name, int  amount, 
             int price, int alcoholProof, String type) {
         if (conv.isTransient()) {
             conv.begin();

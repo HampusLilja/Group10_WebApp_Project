@@ -55,7 +55,8 @@ nav{
     text-transform: uppercase;
 }
 #main{
-    min-height: 550px;
+    height: 675px;
+    background-color: #333333;
 }
 #slider{
     min-height: 100px;
@@ -100,12 +101,18 @@ nav{
 .one-third li{
     margin: 1.3em 0;
 }
-.one-sixth{ 
-    margin-top: 10px;
-    width: 151px; 
-    float:left;
+.one-sixth{
+    background-color: #000;
+    color: #fff;
+    margin-top: 25px;
+    margin-left: 28px;
+    width: 180px; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
     position:relative;
-    height: 300px;
+    min-height: 130px;
 }
     
 .line-divider{

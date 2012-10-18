@@ -3,7 +3,8 @@
 <!DOCTYPE xhtml>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
     <head>
         <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
 	
@@ -25,11 +26,14 @@
 				<!-- Navigation -->
 					<nav>
                                         	<ul>
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="shop.xhtml">Shop</a></li>
-						<li><a href="contact.xhtml">Contact</a></li>
-                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
-                                                </ul>
+						<li><a href="faces/index.xhtml">Home</a></li>
+						<li><a href="faces/shop.xhtml">Shop</a></li>
+						<li><a href="faces/contact.xhtml">Contact</a></li>
+                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
+                                                <li><a href="faces/addProduct.xhtml">Add Product</a></li>
+                                                <li><a href="faces/editProduct.xhtml">Edit Product</a></li>
+                                                <li><a href="faces/products.xhtml">Products</a></li>
+						</ul>
 					</nav>
 				<!-- Navigation -->
                                  
@@ -40,31 +44,41 @@
 			<div id="main">
                                 <!-- Slider -->
 				<div id="slider">
-                                        <select>
-                                        <option value="type" selected="selected">Select type</option>
-                                        <option value="vodka">Vodka</option>
-                                        <option value="rum">Rum</option>
-                                        <option value="whiskey">Whiskey</option>
-                                        <option value="wine">Wine</option>
-                                        </select><br/>
-                                        <input type="search" placeholder="Search..." /><br/>
-                                        <input type="button" value="Search" name="search" id="search" /> 
+                                        <h:body>
+                            <h:form id="searchProductForm">   
+			    <h:selectOneMenu value="#{productBB.type}">
+                            <f:selectItem itemValue="Whiskey"/>
+                            <f:selectItem itemValue="Rum"/>
+                            <f:selectItem itemValue="Vodka"/>
+                            <f:selectItem itemValue="Gin"/>
+                            <f:selectItem itemValue="Other"/>
+			    </h:selectOneMenu><br/>
+                            <h:commandButton id="filterButton" value="Sort by type"/>
+                            <h:commandButton id="sortByPriceButton" value="Sort by price"/>
+                            </h:form>
+                            </h:body>
                                 </div>
 				<!-- ENDS Slider -->
-                            <div class="one-sixth">
-                            <h:body>
-                            <h:dataTable var="product" value="#{products.all}" border="1" >
-                          
-                                <h:column><h:outputText value="#{product.name}"/></h:column>
-                                <h:column><h:outputText value="#{product.amount}"/></h:column>
-                                <h:column><h:outputText value="#{product.price}"/></h:column>
-                                <h:column><h:outputText value="#{product.alcoholProof}"/></h:column>
-                                <h:column><h:outputText value="#{product.type}"/></h:column>
-                                <h:commandButton id="buyButton" value="Submit" actionListener="#{productBB.addProductToCart(
-                                        productBB.name, productBB.quantity)}" />
-                        </h:dataTable></h:body>
-                        </div>
-		
+                        
+                                <h:form>
+                                    <c:forEach items="${products.all}" var="product">
+                                        <div class="one-sixth">
+                                    <h:outputText value="Name: ${product.name}"/><br/>
+                                    <h:outputText value="Amount: ${product.amount}cl"/><br/>
+                                    <h:outputText value="Price: ${product.price}kr"/><br/>
+                                    <h:outputText value="Alcohol Proof: ${product.alcoholProof}%"/><br/>
+                                    <h:outputText value="Type: ${product.type}"/><br/><br/>
+                                    <h:outputLabel value="Quantity: " />
+                                    <h:selectOneMenu id="quantity" value="">
+                                    <c:forEach  var="i" begin="1" end="10">    
+                                    <f:selectItem itemValue="#{i}"></f:selectItem>
+                                    </c:forEach>  
+                                    </h:selectOneMenu>
+                                    <h:commandButton id="addToCartButton" value="Add to Cart" 
+                                                                    action="products?faces-redirect=true" />  
+                                        </div>
+                                    </c:forEach>
+                                    </h:form>
 			</div>
 		<!-- ENDS MAIN -->
   
