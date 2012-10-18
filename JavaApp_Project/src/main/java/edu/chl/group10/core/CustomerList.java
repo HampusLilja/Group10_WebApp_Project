@@ -22,11 +22,8 @@ public final class CustomerList extends AbstractDAO<Customer, Long> implements I
     
     @Override
     public List<Customer> getAll() {
-        List<Customer> pL = new ArrayList<>();
-        
-        pL = qProc.getAll();
+        List<Customer> pL = qProc.getAll();
         return pL;
-
     }
     
     @Override
@@ -35,14 +32,33 @@ public final class CustomerList extends AbstractDAO<Customer, Long> implements I
     }
     
     @Override
-    public List<Customer> getByName(String name) {
+    public List<Customer> getByEmail(String name) {
         List<Customer> found = new ArrayList<>();
-        for (Customer c : getAll()) {
-            if (c.getFirstName().equals(name) || c.getLastName().equals(name)) {
-                found.add(c);
+        try {
+            for (Customer c : this.getAll()) {
+                if (c.getContactInfo().getEmail().equals(name)) {
+                    found.add(c);
+                }
             }
+            return found;
+        } catch (Exception ex) {
+            return null;
         }
-        return found;
+    }
+
+    @Override
+    public List<Customer> getByPassword(String password) {
+        List<Customer> found = new ArrayList<>();
+        try {
+            for (Customer c : this.getAll()) {
+                if (c.getPassword().equals(password)) {
+                    found.add(c);
+                }
+            }
+            return found;
+        } catch (Exception ex) {
+            return null;
+        }
     }
     
 }

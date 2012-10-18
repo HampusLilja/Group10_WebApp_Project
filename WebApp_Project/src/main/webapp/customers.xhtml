@@ -38,7 +38,7 @@
 		<!-- ENDS Menu -->
 
 		<!-- MAIN -->
-                <div id="main" align="justify">
+                <div id="main">
                             
                     <h:body>
                         <h:dataTable var="customer" value="#{customers.all}" border="1" >
@@ -53,6 +53,10 @@
                             <h:column>
                                 <f:facet name="header">Last Name</f:facet>
                                 #{customer.lastName}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Password</f:facet>
+                                #{customer.password}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Address</f:facet>
