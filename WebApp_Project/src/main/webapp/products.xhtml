@@ -76,14 +76,16 @@
                                                                      product.name, product.amount, 
                                                                      product.price, product.alcoholProof, 
                                                                      product.type)}"
-                                    action="editProductDetails" >Edit</h:commandLink>
+                                    action="editProduct" >Edit</h:commandLink>
                                 </h:form>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
                                     <h:commandLink actionListener="#{productconversation.deleteActionListener(
-                                                                     product.id)}"
+                                                                     product.id, product.name, product.amount, 
+                                                                     product.price, product.alcoholProof, 
+                                                                     product.type)}"
                                     action="deleteProduct" >Delete</h:commandLink>
                                 </h:form>
                             </h:column>

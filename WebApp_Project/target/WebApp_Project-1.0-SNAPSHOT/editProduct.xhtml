@@ -68,11 +68,11 @@
                                                                 <h:commandButton 
                                                                     id="updateProductButton"
                                                                     value="Update"
-                                                                    actionListener="#{editProductDetails.editProductDetails(productconversation.getId(), 
-                                                                                      productconversation.getName(), productconversation.getAmount, 
-                                                                                      productconversation.getPrice(), productconversation.getAlcoholProof(),
-                                                                                      productconversation.getType())}"
-                                                                    action="#{conversation.action()}" />
+                                                                    actionListener="#{editProduct.editProduct(productconversation.id, 
+                                                                                      productconversation.name, productconversation.amount, 
+                                                                                      productconversation.price, productconversation.alcoholProof,
+                                                                                      productconversation.type)}"
+                                                                    action="#{productconversation.action()}" />
 
                                                             </h:form>
                                                         </h:body>

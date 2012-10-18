@@ -57,7 +57,8 @@ public class ProductConversationBean implements Serializable {
         this.type = type;
     }
     
-    public void deleteActionListener(long id) {
+    public void deleteActionListener(long id, String name, int  amount, 
+            int price, int alcoholProof, String type) {
                 if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "DELETE CONVERSATION BEGINS: "
@@ -66,6 +67,11 @@ public class ProductConversationBean implements Serializable {
             
         }
         this.id = id;
+        this.name = name;
+        this.amount = amount;
+        this.price = price;
+        this.alcoholProof = alcoholProof; 
+        this.type = type;
     }
     
     public String action() {
