@@ -45,37 +45,34 @@
 
                                 <div class="one-half">
 					<!-- form -->
-							<h2>Edit Product</h2>
-                                                        <h:body>
-                                                            <h:form id="editCustomerDetails">
-
-                            <h:outputLabel value="Name: " /><br/>
-                            <h:inputText value="#{productconversation.name}" required="true" /><br/>
-                            <h:outputLabel value="Amount: " /><br/>
-                            <h:inputText value="#{productconversation.amount}" required="true" /><br/>
-                            <h:outputLabel value="Price: " /><br/>
-                            <h:inputText value="#{productconversation.price}" required="true"/><br/>
-                            <h:outputLabel value="Alcohol proof: " /><br/>
-                            <h:inputText value="#{productconversation.alcoholProof}" required="true"/><br/>
-                            <h:outputText value="Select a Type: "/><br/>    
-			    <h:selectOneMenu value="#{productconversation.type}">
-                                <f:selectItem itemValue="Whiskey"/>
-                                <f:selectItem itemValue="Rum"/>
-                                <f:selectItem itemValue="Vodka"/>
-                                <f:selectItem itemValue="Gin"/>
-                                <f:selectItem itemValue="Other"/>
-			    </h:selectOneMenu><br/>
-                                                                <h:commandButton 
-                                                                    id="updateProductButton"
-                                                                    value="Update"
+                                        <h2>Edit Product</h2>
+                                            <h:body>
+                                                <h:form id="editProductForm">
+                                                <h:outputLabel value="Name: " /><br/>
+                                                <h:inputText value="#{productconversation.name}" required="true" /><br/>
+                                                <h:outputLabel value="Amount: " /><br/>
+                                                <h:inputText value="#{productconversation.amount}" required="true" /><br/>
+                                                <h:outputLabel value="Price: " /><br/>
+                                                <h:inputText value="#{productconversation.price}" required="true"/><br/>
+                                                <h:outputLabel value="Alcohol proof: " /><br/>
+                                                <h:inputText value="#{productconversation.alcoholProof}" required="true"/><br/>
+                                                <h:outputText value="Select a Type: "/><br/>    
+                                		    <h:selectOneMenu value="#{productconversation.type}">
+                                                        <f:selectItem itemValue="Whiskey"/>
+                                                        <f:selectItem itemValue="Rum"/>
+                                                        <f:selectItem itemValue="Vodka"/>
+                                                        <f:selectItem itemValue="Gin"/>
+                                                        <f:selectItem itemValue="Other"/>
+                                                    </h:selectOneMenu><br/>
+                                                <h:commandButton id="updateProductButton" value="Update"
                                                                     actionListener="#{editProduct.editProduct(productconversation.id, 
                                                                                       productconversation.name, productconversation.amount, 
                                                                                       productconversation.price, productconversation.alcoholProof,
                                                                                       productconversation.type)}"
                                                                     action="#{productconversation.action()}" />
 
-                                                            </h:form>
-                                                        </h:body>
+                                                 </h:form>
+                                               </h:body>
 
 							<!-- ENDS form -->
 				</div>
