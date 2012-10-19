@@ -25,11 +25,10 @@ public class ProductsBB {
     private ProductListBean productList;
     
     public List<Product> getAll() {
-        //ICustomerList cl = Group10.INSTANCE.getCustomerList();
-        //return cl.getAll();
         return productList.getAll();
     }
-    public void addProduct(String name, int amount,int price, int alcoholProof, String type) {
+    
+    public void addProduct(String name, int amount, int price, int alcoholProof, String type) {
         this.name = name;
         this.amount = amount;
         this.price = price;
@@ -43,12 +42,13 @@ public class ProductsBB {
                                         int alcoholProof, String type){
 
         productList.remove(id);
-        
         productList.add(new Product(id, name, amount, price, alcoholProof, type));
     }
+    
     public void deleteProduct(long id) {
        productList.remove(id);
     }
+    
     public long getId(){
         return id;
     }

@@ -44,19 +44,7 @@
 			<div id="main">
                                 <!-- Slider -->
 				<div id="slider">
-                                        <h:body>
-                            <h:form id="searchProductForm">   
-			    <h:selectOneMenu value="#{product.type}">
-                            <f:selectItem itemValue="Whiskey"/>
-                            <f:selectItem itemValue="Rum"/>
-                            <f:selectItem itemValue="Vodka"/>
-                            <f:selectItem itemValue="Gin"/>
-                            <f:selectItem itemValue="Other"/>
-			    </h:selectOneMenu><br/>
-                            <h:commandButton id="filterButton" value="Sort by type"/>
-                            <h:commandButton id="sortByPriceButton" value="Sort by price"/>
-                            </h:form>
-                            </h:body>
+                
                                 </div>
 				<!-- ENDS Slider -->
                         
@@ -69,12 +57,13 @@
                                     <h:outputText value="Alcohol Proof: ${product.alcoholProof}%"/><br/>
                                     <h:outputText value="Type: ${product.type}"/><br/><br/>
                                     <h:outputLabel value="Quantity: " />
-                                    <h:selectOneMenu id="quantity" value="">
+                                    <h:selectOneMenu id="quantity" value="quantity">
                                     <c:forEach  var="i" begin="1" end="10">    
                                     <f:selectItem itemValue="#{i}"></f:selectItem>
                                     </c:forEach>  
                                     </h:selectOneMenu>
-                                    <h:commandButton id="addToCartButton" value="Add to Cart" />  
+                                    <h:commandButton id="addToCartButton" value="Add to Cart" 
+                                                     action="shop?faces-redirect=true"/>  
                                         </div>
                                     </c:forEach>
                                     </h:form>

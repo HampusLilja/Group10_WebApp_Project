@@ -39,19 +39,7 @@
 		<!-- MAIN -->
 			<div id="main">
                                 <!-- SignUp -->
-                                    <div class="one-half">
-                                    <!-- form -->
-							<h2>Login</h2>
-							<form id="loginForm" action="#" method="post">
-                                                                       <label>Email:</label><br/>
-                                                                       <input id="email2" placeholder="some@email.com" required="true"/><br/>
-                                                                       <label>Password:</label><br/>
-                                                                       <input id="password" type="password" required="true" /><br/>
-                                                                        <p><input type="button" value="Login" name="submit" id="submit" /></p>
-								
-							</form>
-							<!-- ENDS form -->
-                                    </div>
+                                   
                                 <div class="one-half">
 					<!-- form -->
 							<h2>Delete customer</h2>
@@ -75,8 +63,8 @@
                                                                 <h:inputText value="#{conversation.email}" readonly="true"/><br/>
 
                                                                 <h:commandButton id="deleteButton" value="Delete"
-                                                                                 actionListener="#{customers.deleteCustomer(conversation.ID)}"
-                                                                        action="#{conversation.action()}" />
+                                                                                 actionListener="#{customer.deleteCustomer(conversation.ID)}"
+                                                                            action="#{conversation.customerAction()}" />
 
                                                             </h:form>
                                                         </h:body>

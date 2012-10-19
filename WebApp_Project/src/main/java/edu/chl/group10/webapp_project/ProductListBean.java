@@ -17,6 +17,7 @@ import javax.inject.Named;
 public class ProductListBean implements Serializable {
     
     private IProductList plist;
+    
     public ProductListBean (){
         plist  = Group10.INSTANCE.getProductList();
         

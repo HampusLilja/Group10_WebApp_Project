@@ -11,7 +11,7 @@ import javax.inject.Named;
  *
  * @author Hampus
  */
-@Named("customers")
+@Named("customer")
 @RequestScoped
 public class CustomersBB {
     private long ID;
@@ -32,8 +32,6 @@ public class CustomersBB {
     private CustomerListBean customerList;
     
     public List<Customer> getAll() {
-        //ICustomerList cl = Group10.INSTANCE.getCustomerList();
-        //return cl.getAll();
         return customerList.getAll();
     }
     public void addCustomer(String firstName, String lastName, String street, 
@@ -54,7 +52,7 @@ public class CustomersBB {
     }
     public void editCustomer(Long id, String firstName, String lastName, 
             String street, int number, int zip, String town, String email){
-        Customer customer = customerList.find(id);
+
         customerList.remove(id);
 
         this.street = street;
@@ -65,7 +63,7 @@ public class CustomersBB {
         this.email = email;
         
         customerList.add(new Customer(id, firstName, lastName, 
-                address, customer.getEmail(), customer.getPassword()));
+                address, email, getPassword()));
     }
     
     public void deleteCustomer(long id) {
