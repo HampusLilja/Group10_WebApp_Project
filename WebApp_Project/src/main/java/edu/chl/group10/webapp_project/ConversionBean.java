@@ -1,7 +1,6 @@
 package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Address;
-import edu.chl.group10.core.ContactInfo;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +21,7 @@ public class ConversionBean implements Serializable {
 
     @Inject // Handled by system, don't need to create class.
     private Conversation conv;
+    
     private long ID;
     private String firstName;
     private String lastName;
@@ -30,16 +30,12 @@ public class ConversionBean implements Serializable {
     private int zip;
     private String town;
     private Address address;
-    private String phoneNumber;
     private String email;
-    private String website;
-    private String comments;
-    private ContactInfo contactInfo;
     private String password;
 
     public void actionListener(Long id, String firstName, String lastName, 
-            String street, int number, int zip, String town, String phoneNumber,
-            String email, String website, String comments, String password) {
+            String street, int number, int zip, String town,
+            String email, String password) {
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "SIGNUP CONVERSATION BEGINS: "
@@ -55,17 +51,12 @@ public class ConversionBean implements Serializable {
         this.zip = zip;
         this.town = town;
         this.address = new Address(street, number, zip, town);
-        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.website = website;
-        this.comments = comments;
-        this.contactInfo = new ContactInfo(
-                phoneNumber, email, website, comments);
         // Find person from database...
     }
     
     public void contactActionListener(Long id, String firstName, String lastName, 
-            String phoneNumber, String email, String website, String comments) {
+            String phoneNumber, String email) {
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "CONTACT CONVERSATION BEGINS: "
@@ -76,12 +67,7 @@ public class ConversionBean implements Serializable {
         this.ID = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.website = website;
-        this.comments = comments;
-        this.contactInfo = new ContactInfo(
-                phoneNumber, email, website, comments);
         // Find person from database...
     }
     
@@ -175,41 +161,12 @@ public class ConversionBean implements Serializable {
         return town;
     }
     
-    public ContactInfo getContactInfo(){
-        return contactInfo;
-    }
-    
-    public String getPhoneNumber(){
-        return phoneNumber;
-    }
-    
     public String getEmail(){
         return email;
     }
     
-    public String getWebsite(){
-        return website;
-    }
-    
-    public String getComments(){
-        return comments;
-    }
-    
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
-        
-    }
-    
     public void setEmail(String email){
         this.email = email;
-    }
-    
-    public void setWebsite(String website){
-        this.website = website;
-    }
-    
-    public void setComments(String comments){
-        this.comments = comments;
     }
     
     public long getID(){
@@ -246,12 +203,6 @@ public class ConversionBean implements Serializable {
     
     public void setAddress(String street, int number, int zip, String town){
         this.address = new Address(street, number, zip, town);
-    }
-    
-    public void setContactInfo(String phoneNumber, String email, String website,
-            String comments){
-        this.contactInfo = new ContactInfo(
-                phoneNumber, email, website, comments);
     }
     
     public void setID(long id){

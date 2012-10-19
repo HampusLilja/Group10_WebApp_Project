@@ -1,7 +1,6 @@
 package edu.chl.group10.javaapp_project.core;
 
 import edu.chl.group10.core.Address;
-import edu.chl.group10.core.ContactInfo;
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.core.Group10;
 import edu.chl.group10.core.ICustomerList;
@@ -29,7 +28,7 @@ public class TestAddingCustomer {
     public void testAddingCustomer(){
         ICustomerList cl = Group10.INSTANCE.getCustomerList();
         Customer c1 = new Customer("Fname", "Lname", new Address("street", 1, 112, "town"), 
-                new ContactInfo("Phonenumber", "Email", "Website", "Comments"), "Password");
+                "Email", "Password");
         Customer c2;
 
         cl.add(c1);

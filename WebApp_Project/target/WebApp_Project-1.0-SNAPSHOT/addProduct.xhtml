@@ -49,19 +49,19 @@
                             <h:body>
                             <h:form id="addProductForm">
                             <h:outputLabel value="Name: " /><br/>
-                            <h:inputText value="#{productBB.name}" required="true" /><br/>
+                            <h:inputText value="#{product.name}" required="true" /><br/>
                             <h:outputLabel value="Amount: " /><br/>
-                            <h:inputText value="#{productBB.amount}" required="true" /><br/>
+                            <h:inputText value="#{product.amount}" required="true" /><br/>
                             <h:outputLabel value="Price: " /><br/>
-                            <h:inputText value="#{productBB.price}" required="true"/><br/>
+                            <h:inputText value="#{product.price}" required="true"/><br/>
                             <h:outputLabel value="Alcohol proof: " /><br/>
-                            <h:selectOneMenu id="alcoholProof" value="#{productBB.alcoholProof}">
+                            <h:selectOneMenu id="alcoholProof" value="#{product.alcoholProof}">
                             <c:forEach  var="i" begin="0" end="100">    
                             <f:selectItem itemValue="#{i}"></f:selectItem>
                             </c:forEach>
                             </h:selectOneMenu><br/>
                             <h:outputText value="Select a Type: "/><br/>    
-			    <h:selectOneMenu value="#{productBB.type}">
+			    <h:selectOneMenu value="#{product.type}">
                             <f:selectItem itemValue="Whiskey"/>
                             <f:selectItem itemValue="Rum"/>
                             <f:selectItem itemValue="Vodka"/>
@@ -69,11 +69,11 @@
                             <f:selectItem itemValue="Other"/>
 			    </h:selectOneMenu><br/>
 
-                            <h:commandButton id="submitButton" value="Submit" actionListener="#{productBB.addProduct(
-                                                                     productBB.name, productBB.amount, 
-                                                                     productBB.price, productBB.alcoholProof, 
-                                                                     productBB.type)}"
-                                                                    action="products?faces-redirect=true" />
+                            <h:commandButton id="submitButton" value="Submit" actionListener="#{product.addProduct(
+                                                                     product.name, product.amount, 
+                                                                     product.price, product.alcoholProof, 
+                                                                     product.type)}"
+                                                                    action="product?faces-redirect=true" />
 
                             </h:form>
                             </h:body>

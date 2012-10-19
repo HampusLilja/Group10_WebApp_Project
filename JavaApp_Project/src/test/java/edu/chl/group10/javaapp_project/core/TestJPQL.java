@@ -1,7 +1,6 @@
 package edu.chl.group10.javaapp_project.core;
 
 import edu.chl.group10.core.Address;
-import edu.chl.group10.core.ContactInfo;
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.core.CustomerList;
 import java.util.ArrayList;
@@ -28,13 +27,13 @@ public class TestJPQL {
         List<Customer> customers1 = new ArrayList<>();
         List<Customer> customers2 = new ArrayList<>();
         Customer c1 = new Customer(1L, "Fname1", "Lname1", new Address("street1", 1, 111, "town1"), 
-                new ContactInfo("Phonenumber1", "Email1", "Website1", "Comments1"), "Password1");
+                        "Email1", "Password1");
         Customer c2 = new Customer(2L, "Fname2", "Lname2", new Address("street2", 2, 112, "town2"), 
-                new ContactInfo("Phonenumber2", "Email2", "Website2", "Comments2"), "Password2");
+                        "Email2", "Password2");
         Customer c3 = new Customer(3L, "Fname3", "Lname3", new Address("street3", 3, 113, "town3"), 
-                new ContactInfo("Phonenumber3", "Email3", "Website3", "Comments3"), "Password3");
+                        "Email3", "Password3");
         Customer c4 = new Customer(4L, "Fname4", "Lname4", new Address("street4", 4, 114, "town4"), 
-                new ContactInfo("Phonenumber4", "Email4", "Website4", "Comments4"), "Password4");
+                        "Email4", "Password4");
         customers1.add(c1);
         customers1.add(c2);
         customers2.add(c3);

@@ -1,7 +1,6 @@
 package edu.chl.group10.javaapp_project.core;
 
 import edu.chl.group10.core.Address;
-import edu.chl.group10.core.ContactInfo;
 import edu.chl.group10.core.Customer;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,7 +21,7 @@ public class Mapper {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         Customer customer = new Customer("Fname", "Lname", new Address("street", 1, 112, "town"), 
-                new ContactInfo("Phonenumber", "Email", "Website", "Comments"), "Password");
+                "Email", "Password");
         tx.begin();
         em.persist(customer);
         tx.commit();

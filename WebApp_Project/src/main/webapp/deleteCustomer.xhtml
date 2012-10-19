@@ -54,7 +54,7 @@
                                     </div>
                                 <div class="one-half">
 					<!-- form -->
-							<h2>Delete Customer</h2>
+							<h2>Delete customer</h2>
                                                         <h:body>
                                                             <h:form id="deleteCustomerForm">
                                                                 <h:outputLabel value="ID: " /><br/>
@@ -63,14 +63,20 @@
                                                                 <h:inputText value="#{conversation.firstName}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Last Name: " /><br/>
                                                                 <h:inputText value="#{conversation.lastName}" readonly="true" /><br/>
+                                                                <h:outputLabel value="Street: " /><br/>
+                                                                <h:inputText value="#{conversation.street}" readonly="true"/><br/>
+                                                                <h:outputLabel value="Number: " /><br/>
+                                                                <h:inputText value="#{conversation.number}" readonly="true"/><br/>
+                                                                <h:outputLabel value="Zip: " /><br/>
+                                                                <h:inputText value="#{conversation.zip}" readonly="true"/><br/>
+                                                                <h:outputLabel value="Town: " /><br/>
+                                                                <h:inputText value="#{conversation.town}" readonly="true"/><br/>
                                                                 <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{conversation.email}" readonly="true" /><br/><br/>
+                                                                <h:inputText value="#{conversation.email}" readonly="true"/><br/>
 
-                                                                <h:commandButton 
-                                                                    id="deleteButton"
-                                                                    value="Delete"
-                                                                    actionListener="#{deleteCustomer.deleteCustomer(conversation.ID)}"
-                                                                    action="#{conversation.action()}" />
+                                                                <h:commandButton id="deleteButton" value="Delete"
+                                                                                 actionListener="#{customers.deleteCustomer(conversation.ID)}"
+                                                                        action="#{conversation.action()}" />
 
                                                             </h:form>
                                                         </h:body>

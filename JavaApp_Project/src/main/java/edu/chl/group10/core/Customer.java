@@ -22,32 +22,31 @@ public class Customer implements Serializable{
     private String firstName;
     private String lastName;
     private String password;
+    private String email;
     private transient ShoppingCart cart;
     
     @Embedded protected Address address;
-    
-    @Embedded protected ContactInfo contactInfo;
 
     public Customer() {
     }
     
     public Customer(String firstName, String lastName, Address address, 
-            ContactInfo contactInfo, String password){
+            String email, String password){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.contactInfo = contactInfo;
+        this.email = email;
         this.password = password;
         cart = new ShoppingCart();
     }
     
     public Customer(Long id, String firstName, String lastName, Address address, 
-            ContactInfo contactInfo, String password){
+            String email, String password){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.contactInfo = contactInfo;
+        this.email = email;
         this.password = password;
     }
         
@@ -67,8 +66,8 @@ public class Customer implements Serializable{
         return address;
     }
 
-    public ContactInfo getContactInfo(){
-        return contactInfo;
+    public String getEmail(){
+        return email;
     }
     
     public String getPassword(){
@@ -83,7 +82,7 @@ public class Customer implements Serializable{
     @Override
     public String toString() {
         return "Customer{" + "id=" + id + ", address=" + address.toString() + ", fname=" + 
-                firstName + ", lname=" + lastName + ", email=" + contactInfo.getEmail() + '}';
+                firstName + ", lname=" + lastName + ", email=" + getEmail() + '}';
     }
     
     @Override

@@ -36,7 +36,7 @@ public final class CustomerList extends AbstractDAO<Customer, Long> implements I
         List<Customer> found = new ArrayList<>();
         try {
             for (Customer c : this.getAll()) {
-                if (c.getContactInfo().getEmail().equals(name)) {
+                if (c.getEmail().equals(name)) {
                     found.add(c);
                 }
             }

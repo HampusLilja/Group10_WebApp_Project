@@ -46,7 +46,7 @@
 				<div id="slider">
                                         <h:body>
                             <h:form id="searchProductForm">   
-			    <h:selectOneMenu value="#{productBB.type}">
+			    <h:selectOneMenu value="#{product.type}">
                             <f:selectItem itemValue="Whiskey"/>
                             <f:selectItem itemValue="Rum"/>
                             <f:selectItem itemValue="Vodka"/>
@@ -61,7 +61,7 @@
 				<!-- ENDS Slider -->
                         
                                 <h:form>
-                                    <c:forEach items="${products.all}" var="product">
+                                    <c:forEach items="${product.all}" var="product">
                                         <div class="one-sixth">
                                     <h:outputText value="Name: ${product.name}"/><br/>
                                     <h:outputText value="Amount: ${product.amount}cl"/><br/>
@@ -74,8 +74,7 @@
                                     <f:selectItem itemValue="#{i}"></f:selectItem>
                                     </c:forEach>  
                                     </h:selectOneMenu>
-                                    <h:commandButton id="addToCartButton" value="Add to Cart" 
-                                                                    action="products?faces-redirect=true" />  
+                                    <h:commandButton id="addToCartButton" value="Add to Cart" />  
                                         </div>
                                     </c:forEach>
                                     </h:form>

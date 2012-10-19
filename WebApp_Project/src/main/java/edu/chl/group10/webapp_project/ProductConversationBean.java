@@ -80,7 +80,7 @@ public class ProductConversationBean implements Serializable {
              Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION ENDS");
         }
         try {
-            return "products?faces-redirect=true"; // Go back
+            return "product?faces-redirect=true"; // Go back
         } catch (Exception e) {
             // Not implemented
             //return "error?faces-redirect=true&amp;cause=" + e.getMessage();
