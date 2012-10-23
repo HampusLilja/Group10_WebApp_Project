@@ -17,6 +17,7 @@ import javax.inject.Named;
 public class CustomerListBean implements Serializable {
     
     private ICustomerList clist;
+    
     public CustomerListBean (){
         clist  = Group10.INSTANCE.getCustomerList();
         

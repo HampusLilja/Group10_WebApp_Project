@@ -2,9 +2,6 @@ package edu.chl.group10.webapp_project.CustomerCRUDBB;
 
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.Customer;
-import edu.chl.group10.core.CustomerList;
-import edu.chl.group10.core.Group10;
-import edu.chl.group10.core.ICustomerList;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
