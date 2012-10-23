@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
-//follow plugin
-	$('#cart').jfollow('#followbox', 20);	
 
-
+        
 	//shopping cart functionality
 	//hide the empty cart button
 	emptyBtn.hide();
@@ -54,11 +52,7 @@ $(document).ready(function() {
 				$('#dialog-confirm').dialog({
 					resizable: false,
 					modal: true,
-					buttons: [	{	
-								text: "Cancel",
-								click: function(){
-									$(this).dialog('close');}
-								},
+					buttons: [	
 								{	
 								text: "Clear Cart",
 								click: function(){

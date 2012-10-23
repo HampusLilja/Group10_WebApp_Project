@@ -12,16 +12,14 @@ root {
 margin: 0;
 padding: 0;
 }
-#move{
-    position: absolute; left:-400px; top:150px;
-}
+
 body{
     margin: 0 auto;
     width: 906px;
     height: 100%;
     line-height: 1;
     color: #51565B;
-    background: #F1F1F1;
+    background-color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
 }
@@ -57,24 +55,34 @@ nav{
 }
 #main{
     height: 675px;
-    background-color: #333333;
+    background-color: white;
+    border: 1px;
+    border-color: black;
+}
+.h1{
+    color:white;
+    text-align:center
 }
 #slider{
-    min-height: 100px;
-    background: url(../img/sok.jpg);
+    background-color: lightgray;
+    min-height: 400px;
 }
 #content{
-    margin-top: 30px;
-    min-height: 400px;
+    border: 1px solid #808080;
+    background-color: lightgray;
+
     overflow: hidden;
-    margin-bottom: 170px;
+    margin-bottom: 30px;
+    min-height: 200px;
     font-size: 14px;
     line-height: 1.5em;
 }
 .one-column{
     margin-top: 30px;
     float: right;
+    margin-right: 30px;
 }
+
 .one-half{ 
     margin-top: 30px;
     margin-left: 90px;
@@ -94,6 +102,7 @@ nav{
     margin: 20px;
 }
 .one-third{ 
+
     margin-top: 10px;
     width: 300px; 
     float:left;
@@ -103,8 +112,6 @@ nav{
     margin: 1.3em 0;
 }
 .one-sixth{
-    background-color: #000;
-    color: #fff;
     margin-top: 25px;
     margin-left: 28px;
     width: 180px; 
@@ -117,6 +124,7 @@ nav{
 }
     
 .line-divider{
+        text-align:center;
 	clear: both;
 	border-bottom: 1px solid #d7d7d7;
 	padding-bottom: 10px;
@@ -142,35 +150,35 @@ footer {
 }
 
 
-section#products {width: 620px; float: left;}
+section#products {}
 section#products h2 {padding: 10px; font-size: 20px;}
-section#products p {padding: 10px;display: block;}
-.product {border: 1px solid #808080; display: block; height: 150px; width: 300px}
+section#products p {padding: 10px;}
+.product {border: 1px solid #808080; height: 150px; width: 300px}
 .product img {float: left;}
 .product-info {float: left; width: 300px;}
 .price {float: right; font-weight: bold; margin-top: -40px;}
-aside {width: 300px; float: right; margin: 88px 0 0 0;}
-#cart {padding: 10px;border: 1px solid #808080;width: 278px;}
+aside {float: right; margin: 88px 0 0 0;}
+#cart {padding: 10px;border: 1px solid #808080;}
 #cart h2 {padding: 0 0 10px 0; font-size: 20px;}
 
 .dropzone {background: #c0c0c0; display: block; padding: 20px;margin: 20px 0;border: 5px dashed #808080;}
 .dropzone p {text-align: center;}
 .cart-content {}
-.empty {margin: 20px 0 0 0; width: 100%;background: #000; height: 40px; color: #fff; text-align: center;line-height: 40px; display: none;}
+.empty {margin: 10px; ;background: grey; height: 40px; color: #fff; text-align: center;line-height: 40px;}
 .div-remove {float: left;padding: 0 10px;font-size: 30px;line-height: 25px;}
 .div-remove a:hover {color: #ff0000;cursor: pointer;}
 .cart-item {line-height: 30px;clear:both;}
 
 
-#dialog-confirm {display: none;}
+#dialog-confirm {display: none; background-color: white;}
 
 .item-name {padding-right: 10px;}
 .cart-item p {float: left;}
 input {width: 20px;}
 p.input {float:right;}
 
-form {position: absolute; top: 10px; left: 570px;width: 400px;}
-form input {width: 300px;float: left;}
+form {top: 10px; }
+form input {width: 200px;float: left;}
 #submit {width: 80px; display: block; background: #c0c0c0;border: 1px solid #808080;height: 22px;}
 #results-box {position: absolute; top: 35px; left: 570px; z-index: 100; background: #fff; border: 1px solid #808080; width: 305px;display: none;}
 #results-box ul {}
