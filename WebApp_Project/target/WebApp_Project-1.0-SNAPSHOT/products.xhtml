@@ -44,35 +44,35 @@
                 <div id="main" align="justify">
                             
                     <h:body>
-                        <h:dataTable value="${product.all}" var="product" border="1" >
+                        <h:dataTable value="${product.all}" var="p" border="1" >
                             <h:column>
                                 <f:facet name="header">ID</f:facet>
-                                #{product.id}
+                                #{p.id}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Name</f:facet>
-                                #{product.name}
+                                #{p.name}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Amount</f:facet>
-                                #{product.amount}cl
+                                #{p.amount}cl
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Price</f:facet>
-                                #{product.price}kr
+                                #{p.price}kr
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Alcohol proof</f:facet>
-                                #{product.alcoholProof}%
+                                #{p.alcoholProof}%
                             </h:column>
                             <h:column>  
                                 <f:facet name="header">Type</f:facet>
-                                #{product.type}
+                                #{p.type}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{product.editProduct(product.id, product.name, product.amount, 
+                                    <h:commandLink actionListener="#{conversation.productActionListener(product.name, product.amount, 
                                                                      product.price, product.alcoholProof, product.type)}"
                                                      action="editProduct" >Edit</h:commandLink>
                                 </h:form>

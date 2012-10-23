@@ -41,26 +41,26 @@
                 <div id="main">
                             
                     <h:body>
-                        <h:dataTable var="customer" value="#{customer.all}" border="1" >
+                        <h:dataTable var="c" value="#{customer.all}" border="1" >
                             <h:column>
                                 <f:facet name="header">ID</f:facet>
-                                #{customer.ID}
+                                #{c.ID}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">First Name</f:facet>
-                                #{customer.firstName}
+                                #{c.firstName}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Last Name</f:facet>
-                                #{customer.lastName}
+                                #{c.lastName}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Password</f:facet>
-                                #{customer.password}
+                                #{c.password}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Address</f:facet>
-                                #{customer.address.toString()}
+                                #{c.address.toString()}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>

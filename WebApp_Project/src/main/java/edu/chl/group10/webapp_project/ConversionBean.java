@@ -3,6 +3,8 @@ package edu.chl.group10.webapp_project;
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.OrderItem;
 import edu.chl.group10.core.Product;
+import edu.chl.group10.core.ProductList;
+import edu.chl.group10.core.ShoppingCart;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,8 +42,12 @@ public class ConversionBean implements Serializable {
     private int price;
     private int alcoholProof;
     private String type; //eg. rum, vodka
-      
-    public void contactActionListener(Long id, String firstName, String lastName, 
+    
+    public void addToCart(long id, int quantity){
+ 
+    }
+    
+    public void customerActionListener(Long id, String firstName, String lastName, 
                                         String street, int number, int zip, String town,
                                         String email, String password) {
         if (conv.isTransient()) {
@@ -77,7 +83,7 @@ public class ConversionBean implements Serializable {
         }
     }
     
-    public void productActionListener(String name, int amount, int price, int alcoholProof, String type) {
+        public void productActionListener(String name, int amount, int price, int alcoholProof, String type) {
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "ADDPRODUCT CONVERSATION BEGINS: "

@@ -5,7 +5,6 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
 root { 
     display: block;
 }
@@ -13,7 +12,9 @@ root {
 margin: 0;
 padding: 0;
 }
-
+#move{
+    position: absolute; left:-400px; top:150px;
+}
 body{
     margin: 0 auto;
     width: 906px;
@@ -139,3 +140,45 @@ footer {
     border-color: #e88;
     -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
 }
+
+
+section#products {width: 620px; float: left;}
+section#products h2 {padding: 10px; font-size: 20px;}
+section#products p {padding: 10px;display: block;}
+.product {border: 1px solid #808080; display: block; height: 150px; width: 300px}
+.product img {float: left;}
+.product-info {float: left; width: 300px;}
+.price {float: right; font-weight: bold; margin-top: -40px;}
+aside {width: 300px; float: right; margin: 88px 0 0 0;}
+#cart {padding: 10px;border: 1px solid #808080;width: 278px;}
+#cart h2 {padding: 0 0 10px 0; font-size: 20px;}
+
+.dropzone {background: #c0c0c0; display: block; padding: 20px;margin: 20px 0;border: 5px dashed #808080;}
+.dropzone p {text-align: center;}
+.cart-content {}
+.empty {margin: 20px 0 0 0; width: 100%;background: #000; height: 40px; color: #fff; text-align: center;line-height: 40px; display: none;}
+.div-remove {float: left;padding: 0 10px;font-size: 30px;line-height: 25px;}
+.div-remove a:hover {color: #ff0000;cursor: pointer;}
+.cart-item {line-height: 30px;clear:both;}
+
+
+#dialog-confirm {display: none;}
+
+.item-name {padding-right: 10px;}
+.cart-item p {float: left;}
+input {width: 20px;}
+p.input {float:right;}
+
+form {position: absolute; top: 10px; left: 570px;width: 400px;}
+form input {width: 300px;float: left;}
+#submit {width: 80px; display: block; background: #c0c0c0;border: 1px solid #808080;height: 22px;}
+#results-box {position: absolute; top: 35px; left: 570px; z-index: 100; background: #fff; border: 1px solid #808080; width: 305px;display: none;}
+#results-box ul {}
+#results-box li {display: block; padding: 5px 10px;}
+#results-box li.results-item {display: block; height: 30px;}
+#results-box p {line-height: 30px; padding-left: 10px;}
+p.results-title {float: left;}
+p.results-url {float: right;}
+.active {background: #ff0000;}
+.no-results {display: none;}
+.results-icon {float: left;}
