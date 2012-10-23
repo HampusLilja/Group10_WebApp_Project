@@ -1,9 +1,8 @@
 /* 
     Document   : newcss
     Created on : 2012-sep-04, 09:38:25
-    Author     : Hampus, Mattias
-    Description:
-        Purpose of the stylesheet follows.
+    Authors    : Grupp10 Webbapplikationer, Chalmers 2012
+    Description: -
 */
 root { 
     display: block;
@@ -54,7 +53,7 @@ nav{
     text-transform: uppercase;
 }
 #main{
-    height: 675px;
+
     background-color: white;
     border: 1px;
     border-color: black;
@@ -72,12 +71,13 @@ nav{
     background-color: lightgray;
 
     overflow: hidden;
-    margin-bottom: 30px;
-    min-height: 200px;
+    margin-bottom: 0px;
     font-size: 14px;
     line-height: 1.5em;
 }
+
 .one-column{
+    
     margin-top: 30px;
     float: right;
     margin-right: 30px;
@@ -86,7 +86,7 @@ nav{
 .one-half{ 
     margin-top: 30px;
     margin-left: 90px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     width: 250px; 
     float:left;
     position:relative;
@@ -94,8 +94,7 @@ nav{
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
-    background-color: #FFF;
-    border: 1px solid #800000;
+    background-color: #ffffff;
 }
 .one-half h2,form,li{
     line-height: 140%;
@@ -105,6 +104,14 @@ nav{
 
     margin-top: 10px;
     width: 300px; 
+    float:left;
+    position:relative;
+}
+.shopitems{ 
+    border: 1px solid #d7d7d7;
+    margin: 5px;
+    width: 260px; 
+
     float:left;
     position:relative;
 }
@@ -132,13 +139,15 @@ nav{
 }
 
 footer {
+    padding-top: 15px;
+    text-align: center;
     background: #2A2D30;
     color: white;
     width: 100%;
     position: relative;
-    margin-top: -170px; /* negative value of footer height */
-    height: 40px;
-    clear:both;
+    margin-bottom: 5px; /* negative value of footer height */
+    height: 30px;
+    clear: both;
 }
 [required] {
     border-color: #88a;
@@ -168,26 +177,125 @@ canvas{
 
 
 section#products {}
-section#products h2 {padding: 10px; font-size: 20px;}
-section#products p {padding: 10px;}
-.product {border: 1px solid #808080; height: 150px; width: 300px}
+section#products p {padding: 15px; font-weight: bold;}
 .product img {float: left;}
-.product-info {float: left; width: 300px;}
-.price {float: right; font-weight: bold; margin-top: -40px;}
-aside {float: right; margin: 88px 0 0 0;}
-#cart {padding: 10px;border: 1px solid #808080;}
-#cart h2 {padding: 0 0 10px 0; font-size: 20px;}
+.product-info {float: right;}
+.id{display:none;}
+.price {float: right;font-weight: bold;}
 
-.dropzone {background: #c0c0c0; display: block; padding: 20px;margin: 20px 0;border: 5px dashed #808080;}
-.dropzone p {text-align: center;}
-.cart-content {}
-.empty {margin: 10px; ;background: grey; height: 40px; color: #fff; text-align: center;line-height: 40px;}
+
+#cart{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #808080;    
+    width: 190px;
+    margin-top: 30px;
+    margin-right: 5px;
+    position: fixed;
+    right: 0px;
+    background-color: lightgrey;
+}
+
+
+.dropzone {
+    background: #c0c0c0;
+    display: block;
+    padding: 20px;
+    margin: 20px 0;
+    border: 5px dashed #808080;
+    text-align: center;
+}
+
+.cart-content {text-align: center;}
+
+.button {	
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	padding:6px 6px 4px;
+	margin: 10px;
+	font:12px; 
+	width:100px;
+}
+.emptybutton {	
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	padding:6px 6px 4px;
+	margin: 10px;
+	font:12px; 
+	width:100px;
+}
+
+.emptybutton {	
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	padding:6px 6px 4px;
+	margin: 10px;
+	font:12px; 
+	width:100px;
+}
+
+.buybutton{	
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	padding:6px 6px 4px;
+	margin: 10px;
+	font:12px; 
+	width:100px;
+}
+
 .div-remove {float: left;padding: 0 10px;font-size: 30px;line-height: 25px;}
 .div-remove a:hover {color: #ff0000;cursor: pointer;}
 .cart-item {line-height: 30px;clear:both;}
 
 
-#dialog-confirm {display: none; background-color: white;}
+#dialog-confirm {display: none; text-align: center; 
+        background: #c0c0c0;
+        padding: 10px;
+        margin: 10px;
+        border: 5px dashed #808080;
+	font-size: 1.2em;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #000000; /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #000000; /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #000000; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+        -moz-border-radius: 3px; /* Firefox */
+        -webkit-border-radius: 3px; /* Safari, Chrome */
+
+}
+
 
 .item-name {padding-right: 10px;}
 .cart-item p {float: left;}
@@ -195,7 +303,12 @@ input {width: 20px;}
 p.input {float:right;}
 
 form {top: 10px; }
-form input {width: 200px;float: left;}
+form input {
+    width: 200px;
+}
+textArea{
+    width: 200px;
+}
 #submit {width: 80px; display: block; background: #c0c0c0;border: 1px solid #808080;height: 22px;}
 #results-box {position: absolute; top: 35px; left: 570px; z-index: 100; background: #fff; border: 1px solid #808080; width: 305px;display: none;}
 #results-box ul {}
@@ -207,3 +320,4 @@ p.results-url {float: right;}
 .active {background: #ff0000;}
 .no-results {display: none;}
 .results-icon {float: left;}
+
