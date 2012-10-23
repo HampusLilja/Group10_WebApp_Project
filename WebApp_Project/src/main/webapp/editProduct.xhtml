@@ -50,7 +50,7 @@
                                             <h:body>
                                                 <h:form id="editProductForm">
                                                 <h:outputLabel value="Id: " /><br/>
-                                                <h:inputText value="#{conversation.id}" required="true" /><br/>
+                                                <h:inputText value="#{conversation.id}" readonly="true" /><br/>
                                                 <h:outputLabel value="Name: " /><br/>
                                                 <h:inputText value="#{conversation.name}" required="true" /><br/>
                                                 <h:outputLabel value="Amount: " /><br/>
@@ -72,7 +72,7 @@
                                                         <f:selectItem itemValue="Other"/>
                                                     </h:selectOneMenu><br/>
                                                 <h:commandButton id="updateProductButton" value="Update"
-                                                                    actionListener="#{product.editProduct(conversation.id, 
+                                                                 actionListener="#{editProduct.editProduct(conversation.id, 
                                                                                       conversation.name, conversation.amount, 
                                                                                       conversation.price, conversation.alcoholProof,
                                                                                       conversation.type)}"

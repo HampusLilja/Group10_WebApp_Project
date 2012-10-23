@@ -16,7 +16,7 @@ import javax.inject.Named;
 @RequestScoped
 public class DeleteProductBB {
     
-    private long id;
+    private long ID;
     
     @Inject
     private ProductListBean productList;
@@ -31,10 +31,10 @@ public class DeleteProductBB {
     }
 
     public long getID(){
-        return id;
+        return ID;
     }
 
     public void setID(long id){
-        this.id = id;
+        this.ID = id;
     }
 }
