@@ -41,5 +41,14 @@ public final class ProductList extends AbstractDAO<Product, Long> implements IPr
         }
         return found;
     }
-    
+    @Override
+    public List<Product> getAllByType(String type) {
+        List<Product> found = new ArrayList<>();
+        for (Product p : getAll()) {
+            if (p.getType().equals(type)) {
+                found.add(p);
+            }
+        }
+        return found;
+    }
 }

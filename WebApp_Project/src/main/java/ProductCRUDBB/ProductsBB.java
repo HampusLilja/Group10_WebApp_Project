@@ -21,5 +21,7 @@ public class ProductsBB {
     public List<Product> getAll() {
         return productList.getAll();
     }
-    
+    public List<Product> getAllByType(String type){
+        return productList.getAllByType(type);
+    }
 }
