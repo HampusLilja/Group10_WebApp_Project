@@ -47,7 +47,7 @@ public class ConversionBean implements Serializable {
  
     }
     
-    public void customerActionListener(Long id, String firstName, String lastName, 
+    public void actionListener(Long id, String firstName, String lastName, 
                                         String street, int number, int zip, String town,
                                         String email, String password) {
         if (conv.isTransient()) {
@@ -67,6 +67,55 @@ public class ConversionBean implements Serializable {
         this.town = town;
         this.address = new Address(street, number, zip, town);
         this.email = email;
+    }
+    
+    public void deleteActionListener(Long id, String firstName, String lastName, 
+            String email) {
+                if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "DELETE CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+    
+        public String action() {
+        if (!conv.isTransient()) {
+            conv.end();
+             Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION ENDS");
+        }
+        try {
+            return "customers?faces-redirect=true"; // Go back
+        } catch (Exception e) {
+            // Not implemented
+            //return "error?faces-redirect=true&amp;cause=" + e.getMessage();
+            return null;
+        }
+    }
+        
+    public void addressActionListener(Long id, String firstName, String lastName, 
+            String street, int number, int zip, String town) {
+        if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "ADDRESS CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+        this.ID = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.number = number;
+        this.zip = zip;
+        this.town = town;
+        this.address = new Address(street, number, zip, town);
+        // Find person from database...
     }
     
     public String customerAction() {
