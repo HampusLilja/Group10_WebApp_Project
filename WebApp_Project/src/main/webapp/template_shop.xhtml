@@ -41,17 +41,6 @@
                                                             <li><a href="customers.xhtml">Customers</a></li>
                                                         </c:if>
                                                 </c:if>
-                                                <li><c:if test="#{!accountLogin.loggedIn}">
-                                                    <h:form>
-                                                        <h:commandButton value ="Login" action="/signup.xhtml?faces-redirect=true"/>
-                                                    </h:form>
-                                                    </c:if></li>
-                                                <li><c:if test="#{accountLogin.loggedIn}">
-                                                    <h:form id="logoutform">
-                                                        <h:commandButton value ="Logout" action="/index.xhtml?faces-redirect=true" 
-                                                                         actionListener="#{accountLogin.logout}" rendered="#{accountLogin.loggedIn}"/>
-                                                    </h:form>
-                                                    </c:if></li>
 						</ul>
 					</nav>
 				<!-- Navigation -->
@@ -96,6 +85,8 @@
                 <!-- FOOTER -->
                 <div id="footer">
 		<footer>
+                    <c:if test="#{!accountLogin.loggedIn}">
+                        <p>Not logged in!</p></c:if>
                     <c:if test="#{accountLogin.loggedIn}">
                         <p>Logged in as: ${accountLogin.name}</p></c:if>
                     <p>  Drink responsively! </p>

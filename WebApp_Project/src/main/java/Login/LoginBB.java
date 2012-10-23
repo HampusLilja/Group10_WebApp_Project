@@ -7,6 +7,8 @@ package Login;
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.webapp_project.CustomerCRUDBB.CustomerListBean;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -33,9 +35,17 @@ public class LoginBB implements Serializable {
         
     }
     
-    public void login() {
-        this.customer = customerList.find(ID);
-        loggedIn = true;
+    public String login() {
+        try {
+            this.customer = customerList.find(ID);
+            loggedIn = true;
+            return "index?faces-redirect=true"; // Go back
+        } catch (Exception e) {
+            // Not implemented
+            //return "error?faces-redirect=true&amp;cause=" + e.getMessage();
+            return null;
+        }
+
     }
     
     public void logout() {
