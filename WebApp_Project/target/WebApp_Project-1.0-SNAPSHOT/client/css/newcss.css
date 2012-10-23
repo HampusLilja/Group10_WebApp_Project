@@ -141,6 +141,23 @@ footer {
     -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
 }
 
+.drop-area{
+  width:100px;
+  height:25px;
+  border: 1px solid #999;
+  text-align: center;
+  padding:10px;
+  cursor:pointer;
+}
+#thumbnail img{
+  width:100px;
+  height:100px;
+  margin:5px;
+}
+canvas{
+  border:1px solid red;
+}
+
 
 section#products {width: 620px; float: left;}
 section#products h2 {padding: 10px; font-size: 20px;}
