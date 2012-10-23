@@ -1,4 +1,4 @@
-package edu.chl.group10.webapp_project;
+package ProductCRUDBB;
 
 import edu.chl.group10.core.Group10;
 import edu.chl.group10.core.IProductList;
