@@ -1,64 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
 
-<!DOCTYPE xhtml>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
-	
-        <title>Grupp 10</title>
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        <script type="text/javascript" src="client/js/welcomeCookie.js"/>
-
-    </head>
-    <!-- body -->
-	<body onload="checkCookie()">
-		<!-- HEADER -->
-		<div id="header">
-                    <img src="client/img/logo.png"/>
-		</div>
-		<!-- ENDS HEADER -->	
-  
-  		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="faces/index.xhtml">Home</a></li>
-						<li><a href="faces/shop.xhtml">Shop</a></li>
-						<li><a href="faces/contact.xhtml">Contact</a></li>
-                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
-                                                <li><a href="faces/addProduct.xhtml">Add Product</a></li>
-                                                <li><a href="faces/editProduct.xhtml">Edit Product</a></li>
-                                                <li><a href="faces/products.xhtml">Products</a></li>
-						</ul>
-					</nav>
-				<!-- Navigation -->
-					
-			</menu>
-		<!-- ENDS Menu -->
-
-		<!-- MAIN -->
-			<div id="main">
-                                <!-- Slider -->
-				<div id="slider">
-					<a href="#main"><img src="client/img/01.jpg" title="Main Picture!"/></a>
-				</div>
-				<!-- ENDS Slider -->
-                                
-                               <!-- 3 cols -->
+        <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+            <!-- Define body -->
+            <ui:define name="body">
+                <body onload="checkCookie()"></body></ui:define>
+            <!-- Inserting default banner -->
+            <ui:define name="header">
+               
+            </ui:define>
+                
+            <!-- Defining main content -->
+            <ui:define name="maincontent"></ui:define>
+                <ui:define name="info_main">
+                    <div id="content">
+                        <br></br><br></br>
+                         <a href="#main"><h1 class="h1">Welcome!</h1></a>
+                    </div>
+                </ui:define>
+            <ui:define name="info_second">
+                <!-- 3 cols -->
+                               
                                                 <div class="one-third">
-							<h4 class="line-divider">Veckans Erbjudande </h4>
+							<h4 class="line-divider">Vodka 2-for-1 </h4>
                                                         <img src="client/img/erbjudande.png"/>
                                                         
                                                 </div>
 						<div class="one-third">
-							<h4 class="line-divider">Veckans Drink</h4>
+							<h4 class="line-divider">Featured drink</h4>
 							<img src="client/img/drink.jpg" />
-                                                        <p>Vestibulum tortor quam, feugiat vitae, elit eget.</p>
+                                                       
 						</div>
                                
                                                 <div class="one-third">
-							<h4 class="line-divider">Senaste Nytt</h4>
+                                                    <h4 class="line-divider">Latest news</h4>
                                                 <ul>
 						<li><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> </li>
 						<li><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> </li>
@@ -70,19 +49,13 @@
                                                 </div>
 						
                         	
-                                   <!-- ENDS 3 cols -->
-		
-			</div>
-		<!-- ENDS MAIN -->
-  
-		
-        <!-- FOOTER -->
-		<footer>
-                    <p> Footer content goes here </p>
-                    <p>&#169; Grupp 10 Webbapplikationer</p>
-		</footer>
-		<!-- ENDS FOOTER -->
+            <!-- ENDS 3 cols -->
+            </ui:define>
+            
+            
+                <!-- Inserting default footer -->
+                <ui:define name="footer"></ui:define>
+        </ui:composition>
 
-    </body>
-	<!-- ENDS body -->
+
 </html>

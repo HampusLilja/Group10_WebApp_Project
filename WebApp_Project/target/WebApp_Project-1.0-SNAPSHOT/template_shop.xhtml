@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
+        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
+        <script type="text/javascript" src="client/js/welcomeCookie.js"/>
+        <ui:insert name="title"><title>Template</title></ui:insert>
+    </h:head>
+    <!--
+    
+                   This is Common to all Pages
+
+    -->
+    <h:body>
+        <ui:insert name="body"><body></body></ui:insert>
+        <div id="body">
+        	<!-- HEADER -->
+		<div id="header">
+                    <img src="client/img/logo.png"/>
+		</div>
+		<!-- ENDS HEADER -->	
+
+          		<!-- Menu -->
+			<menu>
+				<!-- Navigation -->
+					<nav>
+                                        	<ul>
+						<li><a href="index.xhtml">Home</a></li>
+						<li><a href="shop.xhtml">Shop</a></li>
+						<li><a href="contact.xhtml">Contact</a></li>
+                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
+                                                <li><a href="addProduct.xhtml">Add Product</a></li>
+						</ul>
+					</nav>
+				<!-- Navigation -->
+					
+			</menu>
+		<!-- ENDS Menu -->
+                <!-- MAIN -->
+			<div id="main">
+                            <ui:insert name="info_main">
+                                <!-- Slider -->
+				<div id="slider">
+                                        None
+				</div>
+				<!-- ENDS Slider -->
+                            </ui:insert>
+                                
+                            <ui:insert name="info_second">
+                               <!-- 3 cols -->
+                               
+                                                <div class="one-third">
+							<h4 class="line-divider">Null </h4>
+                                                        <img src="client/img/erbjudande.png"/>
+                                                        
+                                                </div>
+						<div class="one-third">
+							<h4 class="line-divider">Null 2</h4>
+						</div>
+                               
+                                                <div class="one-third">
+                                                    <h4 class="line-divider">Null news</h4>
+                                                <ul>
+						</ul>					
+                                                </div>
+						
+                        	
+                                   <!-- ENDS 3 cols -->
+                                   </ui:insert>
+			</div>
+		<!-- ENDS MAIN -->
+
+
+                <!-- FOOTER -->
+                <div id="footer">
+		<footer>
+                    <p>  Drink responsively! </p>
+                    <p> &#169; Grupp 10 Webbapplikationer</p>
+		</footer>
+                </div>
+		<!-- ENDS FOOTER -->
+
+    </div>
+    </h:body>
+
+</html>
