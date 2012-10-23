@@ -124,7 +124,8 @@ public class ConversionBean implements Serializable {
         }
     }
     
-        public void productActionListener(long id, String name, int amount, int price, int alcoholProof, String type) {
+        public void productActionListener(long id, String name, 
+                int amount, int price, int alcoholProof, String type) {
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "ADDPRODUCT CONVERSATION BEGINS: "
@@ -139,7 +140,16 @@ public class ConversionBean implements Serializable {
         this.alcoholProof = alcoholProof; 
         this.type = type;
     }
-    
+    public void deleteProductActionListener(long id,String name, 
+                int amount, int price, int alcoholProof, String type){
+         if (conv.isTransient()) {
+            conv.begin();
+             Logger.getAnonymousLogger().log(Level.INFO, "DELETE CONVERSATION BEGINS: "
+                     + "Got id {0}", id);
+        }else{
+            
+        }
+    }
      public String productAction() {
         if (!conv.isTransient()) {
             conv.end();

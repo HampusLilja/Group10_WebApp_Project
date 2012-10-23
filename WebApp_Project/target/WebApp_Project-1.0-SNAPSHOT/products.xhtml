@@ -80,7 +80,8 @@
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{product.deleteProduct(product.id)}"
+                                    <h:commandLink actionListener="#{conversation.productActionListener(p.id, p.name, p.amount, 
+                                                                     p.price, p.alcoholProof, p.type)}"
                                                     action="deleteProduct" >Delete</h:commandLink>
                                 </h:form>
                             </h:column>
