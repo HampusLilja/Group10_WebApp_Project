@@ -1,4 +1,4 @@
-package edu.chl.group10.webapp_project;
+package Loggin;
 
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.core.Group10;
@@ -38,11 +38,11 @@ public class LoggingInServlet extends HttpServlet {
             if( typeOfAction.equals("login")) {
                 String email = request.getParameter("username");
                 String password = request.getParameter("password");
-                List<Customer> emails = Group10.INSTANCE.getCustomerList().getByEmail(email);               
-                List<Customer> passwords = Group10.INSTANCE.getCustomerList().getByPassword(password);
+                Customer customer = Group10.INSTANCE.getCustomerList().
+                        getByEmailAndPassword(email, password);              
                 
-                if( emails != null && passwords != null){
-                    response.sendRedirect("loggedIn.xhtml");
+                if( customer != null ){
+                    response.sendRedirect("faces/loggedIn.xhtml");
                 }else {
                     response.sendRedirect("faces/wrongLoggInInfo.xhtml");
                 }

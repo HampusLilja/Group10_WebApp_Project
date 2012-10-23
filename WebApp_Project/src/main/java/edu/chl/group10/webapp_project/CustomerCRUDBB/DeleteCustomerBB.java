@@ -5,7 +5,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
- *
  * @author Hampus
  */
 @Named("deleteCustomer")
