@@ -1,68 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
-<<<<<<< HEAD
-    
-      <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits: Contact</title></ui:define>
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+        <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
             <!-- Define body -->
             <ui:define name="body"></ui:define>
+        
             <!-- Inserting default banner -->
             <ui:define name="header">
-               
-            </ui:define>	
-  
-                        <ui:define name="maincontent"></ui:define>
-                        <div id="main">
+            </ui:define>
+                
+            <!-- Defining main content -->
+            <ui:define name="maincontent"></ui:define>
                 <ui:define name="info_main">
-		<!-- MAIN -->
-                <div id="content" align="justify">
-=======
-    <head>
-        
-        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
-	
-        <title>Grupp 10</title>
-	
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
-    </head>
-    <!-- body -->
-	<body>
-		<!-- HEADER -->
-		<div id="header">
-                    <img src="client/img/logo.png"/>
-		</div>
-		<!-- ENDS HEADER -->	
-  
-  		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="faces/index.xhtml">Home</a></li>
-						<li><a href="faces/shop.xhtml">Shop</a></li>
-						<li><a href="faces/contact.xhtml">Contact</a></li>
-                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
-                                                <li><a href="faces/addProduct.xhtml">Add Product</a></li>
-                                                <li><a href="faces/editProduct.xhtml">Edit Product</a></li>
-                                                <li><a href="faces/products.xhtml">Products</a></li>
-						</ul>
-					</nav>
-				<!-- Navigation -->
-                                
-                                
-                                
-			</menu>
-		<!-- ENDS Menu -->
-
-		<!-- MAIN -->
+                    <div id="content">
+        	<!-- MAIN -->
+                <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
                 <form action="upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" style="display:none" id="upload-image"></input>
                 <input type="text" name="photoname" size="20"/>
@@ -74,8 +32,6 @@
         <input type="submit" value="Upload File"/>
                 </form>
                 
-                <div id="main" align="justify">
->>>>>>> dosebranch
                     <div class="one-half">
                             <h:body>
                             <h:form id="addProductForm">
@@ -109,26 +65,16 @@
 
                             </h:form>
                             </h:body>
-                    </div>
-                </div></ui:define></div>
+                    </div></div>
+                </ui:define>
+                
 		<!-- ENDS MAIN -->
   
-<<<<<<< HEAD
                 <ui:define name="info_second"></ui:define>
                 <!-- Inserting default footer -->
                 <ui:define name="footer"></ui:define>
                     
-      </ui:composition>
-=======
+           </ui:composition>
 		
-        <!-- FOOTER -->
-		<footer>
-                    <p> Footer content goes here </p>
-                    <p>&#169; Grupp 10 Webbapplikationer</p>
-		</footer>
-		<!-- ENDS FOOTER -->
-                
-    </body>
 	<!-- ENDS body -->
->>>>>>> dosebranch
 </html>

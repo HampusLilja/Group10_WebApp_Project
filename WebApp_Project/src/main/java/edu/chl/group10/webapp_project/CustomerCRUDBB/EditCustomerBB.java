@@ -25,6 +25,7 @@ public class EditCustomerBB {
     private int number;
     private int zip;
     private String town;
+    private String email;
     
     public EditCustomerBB(){
         
@@ -33,8 +34,8 @@ public class EditCustomerBB {
     private CustomerListBean customerList;
     
     
-    public void editAddressDetails(Long id, String firstName, String lastName, 
-            String street, int number, int zip, String town){
+    public void editCustomerDetails(Long id, String firstName, String lastName, 
+            String street, int number, int zip, String town, String email){
         Customer customer = customerList.find(id);
         customerList.remove(id);
 
@@ -43,9 +44,10 @@ public class EditCustomerBB {
         this.zip = zip;
         this.town = town;
         this.address = new Address(street, number, zip, town);
+        this.email = email;
         
         customerList.add(new Customer(id, firstName, lastName, 
-                address, customer.getEmail(), customer.getPassword()));
+                address, email, customer.getPassword()));
     }
        
     public Address getAddress(){
