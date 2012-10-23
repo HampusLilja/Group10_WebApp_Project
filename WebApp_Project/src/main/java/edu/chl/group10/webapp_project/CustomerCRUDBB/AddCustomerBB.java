@@ -2,6 +2,9 @@ package edu.chl.group10.webapp_project.CustomerCRUDBB;
 
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.Customer;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,7 +40,7 @@ public class AddCustomerBB {
             int number, int zip, String town, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
+        String hashedPassword = hash(password);
         this.street = street;
         this.number = number;
         this.zip = zip;
@@ -45,7 +48,7 @@ public class AddCustomerBB {
         this.address = new Address(street, number, zip, town);
         this.email = email;
         
-       customerList.add(new Customer(firstName, lastName, address, email, password));
+       customerList.add(new Customer(firstName, lastName, address, email, hashedPassword));
 
     }
     
@@ -127,5 +130,35 @@ public class AddCustomerBB {
     
     public void setID(long id){
         this.ID = id;
+    }
+
+    private String hash(String password) {
+    String salt = "GR@$OU1@P0.10&#S%^A$L*T";
+    String hash = md5(password + salt);
+        return hash;
+    }
+    public static String md5(String input) {
+         
+        String md5 = null;
+         
+        if(null == input){ 
+            return null;
+        }
+        try {
+             
+        //Create MessageDigest object for MD5
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+         
+        //Update input string in message digest
+        digest.update(input.getBytes(), 0, input.length());
+ 
+        //Converts message digest value in base 16 (hex) 
+        md5 = new BigInteger(1, digest.digest()).toString(16);
+ 
+        } catch (NoSuchAlgorithmException e) {
+ 
+            e.printStackTrace();
+        }
+        return md5;
     }
 }
