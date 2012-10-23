@@ -1,4 +1,4 @@
-package Loggin;
+package Login;
 
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.core.Group10;
@@ -42,7 +42,8 @@ public class LoggingInServlet extends HttpServlet {
                         getByEmailAndPassword(email, password);              
                 
                 if( customer != null ){
-                    response.sendRedirect("faces/loggedIn.xhtml");
+                    
+                    response.sendRedirect("faces/loggedIn.xhtml?id="+customer.getID());
                 }else {
                     response.sendRedirect("faces/wrongLoggInInfo.xhtml");
                 }

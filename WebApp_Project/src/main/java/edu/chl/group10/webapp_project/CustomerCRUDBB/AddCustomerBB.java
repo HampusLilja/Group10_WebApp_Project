@@ -25,6 +25,7 @@ public class AddCustomerBB {
 
     private String email;
     private String password;
+    private boolean isAdmin;
     
     @Inject
     private CustomerListBean customerList;
@@ -34,7 +35,8 @@ public class AddCustomerBB {
     }
 
     public void addCustomer(String firstName, String lastName, String street, 
-            int number, int zip, String town, String email, String password) {
+            int number, int zip, String town, String email, String password, 
+            boolean admin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -44,8 +46,10 @@ public class AddCustomerBB {
         this.town = town;
         this.address = new Address(street, number, zip, town);
         this.email = email;
+        this.isAdmin = admin;
         
-       customerList.add(new Customer(firstName, lastName, address, email, password));
+       customerList.add(new Customer(firstName, lastName, address, email, 
+               password, isAdmin));
 
     }
     
@@ -79,6 +83,10 @@ public class AddCustomerBB {
     
     public String getTown(){
         return town;
+    }
+    
+    public boolean getIsAdmin(){
+        return isAdmin;
     }
     
     public long getID(){
@@ -123,6 +131,10 @@ public class AddCustomerBB {
     
     public void setEmail(String email){
         this.email = email;
+    }
+    
+    public void setIsAdmin(boolean admin){
+        this.isAdmin = admin;
     }
     
     public void setID(long id){

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,6 +36,22 @@
 						<li><a href="contact.xhtml">Contact</a></li>
                                                 <li><a href="signup.xhtml">Login/Sign up</a></li>
                                                 <li><a href="addProduct.xhtml">Add Product</a></li>
+                                                <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">
+                                                            <li><a href="customers.xhtml">Customers</a></li>
+                                                        </c:if>
+                                                </c:if>
+                                                <li><c:if test="#{!accountLogin.loggedIn}">
+                                                    <h:form>
+                                                        <h:commandButton value ="Login" action="/signup.xhtml?faces-redirect=true"/>
+                                                    </h:form>
+                                                    </c:if></li>
+                                                <li><c:if test="#{accountLogin.loggedIn}">
+                                                    <h:form id="logoutform">
+                                                        <h:commandButton value ="Logout" action="/index.xhtml?faces-redirect=true" 
+                                                                         actionListener="#{accountLogin.logout}" rendered="#{accountLogin.loggedIn}"/>
+                                                    </h:form>
+                                                    </c:if></li>
 						</ul>
 					</nav>
 				<!-- Navigation -->
@@ -79,6 +96,8 @@
                 <!-- FOOTER -->
                 <div id="footer">
 		<footer>
+                    <c:if test="#{accountLogin.loggedIn}">
+                        <p>Logged in as: ${accountLogin.name}</p></c:if>
                     <p>  Drink responsively! </p>
                     <p> &#169; Grupp 10 Webbapplikationer</p>
 		</footer>

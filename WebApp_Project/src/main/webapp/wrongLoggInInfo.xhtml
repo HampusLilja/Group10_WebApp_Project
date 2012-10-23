@@ -25,7 +25,7 @@
                                 <!-- SignUp -->
                                     <div class="one-half">
                                     <!-- form -->
-							<h2>Wrong LoggIn Info Entered</h2>
+							<h2>Wrong LogIn Info Entered</h2>
                                                         <form id="loginForm" action="/WebApp_Project/loggedin" method="POST">
                                                             <input type="hidden" name="action" value="login" />
                                                             <label>Email:</label><br/>
@@ -44,52 +44,43 @@
                                                             <h:form id="addCustomerForm" onsubmit="return checkForm(this);">
 
                                                                 <h:outputLabel value="First Name: " /><br/>
-                                                                <h:inputText value="#{signUp.firstName}" required="true" /><br/>
+                                                                <h:inputText value="#{addCustomer.firstName}" required="true" /><br/>
                                                                 <h:outputLabel value="Last Name: " /><br/>
-                                                                <h:inputText value="#{signUp.lastName}" required="true" /><br/><br/>
+                                                                <h:inputText value="#{addCustomer.lastName}" required="true" /><br/><br/>
 <!--
                                                                 <h:outputLabel value="Password: " /><br/>
-                                                                <h:inputText value="#{signUp.password}" required="true" /><br/><br/>
+                                                                <h:inputText value="#{addCustomer.password}" required="true" /><br/><br/>
 -->
                                                                 <p>Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
                                                                                     name="pwd1" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
                                                                                             'Password must contain at least 6 characters, including UPPER/lowercase and numbers' : '');
                                                                                         if(this.checkValidity()) form.pwd2.pattern = this.value;" onblur="">
-                                                                        <h:inputSecret onfocus="this.value = form.pwd1.value" value="#{signUp.password}"/>
+                                                                        <h:inputSecret onfocus="this.value = form.pwd1.value" value="#{addCustomer.password}"/>
                                                                     </input></p>
                                                                 <p>Confirm Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
                                                                                             name="pwd2" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
-                                                                                                                            'Please enter the same Password as above' : '');"/></p><br/><br/>
-                                                                <h:head>Address</h:head><br/>
+                                                                                                                            'Please enter the same Password as above' : '');"/></p><br/>
+                                  
                                                                 <h:outputLabel value="Street: " /><br/>
-                                                                <h:inputText value="#{signUp.street}" /><br/>
+                                                                <h:inputText value="#{addCustomer.street}" required="true"/><br/>
                                                                 <h:outputLabel value="Number: " /><br/>
-                                                                <h:inputText value="#{signUp.number}" /><br/>
+                                                                <h:inputText value="#{addCustomer.number}" required="true"/><br/>
                                                                 <h:outputLabel value="Zip: " /><br/>
-                                                                <h:inputText value="#{signUp.zip}" /><br/>
+                                                                <h:inputText value="#{addCustomer.zip}" required="true"/><br/>
                                                                 <h:outputLabel value="Town: " /><br/>
-                                                                <h:inputText value="#{signUp.town}" /><br/><br/>
-
-                                                                <h:head>Contact Info</h:head><br/>
+                                                                <h:inputText value="#{addCustomer.town}" required="true"/><br/><br/>
                                                                 <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{signUp.email}" required="true"/><br/>
-
-                                                                <h:outputLabel value="Phone: " /><br/>
-                                                                <h:inputText value="#{signUp.phoneNumber}" /><br/>
-                                                                <h:outputLabel value="Website: " /><br/>
-                                                                <h:inputText value="#{signUp.website}" /><br/>
-                                                                <h:outputLabel value="Comments: " /><br/>
-                                                                <h:inputText value="#{signUp.comments}" /><br/>
-
-
+                                                                <h:inputText value="#{addCustomer.email}" required="true"/><br/><br/>
+                                                                <h:outputLabel value="Admin: "> <h:selectBooleanCheckbox value="#{addCustomer.isAdmin}"/> </h:outputLabel>
+                                                                <br/><br/>
                                                                 <h:commandButton 
                                                                     id="submitButton" type="submit"
                                                                     value="Submit"
-                                                                    actionListener="#{signUp.addCustomer(signUp.getFirstName(), signUp.getLastName(), 
-                                                                                      signUp.getStreet(), signUp.getNumber(), signUp.getZip(), 
-                                                                                      signUp.getTown(), signUp.getPhoneNumber(), signUp.getEmail(), 
-                                                                                      signUp.getWebsite(), signUp.getComments(), signUp.getPassword())}"
-                                                                    action="customers?faces-redirect=true" />
+                                                                    actionListener="#{addCustomer.addCustomer(addCustomer.getFirstName(), addCustomer.getLastName(), 
+                                                                                      addCustomer.getStreet(), addCustomer.getNumber(), addCustomer.getZip(), 
+                                                                                      addCustomer.getTown(), addCustomer.getEmail(), 
+                                                                                      addCustomer.getPassword(), addCustomer.getIsAdmin())}"
+                                                                                      action="customers?faces-redirect=true" />
 
                                                             </h:form>
                                                         </h:body>

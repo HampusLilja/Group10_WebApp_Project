@@ -21,7 +21,7 @@ public class Mapper {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         Customer customer = new Customer("Fname", "Lname", new Address("street", 1, 112, "town"), 
-                "Email", "Password");
+                "Email", "Password", false);
         tx.begin();
         em.persist(customer);
         tx.commit();

@@ -44,6 +44,10 @@
                                 #{c.password}
                             </h:column>
                             <h:column>
+                                <f:facet name="header">Admin</f:facet>
+                                #{c.isAdmin}
+                            </h:column>
+                            <h:column>
                                 <f:facet name="header">Address</f:facet>
                                 #{c.address.toString()}
                             </h:column>
