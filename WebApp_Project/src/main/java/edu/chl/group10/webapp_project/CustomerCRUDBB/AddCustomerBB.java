@@ -52,7 +52,7 @@ public class AddCustomerBB {
         this.isAdmin = admin;
         
        customerList.add(new Customer(firstName, lastName, address, email, 
-               password, isAdmin));
+               hashedPassword, isAdmin));
 
     }
     

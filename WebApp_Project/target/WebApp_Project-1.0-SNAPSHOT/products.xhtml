@@ -72,7 +72,7 @@
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{conversation.productActionListener(p.id, p.name, p.amount, 
+                                    <h:commandLink actionListener="#{productConversation.actionListener(p.id, p.name, p.amount, 
                                                                      p.price, p.alcoholProof, p.type)}"
                                                      action="editProduct" >Edit</h:commandLink>
                                 </h:form>
@@ -80,7 +80,7 @@
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{conversation.productActionListener(p.id, p.name, p.amount, 
+                                    <h:commandLink actionListener="#{productConversation.deleteActionListener(p.id, p.name, p.amount, 
                                                                      p.price, p.alcoholProof, p.type)}"
                                                     action="deleteProduct" >Delete</h:commandLink>
                                 </h:form>

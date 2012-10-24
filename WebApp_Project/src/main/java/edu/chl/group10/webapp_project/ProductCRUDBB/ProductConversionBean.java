@@ -15,23 +15,13 @@ import javax.inject.Named;
  * WILL SURVIVE REDIRECTS, perfect for PRG-pattern
  * @author hampus
  */
-@Named("conversation")
+@Named("productConversation")
 @ConversationScoped
 public class ProductConversionBean implements Serializable {
 
     @Inject // Handled by system, don't need to create class.
     private Conversation conv;
-    
-    private long ID;
-    private String firstName;
-    private String lastName;
-    private String street;
-    private int number;
-    private int zip;
-    private String town;
-    private Address address;
-    private String email;
-    private String password;
+
     private long id;
     private String name;
     private int amount;  //amount of liquid in cl
@@ -39,30 +29,10 @@ public class ProductConversionBean implements Serializable {
     private int alcoholProof;
     private String type; //eg. rum, vodka
 
-    public void actionListener(Long id, String firstName, String lastName, 
-                                        String street, int number, int zip, String town,
-                                        String email, String password) {
-        if (conv.isTransient()) {
-            conv.begin();
-             Logger.getAnonymousLogger().log(Level.INFO, "SIGNUP CONVERSATION BEGINS: "
-                     + "Got id {0}", id);
-        }else{
-            
-        }
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.street = street;
-        this.number = number;
-        this.zip = zip;
-        this.town = town;
-        this.address = new Address(street, number, zip, town);
-        this.email = email;
-    }
+
     
     
-        public void productActionListener(long id, String name, 
+        public void actionListener(long id, String name, 
                 int amount, int price, int alcoholProof, String type) {
         if (conv.isTransient()) {
             conv.begin();
@@ -78,7 +48,7 @@ public class ProductConversionBean implements Serializable {
         this.alcoholProof = alcoholProof; 
         this.type = type;
     }
-    public void deleteProductActionListener(long id,String name, 
+    public void deleteActionListener(long id,String name, 
                 int amount, int price, int alcoholProof, String type){
          if (conv.isTransient()) {
             conv.begin();
@@ -87,8 +57,14 @@ public class ProductConversionBean implements Serializable {
         }else{
             
         }
+        this.id = id;
+        this.name = name;
+        this.amount = amount;
+        this.price = price;
+        this.alcoholProof = alcoholProof; 
+        this.type = type;
     }
-     public String productAction() {
+     public String action() {
         if (!conv.isTransient()) {
             conv.end();
              Logger.getAnonymousLogger().log(Level.INFO, "CONVERSATION ENDS");
@@ -111,84 +87,8 @@ public class ProductConversionBean implements Serializable {
         }
     }
 
-    public String getFirstName(){
-        return firstName;
-    }
-    
-    public String getLastName(){
-        return lastName;
-    }
-    
-    public Address getAddress(){
-        return address;
-    }
-    
-    public String getPassword(){
-        return password;
-    }
-    
-    public String getStreet(){
-        return street;
-    }
-    
-    public int getNumber(){
-        return number;
-    }
-    
-    public int getZip(){
-        return zip;
-    }
-    
-    public String getTown(){
-        return town;
-    }
-    
-    public String getEmail(){
-        return email;
-    }
-    
-    public void setEmail(String email){
-        this.email = email;
-    }
-    
-    public long getID(){
-        return ID;
-    }
-    
-    public void setFirstName(String firstName){
-        this.firstName = firstName;
-    }
-    
-    public void setLastName(String lastName){
-        this.lastName = lastName;
-    }
-    
-    public void setPassword(String password){
-        this.password = password;
-    }
-    
-    public void setStreet(String street){
-        this.street = street;
-    }
-    
-    public void setNumber(int number){
-        this.number = number;
-    }
-    
-    public void setZip(int zip){
-        this.zip = zip;
-    }
-    
-    public void setTown(String town){
-        this.town = town;
-    }
-    
-    public void setAddress(String street, int number, int zip, String town){
-        this.address = new Address(street, number, zip, town);
-    }
-    
     public void setID(long id){
-        this.ID = id;
+        this.id = id;
     }
     public long getId(){
         return id;
