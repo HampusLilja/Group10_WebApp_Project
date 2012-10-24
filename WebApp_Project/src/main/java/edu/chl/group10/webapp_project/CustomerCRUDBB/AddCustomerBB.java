@@ -2,12 +2,9 @@ package edu.chl.group10.webapp_project.CustomerCRUDBB;
 
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.Customer;
-<<<<<<< HEAD
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-=======
->>>>>>> loginBranch
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -54,12 +51,8 @@ public class AddCustomerBB {
         this.email = email;
         this.isAdmin = admin;
         
-<<<<<<< HEAD
-       customerList.add(new Customer(firstName, lastName, address, email, hashedPassword));
-=======
        customerList.add(new Customer(firstName, lastName, address, email, 
                password, isAdmin));
->>>>>>> loginBranch
 
     }
     
