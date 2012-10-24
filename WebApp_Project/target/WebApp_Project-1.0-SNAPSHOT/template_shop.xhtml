@@ -85,17 +85,14 @@
                 <!-- FOOTER -->
                 <div id="footer">
 		<footer>
-                    <h4>&#169; Grupp 10 Webbapplikationer</h4>
                     <c:if test="#{!accountLogin.loggedIn}">
                         <p>Not logged in!</p></c:if>
                     <c:if test="#{accountLogin.loggedIn}">
                         <p>Logged in as: ${accountLogin.name}</p></c:if>
-                    <p>  Drink responsively! </p>
-                    <p> &#169; Grupp 10 Webbapplikationer</p>
 		</footer>
                 </div>
 		<!-- ENDS FOOTER -->
-
+<h4>&#169; Grupp 10 Webbapplikationer</h4>
     </div>
     </h:body>
 

@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     
       <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits: Contact</title></ui:define>
+            <ui:define name="title"><title>&#169; Liquid Spirits: Add product</title></ui:define>
             <!-- Define body -->
             <ui:define name="body"></ui:define>
         
@@ -19,10 +19,12 @@
             <!-- Defining main content -->
             <ui:define name="maincontent"></ui:define>
                 <ui:define name="info_main">
-                    <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
-		<!-- MAIN -->
+              
                 <div id="content" align="justify">
-   
+                    <div class="one-half">
+                                <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
+
+                                <h2>Upload image</h2>
                 <form action="upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" style="display:none" id="upload-image"></input>
                 <input type="text" name="photoname" size="20"/>
@@ -33,9 +35,7 @@
                                 <p/>
         <button type="submit" class="button">Upload</button>
                 </form>
-                
-                <div id="main" align="justify">
-                    <div class="one-half">
+             
                             <h:body>
                             <h:form id="addProductForm">
                             <h2>Add product</h2>
@@ -70,7 +70,6 @@
                             </h:body>
                     </div></div>
                 
-                    </div>
                 </ui:define>
                             
 		<!-- ENDS MAIN -->

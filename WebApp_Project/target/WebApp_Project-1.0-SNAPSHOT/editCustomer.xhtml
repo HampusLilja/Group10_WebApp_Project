@@ -5,7 +5,7 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
         <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+            <ui:define name="title"><title>&#169; Liquid Spirits: Edit customer</title></ui:define>
             <!-- Define body -->
             <ui:define name="body">
                 <body></body></ui:define>
@@ -43,7 +43,7 @@
                                                                 <h:outputLabel value="Email: " /><br/>
                                                                 <h:inputText value="#{customerConversation.email}" required="true"/><br/>
 
-                                                                <h:commandButton id="editCustomerButton" value="Update" 
+                                                                <h:commandButton class="button" id="editCustomerButton" value="Update" 
                                                                                       actionListener="#{editCustomer.editCustomerDetails(
                                                                                                         customerConversation.ID, customerConversation.firstName,
                                                                                                         customerConversation.lastName, customerConversation.street, 
@@ -60,7 +60,7 @@
 			</div>
 		<!-- ENDS MAIN -->
                 </ui:define>
-		
+            <ui:define name="info_second"></ui:define>
                 <!-- Inserting default footer -->
                 <ui:define name="footer"></ui:define>
                          </ui:composition>

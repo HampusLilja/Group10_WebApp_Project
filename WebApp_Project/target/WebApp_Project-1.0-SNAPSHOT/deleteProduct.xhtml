@@ -3,43 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
-    <head>
 
-        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
-	
-        <title>Grupp 10</title>
-	
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <!-- body -->
-	<body>
-		<!-- HEADER -->
-		<div id="header">
-                    <img src="client/img/logo.png"/>
-		</div>
-		<!-- ENDS HEADER -->	
-  
-  		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="shop.xhtml">Shop</a></li>
-						<li><a href="contact.xhtml">Contact</a></li>
-                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
-						</ul>
-					</nav>
-				<!-- Navigation -->
-					
-			</menu>
-		<!-- ENDS Menu -->
-
-		<!-- MAIN -->
-			<div id="main">
-                                <!-- SignUp -->
-                                   
+        <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits: Delete product</title></ui:define>
+            <!-- Define body -->
+            <ui:define name="body">
+                <body></body></ui:define>
+            <!-- Inserting default banner -->
+            <ui:define name="header">
+               
+            </ui:define>
+                
+            <!-- Defining main content -->
+            <ui:define name="maincontent"></ui:define>
+                <ui:define name="info_main">
+                    <div id="content">
+                                       
                                 <div class="one-half">
 					<!-- form -->
 							<h2>Delete Product</h2>
@@ -66,19 +45,14 @@
 
 							<!-- ENDS form -->
 				</div>
-				<!-- ENDS Signup -->
 
 			</div>
 		<!-- ENDS MAIN -->
   
-		
-        <!-- FOOTER -->
-		<footer>
-                    <p> Footer content goes here </p>
-                    <p>&#169; Grupp 10 Webbapplikationer</p>
-		</footer>
-		<!-- ENDS FOOTER -->
+                </ui:define>
+		<ui:define name="info_second"></ui:define>
+                <!-- Inserting default footer -->
+                <ui:define name="footer"></ui:define>
+                         </ui:composition>
 
-    </body>
-	<!-- ENDS body -->
 </html>

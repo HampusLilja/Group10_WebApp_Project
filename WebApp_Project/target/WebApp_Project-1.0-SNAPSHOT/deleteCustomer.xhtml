@@ -5,7 +5,7 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
         <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+            <ui:define name="title"><title>&#169; Liquid Spirits: Delete customer</title></ui:define>
             <!-- Define body -->
             <ui:define name="body">
                 <body></body></ui:define>
@@ -24,7 +24,6 @@
 							<h2>Delete customer</h2>
                                                         <h:body>
                                                             <h:form id="deleteProductForm">
-                                                                <h:outputLabel value="Delete Customer" /><br/>
                                                                 <h:outputLabel value="ID: " /><br/>
                                                                 <h:inputText value="#{customerConversation.ID}" readonly="true" /><br/>
                                                                 <h:outputLabel value="First Name: " /><br/>
@@ -34,7 +33,7 @@
                                                                 <h:outputLabel value="Email: " /><br/>
                                                                 <h:inputText value="#{customerConversation.email}" readonly="true" /><br/><br/>
 
-                                                                <h:commandButton 
+                                                                <h:commandButton class="button" 
                                                                     id="deleteButton"
                                                                     value="Delete"
                                                                     actionListener="#{deleteCustomer.deleteCustomer(customerConversation.ID)}"
@@ -48,7 +47,7 @@
 
 			</div>
                 </ui:define>
-		
+		<ui:define name="info_second"></ui:define>
                 <!-- Inserting default footer -->
                 <ui:define name="footer"></ui:define>
                          </ui:composition>

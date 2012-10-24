@@ -3,47 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <head>
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
 
-        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
-	
-        <title>Grupp 10</title>
-	
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <!-- body -->
-	<body>
-		<!-- HEADER -->
-		<div id="header">
-                    <img src="client/img/logo.png"/>
-		</div>
-		<!-- ENDS HEADER -->	
-  
-  		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="faces/index.xhtml">Home</a></li>
-						<li><a href="faces/shop.xhtml">Shop</a></li>
-						<li><a href="faces/contact.xhtml">Contact</a></li>
-                                                <li><a href="faces/signup.xhtml">Login/Sign up</a></li>
-                                                <li><a href="faces/addProduct.xhtml">Add Product</a></li>
-                                                <li><a href="faces/editProduct.xhtml">Edit Product</a></li>
-                                                <li><a href="faces/products.xhtml">Products</a></li>
-						</ul>
-					</nav>
-				<!-- Navigation -->
-					
-			</menu>
-		<!-- ENDS Menu -->
-
-		<!-- MAIN -->
-			<div id="main">
-
+        <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits: Edit product</title></ui:define>
+            <!-- Define body -->
+            <ui:define name="body">
+                <body></body></ui:define>
+            <!-- Inserting default banner -->
+            <ui:define name="header">
+               
+            </ui:define>
+                
+            <!-- Defining main content -->
+            <ui:define name="maincontent"></ui:define>
+                <ui:define name="info_main">
+                    <div id="content">
+ 
                                 <div class="one-half">
 					<!-- form -->
                                         <h2>Edit Product</h2>
@@ -71,7 +48,7 @@
                                                         <f:selectItem itemValue="Gin"/>
                                                         <f:selectItem itemValue="Other"/>
                                                     </h:selectOneMenu><br/>
-                                                <h:commandButton id="updateProductButton" value="Update"
+                                                <h:commandButton class="button" id="updateProductButton" value="Update"
                                                                  actionListener="#{editProduct.editProduct(productConversation.id, 
                                                                                       productConversation.name, productConversation.amount, 
                                                                                       productConversation.price, productConversation.alcoholProof,
@@ -83,19 +60,11 @@
 
 							<!-- ENDS form -->
 				</div>
-				<!-- ENDS Signup -->
-
 			</div>
-		<!-- ENDS MAIN -->
-  
-		
-        <!-- FOOTER -->
-		<footer>
-                    <p> Footer content goes here </p>
-                    <p>&#169; Grupp 10 Webbapplikationer</p>
-		</footer>
-		<!-- ENDS FOOTER -->
-
-    </body>
-	<!-- ENDS body -->
+            	<!-- ENDS MAIN -->
+                </ui:define>
+            <ui:define name="info_second"></ui:define>
+                <!-- Inserting default footer -->
+                <ui:define name="footer"></ui:define>
+           </ui:composition>
 </html>
