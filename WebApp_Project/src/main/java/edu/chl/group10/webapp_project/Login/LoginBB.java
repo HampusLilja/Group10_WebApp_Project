@@ -1,22 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.webapp_project.Login;
 
 import edu.chl.group10.core.Customer;
 import edu.chl.group10.webapp_project.CustomerCRUDBB.CustomerListBean;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author epinefrema
- */
 @Named("accountLogin")
 @SessionScoped
 public class LoginBB implements Serializable {

@@ -20,99 +20,99 @@
     <h:body>
         <ui:insert name="body"><body></body></ui:insert>
         <div id="body">
-        	<!-- HEADER -->
-		<div id="header">
-                    <a href="index.xhtml">
+            <!-- HEADER -->
+            <div id="header">
+                <a href="index.xhtml">
                     <img src="client/img/logo.png"/>
-                    </a>
-		</div>
-		<!-- ENDS HEADER -->	
+                </a>
+            </div>
+            <!-- ENDS HEADER -->	
 
-          		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="shop.xhtml">Shop</a></li>
-						<li><a href="contact.xhtml">Contact</a></li>
-                                                <c:if test="#{!accountLogin.loggedIn}">
-                                                <li><a href="signup.xhtml">Login/Signup</a></li>
-                                                </c:if>
-                                                
-               <c:if test="#{accountLogin.loggedIn}">
-                                                        <c:if test="#{accountLogin.admin}">
-                                                <li><a href="addProduct.xhtml">Add Product</a></li>
-                                                        </c:if></c:if>
-                                                <c:if test="#{accountLogin.loggedIn}">
-                                                        <c:if test="#{accountLogin.admin}">
-                                                            <li><a href="customers.xhtml">Customers</a></li>
-                                                        </c:if>
-                                                </c:if>
-                                                <c:if test="#{accountLogin.loggedIn}">
-                                                        <c:if test="#{accountLogin.admin}">
-                                                            <li><a href="products.xhtml">Products</a></li>
-                                                        </c:if>
-                                                </c:if>
-                                                <c:if test="#{accountLogin.loggedIn}">
-                                                <li><a href="signup.xhtml">Logout</a></li>
-                                                </c:if>
-                                        
-                                                <li><a href="../client/wishList.xhtml">Wish List</a></li>
-						
-                                        </ul>
-					</nav>
-				<!-- Navigation -->
-					
-			</menu>
-		<!-- ENDS Menu -->
-                <!-- MAIN -->
-			<div id="main">
-                            <ui:insert name="info_main">
-                                <!-- Slider -->
-				<div id="slider">
-                                        None
-				</div>
-				<!-- ENDS Slider -->
-                            </ui:insert>
-                                
-                            <ui:insert name="info_second">
-                               <!-- 3 cols -->
-                               
-                                                <div class="one-third">
-							<h4 class="line-divider">Null </h4>
-                                                        <img src="client/img/erbjudande.png"/>
-                                                        
-                                                </div>
-						<div class="one-third">
-							<h4 class="line-divider">Null 2</h4>
-						</div>
-                               
-                                                <div class="one-third">
-                                                    <h4 class="line-divider">Null news</h4>
-                                                <ul>
-						</ul>					
-                                                </div>
-						
-                        	
-                                   <!-- ENDS 3 cols -->
-                                   </ui:insert>
-			</div>
-		<!-- ENDS MAIN -->
+            <!-- Menu -->
+            <menu>
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li><a href="index.xhtml">Home</a></li>
+                        <li><a href="shop.xhtml">Shop</a></li>
+                        <li><a href="contact.xhtml">Contact</a></li>
+                        <c:if test="#{!accountLogin.loggedIn}">
+                            <li><a href="signup.xhtml">Login/Signup</a></li>
+                        </c:if>
+
+                        <c:if test="#{accountLogin.loggedIn}">
+                            <c:if test="#{accountLogin.admin}">
+                                <li><a href="addProduct.xhtml">Add Product</a></li>
+                            </c:if></c:if>
+                        <c:if test="#{accountLogin.loggedIn}">
+                            <c:if test="#{accountLogin.admin}">
+                                <li><a href="customers.xhtml">Customers</a></li>
+                            </c:if>
+                        </c:if>
+                        <c:if test="#{accountLogin.loggedIn}">
+                            <c:if test="#{accountLogin.admin}">
+                                <li><a href="products.xhtml">Products</a></li>
+                            </c:if>
+                        </c:if>
+                        <c:if test="#{accountLogin.loggedIn}">
+                            <li><a href="signup.xhtml">Logout</a></li>
+                        </c:if>
+
+                        <li><a href="../client/wishList.xhtml">Wish List</a></li>
+
+                    </ul>
+                </nav>
+                <!-- Navigation -->
+
+            </menu>
+            <!-- ENDS Menu -->
+            <!-- MAIN -->
+            <div id="main">
+                <ui:insert name="info_main">
+                    <!-- Slider -->
+                    <div id="slider">
+                        None
+                    </div>
+                    <!-- ENDS Slider -->
+                </ui:insert>
+
+                <ui:insert name="info_second">
+                    <!-- 3 cols -->
+
+                    <div class="one-third">
+                        <h4 class="line-divider">Null </h4>
+                        <img src="client/img/erbjudande.png"/>
+
+                    </div>
+                    <div class="one-third">
+                        <h4 class="line-divider">Null 2</h4>
+                    </div>
+
+                    <div class="one-third">
+                        <h4 class="line-divider">Null news</h4>
+                        <ul>
+                        </ul>					
+                    </div>
 
 
-                <!-- FOOTER -->
-                <div id="footer">
-		<footer>
+                    <!-- ENDS 3 cols -->
+                </ui:insert>
+            </div>
+            <!-- ENDS MAIN -->
+
+
+            <!-- FOOTER -->
+            <div id="footer">
+                <footer>
                     <c:if test="#{!accountLogin.loggedIn}">
                         <p>Not logged in!</p></c:if>
                     <c:if test="#{accountLogin.loggedIn}">
                         <p>Logged in as: ${accountLogin.name}</p></c:if>
-		</footer>
-                </div>
-		<!-- ENDS FOOTER -->
-<h4>&#169; Grupp 10 Webbapplikationer</h4>
-    </div>
+                </footer>
+            </div>
+            <!-- ENDS FOOTER -->
+            <h4>&#169; Grupp 10 Webbapplikationer</h4>
+        </div>
     </h:body>
 
 </html>

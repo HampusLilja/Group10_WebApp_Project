@@ -1,18 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.chl.group10.webapp_project.ProductCRUDBB;
 
 import edu.chl.group10.core.Product;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-/**
- *
- * @author Herzog
- */
 
 @Named("addProduct")
 @RequestScoped

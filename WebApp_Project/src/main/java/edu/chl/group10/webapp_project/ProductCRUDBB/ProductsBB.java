@@ -6,11 +6,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author Herzog & Lilja
- */
-
 @Named("products")
 @RequestScoped
 public class ProductsBB {

@@ -35,7 +35,7 @@ public abstract class AbstractEntityContainer<T extends IEntity<K>, K> implement
     @Override
     public T find(K id) {    
         for (T t : elems) {
-            if (t.getID().equals(id)) { // NOTE: equals, not ==
+            if (t.getID().equals(id)) {
                 return t;
             }
         }

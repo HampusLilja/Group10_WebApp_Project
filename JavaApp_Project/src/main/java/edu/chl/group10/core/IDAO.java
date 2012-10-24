@@ -2,11 +2,6 @@ package edu.chl.group10.core;
 
 import java.util.List;
 
-/**
- * Basic contract for containers of Products, Customers, etc
- * 
- * K is type of id (primary key)
- */
 public interface IDAO<T, K> {
 
     public void add(T t);

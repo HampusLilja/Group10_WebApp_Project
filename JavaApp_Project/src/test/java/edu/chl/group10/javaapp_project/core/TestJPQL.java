@@ -11,11 +11,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *  This is a Junit test using the embedded Derby database
- *  not possible to inspect tables, created and destroyed.
- * @author hajo
- */
 public class TestJPQL {
 
     private static EntityManagerFactory emf;

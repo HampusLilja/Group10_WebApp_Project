@@ -6,82 +6,81 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-        <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
-            <!-- Define body -->
-            <ui:define name="body">
-                <body></body></ui:define>
-            <!-- Inserting default banner -->
-            <ui:define name="header">
-               
-            </ui:define>
-                
-            <!-- Defining main content -->
-            <ui:define name="maincontent"></ui:define>
-                <ui:define name="info_main">
-                    <div id="content">
-                            
-               
-               <c:if test="#{accountLogin.loggedIn}">
-                                                        <c:if test="#{accountLogin.admin}">             
-                    <h:body>
-                        <h:dataTable var="c" value="#{customers.all}" border="1" >
-                            <h:column>
-                                <f:facet name="header">ID</f:facet>
-                                #{c.ID}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">First Name</f:facet>
-                                #{c.firstName}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Last Name</f:facet>
-                                #{c.lastName}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Email</f:facet>
-                                #{c.email}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Password</f:facet>
-                                #{c.password}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Admin</f:facet>
-                                #{c.isAdmin}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Address</f:facet>
-                                #{c.address.toString()}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">Edit</f:facet>
-                                <h:form>
-                                    <h:commandLink actionListener="#{customerConversation.editCustomerActionListener(
-                                                                     c.ID, c.firstName, c.lastName, 
-                                                                     c.address.street, c.address.number, 
-                                                                     c.address.zip, c.address.town, c.email)}"
-                                    action="editCustomer" >Edit</h:commandLink>
-                                </h:form>
-                            </h:column>
-                            
-                            <h:column>
-                                <f:facet name="header">Delete</f:facet>
-                                <h:form>
-                                    <h:commandLink actionListener="#{customerConversation.deleteActionListener(
-                                                                     c.ID, c.firstName, c.lastName,
-                                                                     c.email)}"
-                                    action="deleteCustomer" >Delete</h:commandLink>
-                                </h:form>
-                            </h:column>
+    <ui:composition template="./template_shop.xhtml">
+        <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
 
-                        </h:dataTable>
-                    </h:body>
-                                                        </c:if></c:if>     
-                </div>
-                </ui:define>
-            <ui:define name="info_second"></ui:define>
-                <!-- Inserting default footer -->
-                <ui:define name="footer"></ui:define>
-                         </ui:composition>
+        <ui:define name="body">
+            <body></body></ui:define>
+
+        <ui:define name="header">
+
+        </ui:define>
+
+        <ui:define name="maincontent"></ui:define>
+        <ui:define name="info_main">
+            <div id="content">
+
+
+                <c:if test="#{accountLogin.loggedIn}">
+                    <c:if test="#{accountLogin.admin}">             
+                        <h:body>
+                            <h:dataTable var="c" value="#{customers.all}" border="1" >
+                                <h:column>
+                                    <f:facet name="header">ID</f:facet>
+                                    #{c.ID}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">First Name</f:facet>
+                                    #{c.firstName}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Last Name</f:facet>
+                                    #{c.lastName}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Email</f:facet>
+                                    #{c.email}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Password</f:facet>
+                                    #{c.password}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Admin</f:facet>
+                                    #{c.isAdmin}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Address</f:facet>
+                                    #{c.address.toString()}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Edit</f:facet>
+                                    <h:form>
+                                        <h:commandLink actionListener="#{customerConversation.editCustomerActionListener(
+                                                                         c.ID, c.firstName, c.lastName, 
+                                                                         c.address.street, c.address.number, 
+                                                                         c.address.zip, c.address.town, c.email)}"
+                                                       action="editCustomer" >Edit</h:commandLink>
+                                    </h:form>
+                                </h:column>
+
+                                <h:column>
+                                    <f:facet name="header">Delete</f:facet>
+                                    <h:form>
+                                        <h:commandLink actionListener="#{customerConversation.deleteActionListener(
+                                                                         c.ID, c.firstName, c.lastName,
+                                                                         c.email)}"
+                                                       action="deleteCustomer" >Delete</h:commandLink>
+                                    </h:form>
+                                </h:column>
+
+                            </h:dataTable>
+                        </h:body>
+                    </c:if></c:if>     
+            </div>
+        </ui:define>
+        <ui:define name="info_second"></ui:define>
+
+        <ui:define name="footer"></ui:define>
+    </ui:composition>
 </html>

@@ -9,9 +9,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * Using the database facade
- */
 public class TestAddingCustomer {
 
     @BeforeClass

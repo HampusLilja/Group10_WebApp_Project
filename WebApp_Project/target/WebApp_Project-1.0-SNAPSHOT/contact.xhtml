@@ -5,71 +5,63 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:c="http://java.sun.com/jsp/jstl/core">
-    
-      <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits: Contact</title></ui:define>
-            <!-- Define body -->
-            <ui:define name="body"></ui:define>
-            <!-- Inserting default banner -->
-            <ui:define name="header">
-               
-            </ui:define>	
-  
-                        <ui:define name="maincontent"></ui:define>
-                        <div id="main">
-                <ui:define name="info_main">
-                    
-		<!-- MAIN -->
-					<div id="content">
-			
-							
-						<!-- column (left)-->
-						<div class="one-half">
-							<!-- form -->
-							<h2>Contact Form</h2>
-							<form id="contactForm" action="mailto:herzog90@gmail.com?subject=contact" method="post" enctype="text/plain">
-                                                                        <label>First name:</label><br/>
-                                                                        <input name="First name" id="firstname" required="true"/><br/>
-                                                                        <label>Last name:</label><br/>
-                                                                        <input name="Last name" id="lastname" required="true"/><br/>
-                                                                        <label>Email:</label><br/>
-                                                                        <input name="Email" id="email" placeholder="some@email.com" required="true"/><br/>
-                                                                        <label>Website(optional):</label><br/>
-                                                                        <input name="Website:" id="website" placeholder="www.yourwebsite.com" /><br/>
-                                                                        <label>Comments:</label><br/>
-									<textarea  name="Comments"  id="comments" rows="5" cols="20" required="true"></textarea>
-                                                                           <br/>
-                                                                        <button type="submit" class="button">Send</button>
-                                                        </form><br/>
-							<!-- ENDS form -->
-                                                </div>
-						<!-- ENDS column -->
-						
-						<!-- column (right)-->
-						<div class="one-column">
-							<!-- content -->
-							<iframe width="453" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;aq=1&amp;oq=Chalmers+uni&amp;sll=37.0625,-95.677068&amp;sspn=39.916234,79.013672&amp;ie=UTF8&amp;hq=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;t=m&amp;ll=57.687689,11.978064&amp;spn=0.013113,0.014235&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;aq=1&amp;oq=Chalmers+uni&amp;sll=37.0625,-95.677068&amp;sspn=39.916234,79.013672&amp;ie=UTF8&amp;hq=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;t=m&amp;ll=57.687689,11.978064&amp;spn=0.013113,0.014235" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-							<p>Pellentesque habitant morbi tristique senectus et netus.</p>					
-							<p>Chalmers Gata 32 Goteborg<br/>
-							Sverige 445 11<br/>
-                                                        (+46) 070-321 24 49<br/>
-                                                        email@server.com</p>
-							<!-- ENDS content -->
-						</div>
-						<!-- ENDS column -->							
-		
-					</div>
-					<!-- ENDS content -->
 
-		</ui:define>
-		</div>
+    <ui:composition template="./template_shop.xhtml">
+        <ui:define name="title"><title>&#169; Liquid Spirits: Contact</title></ui:define>
 
-		<!-- ENDS MAIN -->
-  
-                <ui:define name="info_second"></ui:define>
-                <!-- Inserting default footer -->
-                <ui:define name="footer"></ui:define>
-                    
-      </ui:composition>
+        <ui:define name="body"></ui:define>
+
+        <ui:define name="header">
+
+        </ui:define>	
+
+        <ui:define name="maincontent"></ui:define>
+        <div id="main">
+            <ui:define name="info_main">
+
+                <div id="content">
+
+                    <div class="one-half">
+
+                        <h2>Contact Form</h2>
+                        <form id="contactForm" action="mailto:herzog90@gmail.com?subject=contact" method="post" enctype="text/plain">
+                            <label>First name:</label><br/>
+                            <input name="First name" id="firstname" required="true"/><br/>
+                            <label>Last name:</label><br/>
+                            <input name="Last name" id="lastname" required="true"/><br/>
+                            <label>Email:</label><br/>
+                            <input name="Email" id="email" placeholder="some@email.com" required="true"/><br/>
+                            <label>Website(optional):</label><br/>
+                            <input name="Website:" id="website" placeholder="www.yourwebsite.com" /><br/>
+                            <label>Comments:</label><br/>
+                            <textarea  name="Comments"  id="comments" rows="5" cols="20" required="true"></textarea>
+                            <br/>
+                            <button type="submit" class="button">Send</button>
+                        </form><br/>
+
+                    </div>
+
+                    <div class="one-column">
+
+                        <iframe width="453" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;aq=1&amp;oq=Chalmers+uni&amp;sll=37.0625,-95.677068&amp;sspn=39.916234,79.013672&amp;ie=UTF8&amp;hq=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;t=m&amp;ll=57.687689,11.978064&amp;spn=0.013113,0.014235&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;aq=1&amp;oq=Chalmers+uni&amp;sll=37.0625,-95.677068&amp;sspn=39.916234,79.013672&amp;ie=UTF8&amp;hq=Chalmers+University+of+Technology,+G%C3%B6teborg,+Sweden&amp;t=m&amp;ll=57.687689,11.978064&amp;spn=0.013113,0.014235" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                        <p>Pellentesque habitant morbi tristique senectus et netus.</p>					
+                        <p>Chalmers Gata 32 Goteborg<br/>
+                            Sverige 445 11<br/>
+                            (+46) 070-321 24 49<br/>
+                            email@server.com</p>
+
+                    </div>
+
+
+                </div>
+
+            </ui:define>
+        </div>
+
+        <ui:define name="info_second"></ui:define>
+
+        <ui:define name="footer"></ui:define>
+
+    </ui:composition>
 
 </html>

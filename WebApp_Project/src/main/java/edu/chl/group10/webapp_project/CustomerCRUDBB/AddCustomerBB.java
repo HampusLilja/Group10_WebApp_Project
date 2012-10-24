@@ -13,7 +13,6 @@ import javax.inject.Named;
  *
  * @author Group10
  */
-
 @Named("addCustomer")
 @RequestScoped
 public class AddCustomerBB {

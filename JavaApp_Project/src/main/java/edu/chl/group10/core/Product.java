@@ -7,14 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * 
- * 
- * 
- *
- * 
- * @author Herzog
- */
 @Entity
 public class Product implements Serializable{
    @Id

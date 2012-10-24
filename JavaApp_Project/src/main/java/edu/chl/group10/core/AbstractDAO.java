@@ -7,18 +7,8 @@ import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-/**
- * A container for entities
- * Base class for OrderBook, ProductCatalogue, CustomerRegistry
- * 
- * K is type of id (primary key)
- * 
- */
     
 public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
-
-    //private List<T> elems = new ArrayList<>();
     
     private final EntityManagerFactory emf;
     private final Class<T> clazz;
@@ -74,11 +64,7 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
 
     @Override
     public void update(T t) {
-        /*T old = find(t.getId());
-        if (t != null) {
-            elems.remove(old);
-            elems.add(t);
-        }*/
+
     }
 
     @Override
@@ -106,26 +92,23 @@ public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
             em = getEntityManager();
             elems.add(em.find(clazz, 66L));
         } catch (Exception ex) {
-            //DbExceptionHandler.handle(ex);
+            ex.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();
             }
         }
         return elems;
-        //return elems.subList(elems.indexOf(getEntityManager()), 
-          //      elems.lastIndexOf(getEntityManager()));
+
     }
 
     @Override
     public List<T> getRange( int firstResult, int maxResults) {
         return null;
-        //return elems.subList(firstResult, firstResult + maxResults );
     }
 
     @Override
     public int getCount() {
         return 0;
-        //return elems.size();
     }
 }

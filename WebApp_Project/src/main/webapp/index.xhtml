@@ -4,61 +4,55 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
 
-        <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
-            <!-- Define body -->
-            <ui:define name="body">
-                <body onload="checkCookie()"></body></ui:define>
-            <!-- Inserting default banner -->
-            <ui:define name="header">
-               
-            </ui:define>
-                
-            <!-- Defining main content -->
-            <ui:define name="maincontent"></ui:define>
-                <ui:define name="info_main">
-                    <div id="content">
-                        <br></br><br></br>
-                         <a href="#main"><h1 class="h1">Welcome!</h1></a><br/><br/>
-                    </div>
-                </ui:define>
-            <ui:define name="info_second">
-                <!-- 3 cols -->
-                               
-                                                <div class="one-third">
-							<h4 class="line-divider">Special Offer </h4>
-                                                        <a href="shop.xhtml">
-                                                        <img src="client/img/weekly_offer.png"/>
-                                                        </a>
-                                                        
-                                                </div>
-						<div class="one-third">
-							<h4 class="line-divider">Featured drink</h4>
-                                                        <a href="shop.xhtml">
-							<img src="client/img/weekly_drink.png" alt="Click to buy ingredients now!" />
-                                                        </a>
-						</div>
-                               
-                                                <div class="one-third">
-                                                    <h4 class="line-divider">Latest news</h4>
-                                                <ul>
-						<li><p>Welcome to the new and improved Liquid Spirits!</p> </li>
-						<li><p>Here you can find all kinds of high quality liquor. Just go ahead and signup and start shopping.</p> </li>
-						<li><p>Each week we post new and exciting drinks, so make sure you check out our featured weekly drinks and offers.</p> </li>
-						<li><p>Liquid Spirits was started as a project in 2012 by students, and has ever since offered high quality drinks to affordable prices. The new and improved webpage features all kinds of online programming languages.</p> </li>
-						
-						
-						</ul>					
-                                                </div>
-						
-                        	
-            <!-- ENDS 3 cols -->
-            </ui:define>
-            
-            
-                <!-- Inserting default footer -->
-                <ui:define name="footer"></ui:define>
-        </ui:composition>
+    <ui:composition template="./template_shop.xhtml">
+        <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+
+        <ui:define name="body">
+            <body onload="checkCookie()"></body></ui:define>
+
+        <ui:define name="header">
+
+        </ui:define>
+
+        <ui:define name="maincontent"></ui:define>
+        <ui:define name="info_main">
+            <div id="content">
+                <br></br><br></br>
+                <a href="#main"><h1 class="h1">Welcome!</h1></a><br/><br/>
+            </div>
+        </ui:define>
+        <ui:define name="info_second">
+
+            <div class="one-third">
+                <h4 class="line-divider">Special Offer </h4>
+                <a href="shop.xhtml">
+                    <img src="client/img/weekly_offer.png"/>
+                </a>
+
+            </div>
+            <div class="one-third">
+                <h4 class="line-divider">Featured drink</h4>
+                <a href="shop.xhtml">
+                    <img src="client/img/weekly_drink.png" alt="Click to buy ingredients now!" />
+                </a>
+            </div>
+
+            <div class="one-third">
+                <h4 class="line-divider">Latest news</h4>
+                <ul>
+                    <li><p>Welcome to the new and improved Liquid Spirits!</p> </li>
+                    <li><p>Here you can find all kinds of high quality liquor. Just go ahead and signup and start shopping.</p> </li>
+                    <li><p>Each week we post new and exciting drinks, so make sure you check out our featured weekly drinks and offers.</p> </li>
+                    <li><p>Liquid Spirits was started as a project in 2012 by students, and has ever since offered high quality drinks to affordable prices. The new and improved webpage features all kinds of online programming languages.</p> </li>
+
+
+                </ul>					
+            </div>
+
+        </ui:define>
+
+        <ui:define name="footer"></ui:define>
+    </ui:composition>
 
 
 </html>

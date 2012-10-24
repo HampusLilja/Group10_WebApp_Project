@@ -3,16 +3,8 @@ package edu.chl.group10.core;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Herzog & Lilja
- */
 public final class ProductList extends AbstractDAO<Product, Long> implements IProductList{
     private ProductQueryProcessor pQProc = new ProductQueryProcessor();
-    
-    /*public static IProductList newInstance() {
-        return new ProductList();
-    }*/
     
     public ProductList(String puName) {
         super(Product.class, puName);

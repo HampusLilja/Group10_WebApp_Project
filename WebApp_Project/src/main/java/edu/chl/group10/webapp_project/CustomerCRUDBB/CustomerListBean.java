@@ -8,10 +8,6 @@ import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-/**
- *
- * @author Hampus
- */
 @Named("customerListBean")
 @SessionScoped
 public class CustomerListBean implements Serializable {

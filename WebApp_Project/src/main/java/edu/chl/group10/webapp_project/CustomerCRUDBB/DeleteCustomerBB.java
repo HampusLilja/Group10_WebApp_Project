@@ -4,9 +4,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * @author Hampus
- */
 @Named("deleteCustomer")
 @RequestScoped
 public class DeleteCustomerBB {

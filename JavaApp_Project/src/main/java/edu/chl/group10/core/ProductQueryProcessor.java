@@ -8,10 +8,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-/**
- *
- * @author Hampus
- */
 public class ProductQueryProcessor {
     
     

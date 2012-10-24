@@ -10,10 +10,7 @@ import java.util.List;
 public final class CustomerList extends AbstractDAO<Customer, Long> implements ICustomerList{
     private List<Customer> customerList;
     private QueryProcessor qProc = new QueryProcessor();
-    
-    /*public static ICustomerList newInstance() {
-        return new CustomerList();
-    }*/
+
     
     public CustomerList(String puName) {
         super(Customer.class, puName);

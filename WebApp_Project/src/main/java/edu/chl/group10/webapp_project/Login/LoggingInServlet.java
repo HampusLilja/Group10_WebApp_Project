@@ -14,10 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Hampus
- */
 @WebServlet(name = "LoggingInServlet", urlPatterns = {"/loggedin"})
 public class LoggingInServlet extends HttpServlet {
 

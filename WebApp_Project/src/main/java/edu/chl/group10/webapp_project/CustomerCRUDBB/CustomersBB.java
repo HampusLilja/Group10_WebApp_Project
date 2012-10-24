@@ -7,10 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author Hampus
- */
 @Named("customers")
 @RequestScoped
 public class CustomersBB {
@@ -19,8 +15,6 @@ public class CustomersBB {
     private CustomerListBean customerList;
     
     public List<Customer> getAll() {
-        //ICustomerList cl = Group10.INSTANCE.getCustomerList();
-        //return cl.getAll();
         return customerList.getAll();
     }
     

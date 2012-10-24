@@ -4,64 +4,61 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
 
-        <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits: Edit customer</title></ui:define>
-            <!-- Define body -->
-            <ui:define name="body">
-                <body></body></ui:define>
-            <!-- Inserting default banner -->
-            <ui:define name="header">
-               
-            </ui:define>
-                
-            <!-- Defining main content -->
-            <ui:define name="maincontent"></ui:define>
-                <ui:define name="info_main">
-                    <div id="content">
-                                    
-                                <div class="one-half">
-					<!-- form -->
-							<h2>Edit customer</h2>
-                                                        <h:body>
-                                                            <h:form id="editCustomerDetailsForm">
+    <ui:composition template="./template_shop.xhtml">
+        <ui:define name="title"><title>&#169; Liquid Spirits: Edit customer</title></ui:define>
+        <!-- Define body -->
+        <ui:define name="body">
+            <body></body></ui:define>
 
-                                                                <h:outputLabel value="ID: " /><br/>
-                                                                <h:inputText value="#{customerConversation.ID}" required="true" readonly="true"/><br/>
-                                                                <h:outputLabel value="First Name: " /><br/>
-                                                                <h:inputText value="#{customerConversation.firstName}" required="true"/><br/>
-                                                                <h:outputLabel value="Last Name: " /><br/>
-                                                                <h:inputText value="#{customerConversation.lastName}" required="true"/><br/><br/>
+        <ui:define name="header">
 
-                                                                <h:outputLabel value="Street: " /><br/>
-                                                                <h:inputText value="#{customerConversation.street}" required="true"/><br/>
-                                                                <h:outputLabel value="Number: " /><br/>
-                                                                <h:inputText value="#{customerConversation.number}" required="true"/><br/>
-                                                                <h:outputLabel value="Zip: " /><br/>
-                                                                <h:inputText value="#{customerConversation.zip}" required="true"/><br/>
-                                                                <h:outputLabel value="Town: " /><br/>
-                                                                <h:inputText value="#{customerConversation.town}" required="true"/><br/>
-                                                                <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{customerConversation.email}" required="true"/><br/>
+        </ui:define>
 
-                                                                <h:commandButton class="button" id="editCustomerButton" value="Update" 
-                                                                                      actionListener="#{editCustomer.editCustomerDetails(
-                                                                                                        customerConversation.ID, customerConversation.firstName,
-                                                                                                        customerConversation.lastName, customerConversation.street, 
-                                                                                                        customerConversation.number, customerConversation.zip, 
-                                                                                                        customerConversation.town, customerConversation.email)}"
-                                                                                      action="#{customerConversation.action()}" />
+        <ui:define name="maincontent"></ui:define>
+        <ui:define name="info_main">
+            <div id="content">
 
-                                                            </h:form>
-                                                        </h:body>
+                <div class="one-half">
+                    <h2>Edit customer</h2>
+                    <h:body>
+                        <h:form id="editCustomerDetailsForm">
 
-							<!-- ENDS form -->
-				</div>
+                            <h:outputLabel value="ID: " /><br/>
+                            <h:inputText value="#{customerConversation.ID}" required="true" readonly="true"/><br/>
+                            <h:outputLabel value="First Name: " /><br/>
+                            <h:inputText value="#{customerConversation.firstName}" required="true"/><br/>
+                            <h:outputLabel value="Last Name: " /><br/>
+                            <h:inputText value="#{customerConversation.lastName}" required="true"/><br/><br/>
 
-			</div>
-		<!-- ENDS MAIN -->
-                </ui:define>
-            <ui:define name="info_second"></ui:define>
-                <!-- Inserting default footer -->
-                <ui:define name="footer"></ui:define>
-                         </ui:composition>
+                            <h:outputLabel value="Street: " /><br/>
+                            <h:inputText value="#{customerConversation.street}" required="true"/><br/>
+                            <h:outputLabel value="Number: " /><br/>
+                            <h:inputText value="#{customerConversation.number}" required="true"/><br/>
+                            <h:outputLabel value="Zip: " /><br/>
+                            <h:inputText value="#{customerConversation.zip}" required="true"/><br/>
+                            <h:outputLabel value="Town: " /><br/>
+                            <h:inputText value="#{customerConversation.town}" required="true"/><br/>
+                            <h:outputLabel value="Email: " /><br/>
+                            <h:inputText value="#{customerConversation.email}" required="true"/><br/>
+
+                            <h:commandButton class="button" id="editCustomerButton" value="Update" 
+                                             actionListener="#{editCustomer.editCustomerDetails(
+                                                               customerConversation.ID, customerConversation.firstName,
+                                                               customerConversation.lastName, customerConversation.street, 
+                                                               customerConversation.number, customerConversation.zip, 
+                                                               customerConversation.town, customerConversation.email)}"
+                                             action="#{customerConversation.action()}" />
+
+                        </h:form>
+                    </h:body>
+
+                </div>
+
+            </div>
+
+        </ui:define>
+        <ui:define name="info_second"></ui:define>
+
+        <ui:define name="footer"></ui:define>
+    </ui:composition>
 </html>

@@ -10,11 +10,6 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * Very useful to pass data back and forth between pages
- * WILL SURVIVE REDIRECTS, perfect for PRG-pattern
- * @author hampus
- */
 @Named("productConversation")
 @ConversationScoped
 public class ProductConversionBean implements Serializable {
