@@ -9,7 +9,7 @@ import javax.xml.bind.JAXBContext;
 public class ContextResolver implements javax.ws.rs.ext.ContextResolver<JAXBContext>{
 
     private JAXBContext context;
-    private Class[] types = {MemberProxy.class};
+    private Class[] types = {WishProxy.class};
 
     public ContextResolver() throws Exception {
         this.context = new JSONJAXBContext(JSONConfiguration.natural().build(),

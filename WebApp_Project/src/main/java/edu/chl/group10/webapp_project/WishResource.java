@@ -1,8 +1,8 @@
 package edu.chl.group10.webapp_project;
 
 import edu.chl.group10.core.Group10;
-import edu.chl.group10.core.IGroupMembers;
-import edu.chl.group10.core.Member;
+import edu.chl.group10.core.IWishList;
+import edu.chl.group10.core.Wish;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -20,26 +20,22 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
-@Path("/members")
-public class GroupMembersResource {
+@Path("/wish")
+public class WishResource {
     
-    IGroupMembers gmem;
+    IWishList wList;
     private final static Logger log = Logger.getAnonymousLogger();
     
-    public GroupMembersResource() {
-         gmem = Group10.INSTANCE.getGroupMembers();
-         if( gmem.getCount() == 0 ){
-             gmem.update(new Member(10l, "Tom"));
-             gmem.update(new Member(11l, "Ham"));
-         }
+    public WishResource() {
+         wList = Group10.INSTANCE.getWishList();
     }
     
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<MemberProxy> getAll(){
-        List<MemberProxy> found = new ArrayList<MemberProxy>();
-        for (Member m : gmem.getAll()) {
-            found.add(new MemberProxy(m));
+    public List<WishProxy> getAll(){
+        List<WishProxy> found = new ArrayList<>();
+        for (Wish w : wList.getAll()) {
+            found.add(new WishProxy(w));
         }
         log.log(Level.INFO, "getAll");
         return found;
@@ -48,12 +44,12 @@ public class GroupMembersResource {
     @GET
     @Path("{maxResults}{firstResult}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<MemberProxy> getRange(@QueryParam("maxResults") int maxResults,
+    public List<WishProxy> getRange(@QueryParam("maxResults") int maxResults,
     @QueryParam("firstResult") int firstResult){
-        List<MemberProxy> found = new ArrayList<MemberProxy>(); 
+        List<WishProxy> found = new ArrayList<>(); 
         for ( int i = firstResult; i <= maxResults; i++) {
-            Member m = gmem.getAll().get(i);
-            found.add(new MemberProxy(m));
+            Wish w = wList.getAll().get(i);
+            found.add(new WishProxy(w));
         }
         log.log(Level.INFO, "getRange");
         return found;
@@ -64,59 +60,61 @@ public class GroupMembersResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public String getCount(){
         log.log(Level.INFO, "getCount");
-        int t = gmem.getCount();
+        int t = wList.getCount();
         String s = "" + t;
         return s;
     }
     
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    @Path("{pnumb}")
-    public MemberProxy find(@PathParam("pnumb") long pnumb) {
-        for (Member m : gmem.getAll()) {
-            if (m.getID().equals(pnumb)) {
-                log.log(Level.INFO, "selectByPNumb {0}", pnumb);
-                return new MemberProxy(m);
+    @Path("{anumb}")
+    public WishProxy find(@PathParam("anumb") Long anumb) {
+        for (Wish w : wList.getAll()) {
+            if (w.getID().equals(anumb)) {
+                log.log(Level.INFO, "selectByANumb {0}", anumb);
+                return new WishProxy(w);
             }
         }
-        log.log(Level.INFO, "couldNotFindPNumb {0}", pnumb);
+        log.log(Level.INFO, "couldNotFindPNumb {0}", anumb);
         return null;
     }
     
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
     // Can't return boolean (no message body writer)
-    public void add(@FormParam("pnumb") Long pnumb,
-            @FormParam("name") String name) {
-        log.log(Level.INFO, "add {0}{1}{2}", new Object[]{pnumb, name});
-        Member m = new Member(pnumb, name);
+    public void add(@FormParam("anumb") Long anumb,
+            @FormParam("name") String name,
+            @FormParam("size") Double size) {
+        log.log(Level.INFO, "add {0}{1}{2}", new Object[]{anumb, name, size});
+        Wish w = new Wish(anumb, name, size);
         try {
-            gmem.update(m);
+            wList.update(w);
         } catch (IllegalArgumentException e) {
             throw new WebApplicationException(e);
         }
-    }
+    }    
   
     @DELETE
-    @Path("{pnumb}")
+    @Path("{anumb}")
     //@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void remove(@PathParam("pnumb") Long pnumb) {
-        log.log(Level.INFO, "Delete {0}", pnumb);
+    public void remove(@PathParam("anumb") Long anumb) {
+        log.log(Level.INFO, "Delete {0}", anumb);
         try {
-            gmem.remove(pnumb);
+            wList.remove(anumb);
         } catch (IllegalArgumentException e) {
             throw new WebApplicationException(e);
         }
     }
     
     @PUT
-    @Path("{pnumb}")
+    @Path("{anumb}")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void update(@PathParam("pnumb") Long pnumb, @FormParam("name") String name) {
-        log.log(Level.INFO, "Put {0}", pnumb);
+    public void update(@PathParam("anumb") Long anumb, @FormParam("name") String name, 
+    @FormParam("size") Double size) {
+        log.log(Level.INFO, "Put {0}", anumb);
         try {
-            gmem.update(new Member(pnumb, name));
+            wList.update(new Wish(anumb, name, size));
         } catch (IllegalArgumentException e) {
             throw new WebApplicationException(e);
         }

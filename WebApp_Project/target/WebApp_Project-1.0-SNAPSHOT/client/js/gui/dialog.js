@@ -1,7 +1,7 @@
-var Dialog = function(member, pnumb){
-    this.member = member;
-    if( pnumb ){
-        this.pnumb = pnumb;
+var Dialog = function(wish, anumb){
+    this.wish = wish;
+    if( anumb ){
+        this.anumb = anumb;
     }
 }
 
@@ -17,6 +17,12 @@ Dialog.prototype = (function(){
         setParent: function( selector ){
             this.parent = selector;  
         },
+        
+        sendMail: function(){
+          html += "<form id='contactForm' action='mailto:herzog90@gmail.com?subject=contact' method='post' enctype='text/plain'>"  
+            + "<input name='First name' id='firstname' required='true'/><br/>"
+            + "</form>";  
+        },
            
         render: function(){
             if( ! this.parent ){
@@ -31,12 +37,13 @@ Dialog.prototype = (function(){
             
             $(this.parent).find("#save")  
             .on('click', function(){
-                var member = {};
-                member.pnumb =  $(self.parent).find("#pnumb").val();
-                member.name = $(self.parent).find("#name").val();
+                var wish = {};
+                wish.anumb =  $(self.parent).find("#anumb").val();
+                wish.name = $(self.parent).find("#name").val();
+                wish.size = $(self.parent).find("#size").val();
                 
                 if( self.handler ){
-                    self.handler( "save", member ) // if defined!
+                    self.handler( "save", wish ) // if defined!
                 }
                 $(self.parent).html("");  
             }); 
@@ -44,31 +51,35 @@ Dialog.prototype = (function(){
                 $(self.parent).html("");
             });
             $(this.parent).find( "#del").click(function(){
-                var member = {};
-                member.pnumb =  $(self.parent).find("#pnumb").val();
-                member.name = $(self.parent).find("#name").val();
-                self.handler( "del", member );
+                var wish = {};
+                wish.anumb =  $(self.parent).find("#anumb").val();
+                wish.name = $(self.parent).find("#name").val();
+                wish.size = $(self.parent).find("#size").val();
+                self.handler( "del", wish );
                 $(self.parent).html("");
             });
         },
         
         toHtml : function(){
-            var member = this.member || {
-                pnumb:"", 
-                name:""
+            var wish = this.wish || {
+                anumb:"", 
+                name:"",
+                size:""
             };
         
             var html;
             if( this.id ){
-                html = "<div pnumb='"+ this.pnumb +"' class='"+ CLASS + "'>"; 
+                html = "<div anumb='"+ this.anumb +"' class='"+ CLASS + "'>"; 
             }else{
                 html = "<div class='"+ CLASS + "'>"; 
             }
             html += "<table>"  
-            + "<tr><td><label for='pnumb'>PersonNumber</label></td><td>"
-            + "<input id='pnumb' type='text' size='6' value='"+ member.pnumb + "'/></td></tr>" 
+            + "<tr><td><label for='anumb'>ArticleNumber</label></td><td>"
+            + "<input id='anumb' type='text' size='6' value='"+ wish.anumb + "'/></td></tr>" 
             + "<tr><td><label for='name'>Name</label></td><td>" 
-            + "<input id='name' type='text' size='14' value='"+ member.name + "'/></td></tr>" 
+            + "<input id='name' type='text' size='14' value='"+ wish.name + "'/></td></tr>"
+            + "<tr><td><label for='name'>Size</label></td><td>" 
+            + "<input id='size' type='text' size='14' value='"+ wish.size + "'/></td></tr>"
             + "</table>"
             + "<input id='save' type='button' value='Save'/>" 
             + "<input id='cancel' type='button' value='Cancel'/>"

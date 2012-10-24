@@ -6,10 +6,14 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @Generated(value="EclipseLink-2.3.0.v20110604-r9504", date="2012-10-24T14:58:51")
 =======
 @Generated(value="EclipseLink-2.3.0.v20110604-r9504", date="2012-10-24T16:22:13")
 >>>>>>> imageupload
+=======
+@Generated(value="EclipseLink-2.3.0.v20110604-r9504", date="2012-10-24T15:08:37")
+>>>>>>> restfullWish
 @StaticMetamodel(Customer.class)
 public class Customer_ { 
 
