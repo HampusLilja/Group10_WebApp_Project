@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    
+    
 	//navigation functionality
 	$('#nav li.link').each(function(){
 		var that = $(this)

@@ -1,19 +1,18 @@
 $(document).ready(function() {
 
+//Plugin to make the cart follow page
+$('#cart').jfollow('#cart', 20);
 
         
-	//shopping cart functionality
-	//hide the empty cart button
+	//Shopping cart functionality
+	//Hide the empty cart button
 	emptyBtn.hide();
-	
-	//make the product class div part of the draggable ui
+        buyBtn.hide();
 	
 	$('.product').draggable({
 		appendTo: 'body',
 		helper: 'clone'		
 	});
-
-	//make the dropzone class div a part of the droppable ui
 	$('.dropzone').droppable({
 		tolerance: 'touch',
 		activeClass: 'ui-state-default',
@@ -24,12 +23,13 @@ $(document).ready(function() {
 			var item = $(ui.draggable).find('.product-title').text();
 			var itemid = $(ui.draggable).find('.id').text();
 			var price = $(ui.draggable).find('.price').text();
+                        
 			var html = '<div class="cart-item" data-productid="'+itemid+'" >';
 				html = html + '<div class="div-remove">';
 				html = html + '<a onclick = "remove(this)" class="remove '+itemid+'">&times;</a>'+'</div>';
-				html = html + '<p class="item-name">'+item+'</p>';
-				html = html + '<p class="item-price">'+price+'</p>';
-				html = html + '<p class="input">'+'<input type="text" maxlength="2" name="quantity" value="'+quantity+'" />';
+				html = html + '<p class="item-name">'+item+', </p>';
+                                html = html + '<p class="item-price">'+price+'</p>';
+                                html = html + '<p class="input">#'+'<input type="text" maxlength="2" name="quantity" value="'+quantity+'" />';
 				html = html + '</p>'+'</div>'
 			
 			var cartitem = $('".cart-item[data-productid="'+itemid+'"]"');
@@ -47,14 +47,24 @@ $(document).ready(function() {
 			total_items++;			
 			if(total_items > 0){
 				emptyBtn.fadeIn('1000');
+                                buyBtn.fadeIn('1000');
 			}			
 			emptyBtn.click(function(){
+                           
 				$('#dialog-confirm').dialog({
+                                    
 					resizable: false,
 					modal: true,
-					buttons: [	
+					buttons: [	{
+                                                
+                                                                text: "Cancel",
+                                                                className: 'emptybutton',
+                                                                click: function(){
+                                                                $(this).dialog('close');}
+                                                                },
 								{	
-								text: "Clear Cart",
+								text: "Clear!",
+                                                                className: 'emptybutton',
 								click: function(){
 									var content = $('.cart-item');
 									content.remove();
@@ -65,8 +75,11 @@ $(document).ready(function() {
 								}
 							]					
 				})
+                                $("#dialog-confirm").siblings(".ui-dialog-titlebar").remove();
 				return false;
 			});
+                        buyBtn.click(function(){ window.location = 'index.xhtml'});
+                        
 		} //end drop function
 	});
 
@@ -84,6 +97,7 @@ $(document).ready(function() {
         if( total_items === 0){
 			emptyText.delay('1000').fadeIn('500');
 			emptyBtn.fadeOut('500');
+                        buyBtn.fadeOut('500');
 			}
   	}
     
@@ -91,7 +105,8 @@ $(document).ready(function() {
 var total_items = 0;	
 
 var emptyText = $('.cart-content').find('.placeholder');
-var emptyBtn = $('.empty').button();
+var emptyBtn = $('.emptybutton').button();
+var buyBtn = $('.buybutton').button();
 var quantity = 1;
 	
 

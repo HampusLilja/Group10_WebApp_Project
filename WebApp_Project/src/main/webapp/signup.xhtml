@@ -31,8 +31,8 @@
                                                                        <input id="email2" placeholder="some@email.com" required="true" name="username"/><br/>
                                                                        <label>Password:</label><br/>
                                                                        <input id="password" type="password" required="true" name="password"/><br/>
-                                                                       <p><input type="submit" value="Login" name="submit" id="submit" /></p> 
-
+                                                                       <button type="submit" class="button">Login</button>
+                                                                       
                                                         </form>
 							<!-- ENDS form -->
                                     </div>
@@ -71,7 +71,7 @@
                                                                 <h:outputLabel value="Email: " /><br/>
                                                                 <h:inputText value="#{addCustomer.email}" required="true"/><br/>
                                                                 <h:commandButton 
-                                                                    id="submitButton" type="submit"
+                                                                    class="button" id="submitButton" type="submit"
                                                                     value="Submit"
                                                                     actionListener="#{addCustomer.addCustomer(addCustomer.getFirstName(), addCustomer.getLastName(), 
                                                                                       addCustomer.getStreet(), addCustomer.getNumber(), addCustomer.getZip(), 
