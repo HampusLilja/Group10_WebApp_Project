@@ -12,12 +12,12 @@ import javax.persistence.TypedQuery;
  *
  * @author Hampus
  */
-public class QueryProcessor {
+public class ProductQueryProcessor {
     
     
     private final EntityManagerFactory emf;
 
-    protected QueryProcessor() {
+    protected ProductQueryProcessor() {
         emf = Persistence.createEntityManagerFactory("group10_pu");
     }
     
@@ -27,16 +27,16 @@ public class QueryProcessor {
         return em;
     }
     
-    public List<Customer> getAll(){
+    public List<Product> getAll(){
         EntityManager em = null;
-        List<Customer> cl = null;
+        List<Product> pl = null;
         try {
             em = getEntityManager();
-            String query = "select c from Customer c";
-            TypedQuery<Customer> q = em.createQuery(query, Customer.class);
+            String query = "select p from Product p";
+            TypedQuery<Product> q = em.createQuery(query, Product.class);
             
             q.setMaxResults(200);
-            cl = q.getResultList();
+            pl = q.getResultList();
         } catch (Exception ex) {
             System.out.print(ex);
         } finally {
@@ -44,15 +44,15 @@ public class QueryProcessor {
                 em.close();
             }
         }
-        return cl;
+        return pl;
     }
     
     public void remove(long id){
         EntityManager em = null;
         try {
             em = getEntityManager();
-            String query = "delete from Customer c where c.id = :id";
-            TypedQuery<Customer> q = em.createQuery(query, Customer.class);
+            String query = "delete from Product p where p.id = :id";
+            TypedQuery<Product> q = em.createQuery(query, Product.class);
             q.setParameter("id", id);
             em.getTransaction().begin();
             int i = q.executeUpdate();
