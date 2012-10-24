@@ -8,8 +8,7 @@ import java.util.List;
  * @author Herzog & Lilja
  */
 public final class ProductList extends AbstractDAO<Product, Long> implements IProductList{
-    private List<Product> productList = new ArrayList<>();
-    private QueryProcessor qProc = new QueryProcessor();
+    private ProductQueryProcessor pQProc = new ProductQueryProcessor();
     
     /*public static IProductList newInstance() {
         return new ProductList();
@@ -21,25 +20,34 @@ public final class ProductList extends AbstractDAO<Product, Long> implements IPr
     
     @Override
     public List<Product> getAll() {
-        productList = qProc.getAllProducts();
+        List<Product> productList = pQProc.getAll();
         return productList;
-
     }
     
     @Override
     public void remove(Long id) {
-            qProc.remove(id);
+            pQProc.remove(id);
     }
     
 
     @Override
     public List<Product> getByName(String name) {
+        List<Product> found = new ArrayList<>();
         for (Product p : getAll()) {
             if (p.getName().equals(name)) {
-                productList.add(p);
+                found.add(p);
             }
         }
-        return productList;
+        return found;
     }
-    
+    @Override
+    public List<Product> getAllByType(String type) {
+        List<Product> found = new ArrayList<>();
+        for (Product p : getAll()) {
+            if (p.getType().equals(type)) {
+                found.add(p);
+            }
+        }
+        return found;
+    }
 }

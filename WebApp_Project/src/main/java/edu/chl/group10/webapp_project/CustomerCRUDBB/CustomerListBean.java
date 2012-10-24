@@ -12,11 +12,12 @@ import javax.inject.Named;
  *
  * @author Hampus
  */
-@Named("CustomerListBean")
+@Named("customerListBean")
 @SessionScoped
 public class CustomerListBean implements Serializable {
     
     private ICustomerList clist;
+    
     public CustomerListBean (){
         clist  = Group10.INSTANCE.getCustomerList();
         

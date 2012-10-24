@@ -49,20 +49,22 @@
                                         <h2>Edit Product</h2>
                                             <h:body>
                                                 <h:form id="editProductForm">
+                                                <h:outputLabel value="Id: " /><br/>
+                                                <h:inputText value="#{productConversation.id}" readonly="true" /><br/>
                                                 <h:outputLabel value="Name: " /><br/>
-                                                <h:inputText value="#{product.name}" required="true" /><br/>
+                                                <h:inputText value="#{productConversation.name}" required="true" /><br/>
                                                 <h:outputLabel value="Amount: " /><br/>
-                                                <h:inputText value="#{product.amount}" required="true" /><br/>
+                                                <h:inputText value="#{productConversation.amount}" required="true" /><br/>
                                                 <h:outputLabel value="Price: " /><br/>
-                                                <h:inputText value="#{product.price}" required="true"/><br/>
+                                                <h:inputText value="#{productConversation.price}" required="true"/><br/>
                                                 <h:outputLabel value="Alcohol proof: " /><br/>
-                                                <h:selectOneMenu id="alcoholProof" value="#{product.alcoholProof}">
+                                                <h:selectOneMenu id="alcoholProof" value="#{productConversation.alcoholProof}">
                                                 <c:forEach  var="i" begin="0" end="100">    
                                                 <f:selectItem itemValue="#{i}"></f:selectItem>
                                                 </c:forEach>
                                                 </h:selectOneMenu><br/>
                                                 <h:outputText value="Select a Type: "/><br/>    
-                                		    <h:selectOneMenu value="#{product.type}">
+                                		    <h:selectOneMenu value="#{productConversation.type}">
                                                         <f:selectItem itemValue="Whiskey"/>
                                                         <f:selectItem itemValue="Rum"/>
                                                         <f:selectItem itemValue="Vodka"/>
@@ -70,11 +72,11 @@
                                                         <f:selectItem itemValue="Other"/>
                                                     </h:selectOneMenu><br/>
                                                 <h:commandButton id="updateProductButton" value="Update"
-                                                                    actionListener="#{product.editProduct(product.id, 
-                                                                                      product.name, product.amount, 
-                                                                                      product.price, product.alcoholProof,
-                                                                                      product.type)}"
-                                                                                      action="#{conversation.productAction()}" />
+                                                                 actionListener="#{editProduct.editProduct(productConversation.id, 
+                                                                                      productConversation.name, productConversation.amount, 
+                                                                                      productConversation.price, productConversation.alcoholProof,
+                                                                                      productConversation.type)}"
+                                                                                      action="#{productConversation.action()}" />
 
                                                  </h:form>
                                                </h:body>

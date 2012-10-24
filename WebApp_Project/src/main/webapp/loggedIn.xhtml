@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+      <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits: Signup</title></ui:define>
+            <!-- Define body -->
+            <ui:define name="body"></ui:define>
+            <!-- Inserting default banner -->
+            <ui:define name="header">
+               
+            </ui:define>	
+  
+                        <ui:define name="maincontent"></ui:define>
+                        <div id="main">
+                <ui:define name="info_main">
+                    
+		<!-- MAIN -->
+                                <!-- SignUp -->
+                                <div id="content">
+                                <!-- SignUp -->
+                                    <div class="one-half">
+                                    <!-- form -->
+                                    <h2>Logg in as: ${param.id}</h2>
+                                                        <h:form prependId="false" rendered="#{!accountLogin.loggedIn}">
+                                                            <h:inputHidden id ="hidden" value="#{accountLogin.ID}" />
+                                                            <h:commandButton type="submit" value="Yes" 
+                                                                             action="#{accountLogin.login()}" 
+                                                                             onclick="$('#hidden').val(${param.id})"/>
+                                                            <h:commandButton type="submit" value="No" action="signup?faces-redirect=true"/>
+                                                        </h:form>
+							<!-- ENDS form -->
+                                    </div>
+                                <div class="one-half">
+					<!-- form -->
+							
+
+							<!-- ENDS form -->
+				</div>
+				<!-- ENDS Signup -->
+
+			</div>
+		<!-- ENDS MAIN -->
+                </ui:define></div>
+		
+                <ui:define name="info_second"></ui:define>
+                <!-- Inserting default footer -->
+                <ui:define name="footer"></ui:define>
+                    
+      </ui:composition>
+</html>

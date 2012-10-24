@@ -44,7 +44,7 @@
                 <div id="main" align="justify">
                             
                     <h:body>
-                        <h:dataTable value="${product.all}" var="p" border="1" >
+                        <h:dataTable value="${products.all}" var="p" border="1" >
                             <h:column>
                                 <f:facet name="header">ID</f:facet>
                                 #{p.id}
@@ -72,15 +72,16 @@
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{conversation.productActionListener(product.name, product.amount, 
-                                                                     product.price, product.alcoholProof, product.type)}"
+                                    <h:commandLink actionListener="#{productConversation.actionListener(p.id, p.name, p.amount, 
+                                                                     p.price, p.alcoholProof, p.type)}"
                                                      action="editProduct" >Edit</h:commandLink>
                                 </h:form>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{product.deleteProduct(product.id)}"
+                                    <h:commandLink actionListener="#{productConversation.deleteActionListener(p.id, p.name, p.amount, 
+                                                                     p.price, p.alcoholProof, p.type)}"
                                                     action="deleteProduct" >Delete</h:commandLink>
                                 </h:form>
                             </h:column>

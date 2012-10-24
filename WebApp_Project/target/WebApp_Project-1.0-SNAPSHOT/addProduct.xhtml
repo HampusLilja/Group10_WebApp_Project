@@ -5,22 +5,24 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:f="http://java.sun.com/jsf/core">
-
-        <ui:composition template="./template_shop.xhtml">
-            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+    
+      <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits: Contact</title></ui:define>
             <!-- Define body -->
             <ui:define name="body"></ui:define>
         
             <!-- Inserting default banner -->
             <ui:define name="header">
+                    
             </ui:define>
                 
             <!-- Defining main content -->
             <ui:define name="maincontent"></ui:define>
                 <ui:define name="info_main">
-                    <div id="content">
-        	<!-- MAIN -->
-                <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
+                    <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
+		<!-- MAIN -->
+                <div id="content" align="justify">
+   
                 <form action="upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" style="display:none" id="upload-image"></input>
                 <input type="text" name="photoname" size="20"/>
@@ -32,24 +34,25 @@
         <button type="submit" class="button">Upload</button>
                 </form>
                 
+                <div id="main" align="justify">
                     <div class="one-half">
                             <h:body>
                             <h:form id="addProductForm">
                             <h2>Add product</h2>
                             <h:outputLabel value="Name: " /><br/>
-                            <h:inputText value="#{product.name}" required="true" /><br/>
+                            <h:inputText value="#{addProduct.name}" required="true" /><br/>
                             <h:outputLabel value="Amount: " /><br/>
-                            <h:inputText value="#{product.amount}" required="true" /><br/>
+                            <h:inputText value="#{addProduct.amount}" required="true" /><br/>
                             <h:outputLabel value="Price: " /><br/>
-                            <h:inputText value="#{product.price}" required="true"/><br/>
+                            <h:inputText value="#{addProduct.price}" required="true"/><br/>
                             <h:outputLabel value="Alcohol proof: " /><br/>
-                            <h:selectOneMenu id="alcoholProof" value="#{product.alcoholProof}">
+                            <h:selectOneMenu id="alcoholProof" value="#{addProduct.alcoholProof}">
                             <c:forEach  var="i" begin="0" end="100">    
                             <f:selectItem itemValue="#{i}"></f:selectItem>
                             </c:forEach>
                             </h:selectOneMenu><br/>
                             <h:outputText value="Select a Type: "/><br/>    
-			    <h:selectOneMenu value="#{product.type}">
+			    <h:selectOneMenu value="#{addProduct.type}">
                             <f:selectItem itemValue="Whiskey"/>
                             <f:selectItem itemValue="Rum"/>
                             <f:selectItem itemValue="Vodka"/>
@@ -57,17 +60,19 @@
                             <f:selectItem itemValue="Other"/>
 			    </h:selectOneMenu><br/>
 
-                            <h:commandButton class="button" id="submitButton" value="Submit" actionListener="#{product.addProduct(
-                                                                     product.name, product.amount, 
-                                                                     product.price, product.alcoholProof, 
-                                                                     product.type)}"
+                            <h:commandButton class="button" id="submitButton" value="Submit" actionListener="#{addProduct.addProduct(
+                                                                     addProduct.name, addProduct.amount, 
+                                                                     addProduct.price, addProduct.alcoholProof, 
+                                                                     addProduct.type)}"
                                                                     action="products?faces-redirect=true" />
 
                             </h:form>
                             </h:body>
                     </div></div>
-                </ui:define>
                 
+                    </div>
+                </ui:define>
+                            
 		<!-- ENDS MAIN -->
   
                 <ui:define name="info_second"></ui:define>

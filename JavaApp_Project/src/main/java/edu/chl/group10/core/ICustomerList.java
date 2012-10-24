@@ -6,6 +6,8 @@ public interface ICustomerList extends IDAO<Customer, Long> {
 
     List<Customer> getByEmail(String name);
     
-    List<Customer> getByPassword(String password); 
+    List<Customer> getByPassword(String password);
+    
+    Customer getByEmailAndPassword(String email, String password);
     
 }

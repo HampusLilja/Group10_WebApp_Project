@@ -1,19 +1,22 @@
-package edu.chl.group10.webapp_project;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.chl.group10.webapp_project.ProductCRUDBB;
 
 import edu.chl.group10.core.Product;
-import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  *
- * @author Herzog & Lilja
+ * @author Herzog
  */
 
-@Named("product")
+@Named("addProduct")
 @RequestScoped
-public class ProductsBB {
+public class AddProductBB {
     private long id;
     private String name;
     private int amount;  //amount of liquid in cl
@@ -23,9 +26,9 @@ public class ProductsBB {
    
     @Inject
     private ProductListBean productList;
+
+    public AddProductBB(){
     
-    public List<Product> getAll() {
-        return productList.getAll();
     }
     
     public void addProduct(String name, int amount, int price, int alcoholProof, String type) {
@@ -36,19 +39,7 @@ public class ProductsBB {
         this.type = type;
         
        productList.add(new Product(id, name, amount, price, alcoholProof, type));
-
     }
-    public void editProduct(long id, String name, int amount, int price,
-                                        int alcoholProof, String type){
-
-        productList.remove(id);
-        productList.add(new Product(id, name, amount, price, alcoholProof, type));
-    }
-    
-    public void deleteProduct(long id) {
-       productList.remove(id);
-    }
-    
     public long getId(){
         return id;
     }

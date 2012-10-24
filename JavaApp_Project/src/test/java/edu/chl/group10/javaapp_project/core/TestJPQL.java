@@ -27,13 +27,13 @@ public class TestJPQL {
         List<Customer> customers1 = new ArrayList<>();
         List<Customer> customers2 = new ArrayList<>();
         Customer c1 = new Customer(1L, "Fname1", "Lname1", new Address("street1", 1, 111, "town1"), 
-                        "Email1", "Password1");
+                        "Email1", "Password1", false);
         Customer c2 = new Customer(2L, "Fname2", "Lname2", new Address("street2", 2, 112, "town2"), 
-                        "Email2", "Password2");
+                        "Email2", "Password2", false);
         Customer c3 = new Customer(3L, "Fname3", "Lname3", new Address("street3", 3, 113, "town3"), 
-                        "Email3", "Password3");
+                        "Email3", "Password3", false);
         Customer c4 = new Customer(4L, "Fname4", "Lname4", new Address("street4", 4, 114, "town4"), 
-                        "Email4", "Password4");
+                        "Email4", "Password4", false);
         customers1.add(c1);
         customers1.add(c2);
         customers2.add(c3);

@@ -46,22 +46,20 @@
                                                         <h:body>
                                                             <h:form id="deleteProductForm">
                                                                 <h:outputLabel value="ID: " /><br/>
-                                                                <h:inputText value="#{product.id}" readonly="true" /><br/>
+                                                                <h:inputText value="#{productConversation.id}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Name: " /><br/>
-                                                                <h:inputText value="#{product.name}" readonly="true" /><br/>
+                                                                <h:inputText value="#{productConversation.name}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Amount: " /><br/>
-                                                                <h:inputText value="#{product.amount}" readonly="true" /><br/>
+                                                                <h:inputText value="#{productConversation.amount}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Price: " /><br/>
-                                                                <h:inputText value="#{product.price}" readonly="true" /><br/>
+                                                                <h:inputText value="#{productConversation.price}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Alcohol Proof: " /><br/>
-                                                                <h:inputText value="#{product.alcoholProof}" readonly="true" /><br/>
+                                                                <h:inputText value="#{productConversation.alcoholProof}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Type: " /><br/>
-                                                                <h:inputText value="#{product.type}" readonly="true" /><br/><br/>
-                                                                <h:commandButton 
-                                                                    id="deleteButton"
-                                                                    value="Delete"
-                                                                    actionListener="#{product.deleteProduct(product.id)}"
-                                                                    action="#{conversation.productAction()}" />
+                                                                <h:inputText value="#{productConversation.type}" readonly="true" /><br/><br/>
+                                                                <h:commandButton id="deleteButton" value="Delete" 
+                                                                                 actionListener="#{deleteProduct.deleteProduct(productConversation.id)}"
+                                                                                 action="#{productConversation.action()}" />
 
                                                             </h:form>
                                                         </h:body>

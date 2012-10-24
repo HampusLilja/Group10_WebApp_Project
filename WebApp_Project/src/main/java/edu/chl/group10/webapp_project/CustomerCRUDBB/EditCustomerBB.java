@@ -47,7 +47,7 @@ public class EditCustomerBB {
         this.email = email;
         
         customerList.add(new Customer(id, firstName, lastName, 
-                address, email, customer.getPassword()));
+                address, email, customer.getPassword(), customer.getIsAdmin()));
     }
        
     public Address getAddress(){

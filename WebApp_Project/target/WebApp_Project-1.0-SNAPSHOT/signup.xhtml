@@ -24,6 +24,7 @@
                                 <div id="content">
                                     <div class="one-half">
                                     <!-- form -->
+                                    <c:if test="#{!accountLogin.loggedIn}">
 							<h2>Login</h2>
                                                         <form id="loginForm" action="/WebApp_Project/loggedin" method="POST">
                                                             <input type="hidden" name="action" value="login" />
@@ -34,27 +35,29 @@
                                                                        <button type="submit" class="button">Login</button>
                                                                        
                                                         </form>
+                                    </c:if>
+                                    <c:if test="#{accountLogin.loggedIn}">
+                                        <h2>LoggedIn</h2>
+                                    </c:if>
 							<!-- ENDS form -->
                                     </div>
                                 <div class="one-half">
 					<!-- form -->
-							<h2>Sign up</h2>
+                                        <c:if test="#{!accountLogin.loggedIn}">
+                                        <h2>Sign up</h2>
                                                         <h:body>
-                                                            <h:form id="addCustomerForm" onsubmit="return checkForm(this);">
+                                                            <h:form prependId="false" id="addCustomerForm" onsubmit="return checkForm(this);">
 
                                                                 <h:outputLabel value="First Name: " /><br/>
                                                                 <h:inputText value="#{addCustomer.firstName}" required="true" /><br/>
                                                                 <h:outputLabel value="Last Name: " /><br/>
                                                                 <h:inputText value="#{addCustomer.lastName}" required="true" /><br/><br/>
-<!--
-                                                                <h:outputLabel value="Password: " /><br/>
-                                                                <h:inputText value="#{addCustomer.password}" required="true" /><br/><br/>
--->
+
                                                                 <p>Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
                                                                                     name="pwd1" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
                                                                                             'Password must contain at least 6 characters, including UPPER/lowercase and numbers' : '');
                                                                                         if(this.checkValidity()) form.pwd2.pattern = this.value;" onblur="">
-                                                                        <h:inputSecret onfocus="this.value = form.pwd1.value" value="#{addCustomer.password}"/>
+                                                                        <h:inputHidden id="hidd" value="#{addCustomer.password}"/>
                                                                     </input></p>
                                                                 <p>Confirm Password: <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}" 
                                                                                             name="pwd2" onchange="this.setCustomValidity(this.validity.patternMismatch ? 
@@ -69,17 +72,29 @@
                                                                 <h:outputLabel value="Town: " /><br/>
                                                                 <h:inputText value="#{addCustomer.town}" required="true"/><br/><br/>
                                                                 <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{addCustomer.email}" required="true"/><br/>
+                                                                <h:inputText value="#{addCustomer.email}" required="true"/><br/><br/>
+                                                                <h:outputLabel value="Admin: "> <h:selectBooleanCheckbox value="#{addCustomer.isAdmin}"/> </h:outputLabel>
+                                                                <br/><br/>
                                                                 <h:commandButton 
                                                                     class="button" id="submitButton" type="submit"
                                                                     value="Submit"
                                                                     actionListener="#{addCustomer.addCustomer(addCustomer.getFirstName(), addCustomer.getLastName(), 
                                                                                       addCustomer.getStreet(), addCustomer.getNumber(), addCustomer.getZip(), 
-                                                                                      addCustomer.getTown(), addCustomer.getEmail(), addCustomer.getPassword())}"
-                                                                                      action="customers?faces-redirect=true" />
+                                                                                      addCustomer.getTown(), addCustomer.getEmail(), 
+                                                                                      addCustomer.getPassword(), addCustomer.getIsAdmin())}"
+                                                                                      action="customers?faces-redirect=true" 
+                                                                                      onclick="$('#hidd').val(form.pwd1.value)"/>
 
                                                             </h:form>
                                                         </h:body>
+                                        </c:if>
+                                        <c:if test="#{accountLogin.loggedIn}">
+                                        <h2>Loggout to Sign up</h2>
+                                        <h:form id="logoutform2">
+                                                        <h:commandButton value ="Logout" action="/signup.xhtml?faces-redirect=true" 
+                                                                         actionListener="#{accountLogin.logout}" rendered="#{accountLogin.loggedIn}"/>
+                                                    </h:form>
+                                        </c:if>
 
 							<!-- ENDS form -->
 				</div>

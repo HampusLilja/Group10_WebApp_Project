@@ -61,4 +61,20 @@ public final class CustomerList extends AbstractDAO<Customer, Long> implements I
         }
     }
     
+    @Override
+    public Customer getByEmailAndPassword(String email, String password) {
+        Customer found = null;
+        try {
+            for (Customer c : qProc.getAll()) {
+                if (c.getPassword().equals(password) && 
+                        c.getEmail().equals(email)) {
+                    found = c;
+                }
+            }
+            return found;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+    
 }

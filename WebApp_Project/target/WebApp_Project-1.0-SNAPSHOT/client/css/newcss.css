@@ -132,10 +132,10 @@ nav{
     
 .line-divider{
         text-align:center;
-	clear: both;
-	border-bottom: 1px solid #d7d7d7;
-	padding-bottom: 10px;
-	margin-bottom: 10px;
+ clear: both;
+ border-bottom: 1px solid #d7d7d7;
+ padding-bottom: 10px;
+ margin-bottom: 10px;
 }
 
 footer {
@@ -231,15 +231,16 @@ section#products p {padding: 15px; font-weight: bold;}
     font-weight: bold;
 }
 
-.button {	
+.button { 
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
-	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
-	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
-	border-color:#000; 
-	border-width:1px;
+ background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+ background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+ border-color:#000; 
+ border-width:1px;
         border-radius:4px 4px 4px 4px;
-	-moz-border-radius: 4px;
+ -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
+<<<<<<< HEAD
 	color:#333;
 	cursor:pointer;
 	padding:6px 6px 4px;
@@ -250,14 +251,25 @@ section#products p {padding: 15px; font-weight: bold;}
 
 .emptybutton {	
         float: right;
+=======
+ color:#333;
+ cursor:pointer;
+ padding:6px 6px 4px;
+ margin: 10px;
+ font:12px; 
+ width:100px;
+}
+.emptybutton { 
+>>>>>>> 06cc4c46f0d3584bbfaad78aabac4f7621047b5f
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
-	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
-	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
-	border-color:#000; 
-	border-width:1px;
+ background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+ background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+ border-color:#000; 
+ border-width:1px;
         border-radius:4px 4px 4px 4px;
-	-moz-border-radius: 4px;
+ -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
+<<<<<<< HEAD
 	color:#333;
 	cursor:pointer;
 	padding:6px 6px 4px;
@@ -267,14 +279,26 @@ section#products p {padding: 15px; font-weight: bold;}
 
 .buybutton{
         float: right;
+=======
+ color:#333;
+ cursor:pointer;
+ padding:6px 6px 4px;
+ margin: 10px;
+ font:12px; 
+ width:100px;
+}
+
+.emptybutton { 
+>>>>>>> 06cc4c46f0d3584bbfaad78aabac4f7621047b5f
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
-	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
-	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
-	border-color:#000; 
-	border-width:1px;
+ background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+ background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+ border-color:#000; 
+ border-width:1px;
         border-radius:4px 4px 4px 4px;
-	-moz-border-radius: 4px;
+ -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
+<<<<<<< HEAD
 	color:#333;
 	cursor:pointer;
 	padding:6px 6px 4px;
@@ -290,13 +314,52 @@ section#products p {padding: 15px; font-weight: bold;}
     padding-left: 0px;
         line-height: 20px;
         text-align: right;
+=======
+ color:#333;
+ cursor:pointer;
+ padding:6px 6px 4px;
+ margin: 10px;
+ font:12px; 
+ width:100px;
+}
+
+.buybutton{ 
+>>>>>>> 06cc4c46f0d3584bbfaad78aabac4f7621047b5f
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
-	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
-	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
-	border-color:#000; 
-	border-width:1px;
+ background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+ background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+ border-color:#000; 
+ border-width:1px;
+        border-radius:4px 4px 4px 4px;
+<<<<<<< HEAD
+}
+=======
+ -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+ color:#333;
+ cursor:pointer;
+ padding:6px 6px 4px;
+ margin: 10px;
+ font:12px; 
+ width:100px;
+}
+
+.div-remove {float: left;padding: 0 10px;font-size: 30px;line-height: 25px;}
+.div-remove a:hover {color: #ff0000;cursor: pointer;}
+.div-remove-text {margin-top: 0px; font-weight: bold; color: white;line-height: 25px;}
+.div-remove-form {
+    float:right;
+    margin-left: 0px;
+        line-height: 25px;
+        text-align: right;
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+ background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+ background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+ border-color:#000; 
+ border-width:1px;
         border-radius:4px 4px 4px 4px;
 }
+>>>>>>> 06cc4c46f0d3584bbfaad78aabac4f7621047b5f
 .cart-item {line-height: 30px;clear:both; padding-right: 5px;}
 
 
@@ -305,12 +368,12 @@ section#products p {padding: 15px; font-weight: bold;}
         padding: 10px;
         margin: 10px;
         border: 5px dashed #808080;
-	font-size: 1.2em;
-	z-index: 99999;
-	box-shadow: 0px 0px 20px #000000; /* CSS3 */
+ font-size: 1.2em;
+ z-index: 99999;
+ box-shadow: 0px 0px 20px #000000; /* CSS3 */
         -moz-box-shadow: 0px 0px 20px #000000; /* Firefox */
         -webkit-box-shadow: 0px 0px 20px #000000; /* Safari, Chrome */
-	border-radius:3px 3px 3px 3px;
+ border-radius:3px 3px 3px 3px;
         -moz-border-radius: 3px; /* Firefox */
         -webkit-border-radius: 3px; /* Safari, Chrome */
 
@@ -340,4 +403,3 @@ p.results-url {float: right;}
 .active {background: #ff0000;}
 .no-results {display: none;}
 .results-icon {float: left;}
-

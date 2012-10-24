@@ -1,4 +1,4 @@
-package edu.chl.group10.webapp_project;
+package edu.chl.group10.webapp_project.ProductCRUDBB;
 
 import edu.chl.group10.core.Group10;
 import edu.chl.group10.core.IProductList;
@@ -25,6 +25,10 @@ public class ProductListBean implements Serializable {
     
     public List<Product> getAll(){
         return plist.getAll();
+    }
+    
+    public List<Product> getAllByType(String type){
+        return plist.getAllByType(type);
     }
     
     public Product find(long id){
