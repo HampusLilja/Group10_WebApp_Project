@@ -38,7 +38,7 @@ $('#cart').jfollow('#cart', 20);
 				html = html + '<a onclick = "remove(this)" class="remove '+itemid+'">&times;</a>'+'</div>';
 				html = html + '<p class="div-remove-text">'+item+'  </p>';
                                 html = html + '<p class="div-remove-text">'+price+'</p>';
-                                html = html + '<input type="text" class="div-remove-form" maxlength="2" name="quantity" value="'+quantity+'" />';
+                                html = html + '<input type="text" class="div-remove-form" maxlength="2" name="quantity" readonly="true" value="'+quantity+'" />';
 				html = html + '</p>'+'</div>';
 			
 			var cartitem = $('".cart-item[data-productid="'+itemid+'"]"');

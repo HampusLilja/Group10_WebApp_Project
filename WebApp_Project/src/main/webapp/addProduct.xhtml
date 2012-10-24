@@ -19,31 +19,11 @@
             <!-- Defining main content -->
             <ui:define name="maincontent"></ui:define>
                 <ui:define name="info_main">
-              
-                <div id="content" align="justify">
-<<<<<<< HEAD
-                    <div class="one-half">
-                                <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
 
-                                <h2>Upload image</h2>
-                <form action="upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" style="display:none" id="upload-image"></input>
-                <input type="text" name="photoname" size="20"/>
-                                <div id="upload" class="drop-area">
-                                        Upload File
-                                </div>
-                                <div id="thumbnail"></div>
-                                <p/>
-        <button type="submit" class="button">Upload</button>
-                </form>
-             
-=======
-   
-                
-                
-                <div id="main" align="justify">
+               <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">              
+                <div id="content" align="justify">
                     <div class="one-half">
->>>>>>> imageupload
                             <h:body>
                             <h:form id="addProductForm">
                             <h2>Add product</h2>
@@ -81,7 +61,8 @@
                             </h:form>
                             </h:body>
                     </div></div>
-                
+</c:if>
+                                                </c:if>                     
                 </ui:define>
                             
 		<!-- ENDS MAIN -->

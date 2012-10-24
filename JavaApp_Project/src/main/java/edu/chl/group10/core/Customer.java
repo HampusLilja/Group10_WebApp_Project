@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Herzog & Lilja
+ * @author Group10
  */
 @Entity
 public class Customer implements Serializable{
@@ -24,7 +24,6 @@ public class Customer implements Serializable{
     private String password;
     private String email;
     private boolean isAdmin;
-    private transient ShoppingCart cart;
     
     @Embedded protected Address address;
 
@@ -39,7 +38,6 @@ public class Customer implements Serializable{
         this.email = email;
         this.password = password;
         this.isAdmin = admin;
-        cart = new ShoppingCart();
     }
     
     public Customer(Long id, String firstName, String lastName, Address address, 
@@ -51,10 +49,6 @@ public class Customer implements Serializable{
         this.email = email;
         this.password = password;
         this.isAdmin = admin;
-    }
-        
-    public ShoppingCart getCart() {
-        return cart;
     }
     
     public String getFirstName(){

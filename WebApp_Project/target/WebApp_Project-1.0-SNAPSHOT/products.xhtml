@@ -4,9 +4,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-<<<<<<< HEAD
       xmlns:c="http://java.sun.com/jsp/jstl/core">
-    
+
       <ui:composition template="./template_shop.xhtml">
             <ui:define name="title"><title>&#169; Liquid Spirits: Products</title></ui:define>
             <!-- Define body -->
@@ -15,8 +14,6 @@
             <ui:define name="header">
                
             </ui:define>	
-=======
-      xmlns:f="http://java.sun.com/jsf/core">
     <head>
         
         <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
@@ -35,12 +32,13 @@
                     <img src="client/img/logo.png"/>
 		</div>
 		<!-- ENDS HEADER -->	
->>>>>>> imageupload
   
                         <ui:define name="maincontent"></ui:define>
                         <div id="main" align="justify">
                 <ui:define name="info_main">
-                    
+               <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">
+                                                            
                     <h:body>
                         <h:dataTable class="datatable" value="${products.all}" var="p" border="0">
                             <h:column>
@@ -97,11 +95,13 @@
                                 
                         </h:dataTable></h:body>
                              
+                                                        </c:if>
+                                                </c:if>     
       		<!-- ENDS MAIN -->
         	</ui:define></div>
                         <ui:define name="info_second"></ui:define>
                 <!-- Inserting default footer -->
                 <ui:define name="footer"></ui:define>
-                       
+        </body>
       </ui:composition>
 </html>

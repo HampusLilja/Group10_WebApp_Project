@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Herzog & Lilja
+ * @author Group10
  */
 public final class CustomerList extends AbstractDAO<Customer, Long> implements ICustomerList{
     private List<Customer> customerList;

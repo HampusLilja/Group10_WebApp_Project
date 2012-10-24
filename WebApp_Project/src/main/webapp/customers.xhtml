@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
 
         <ui:composition template="./template_shop.xhtml">
             <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
@@ -20,7 +21,9 @@
                 <ui:define name="info_main">
                     <div id="content">
                             
-                            
+               
+               <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">             
                     <h:body>
                         <h:dataTable var="c" value="#{customers.all}" border="1" >
                             <h:column>
@@ -74,7 +77,7 @@
 
                         </h:dataTable>
                     </h:body>
-                    
+                                                        </c:if></c:if>     
                 </div>
                 </ui:define>
             <ui:define name="info_second"></ui:define>

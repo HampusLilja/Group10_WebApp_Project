@@ -39,21 +39,28 @@
                                                 <c:if test="#{!accountLogin.loggedIn}">
                                                 <li><a href="signup.xhtml">Login/Signup</a></li>
                                                 </c:if>
+                                                
+               <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">
                                                 <li><a href="addProduct.xhtml">Add Product</a></li>
+                                                        </c:if></c:if>
                                                 <c:if test="#{accountLogin.loggedIn}">
                                                         <c:if test="#{accountLogin.admin}">
                                                             <li><a href="customers.xhtml">Customers</a></li>
                                                         </c:if>
                                                 </c:if>
-<<<<<<< HEAD
+                                                <c:if test="#{accountLogin.loggedIn}">
+                                                        <c:if test="#{accountLogin.admin}">
+                                                            <li><a href="products.xhtml">Products</a></li>
+                                                        </c:if>
+                                                </c:if>
                                                 <c:if test="#{accountLogin.loggedIn}">
                                                 <li><a href="signup.xhtml">Logout</a></li>
                                                 </c:if>
-                                                </ul>
-=======
+                                        
                                                 <li><a href="../client/wishList.xhtml">Wish List</a></li>
-						</ul>
->>>>>>> restfullWish
+						
+                                        </ul>
 					</nav>
 				<!-- Navigation -->
 					
