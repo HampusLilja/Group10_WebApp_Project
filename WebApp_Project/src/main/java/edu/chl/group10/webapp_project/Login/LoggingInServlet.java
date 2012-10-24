@@ -47,7 +47,7 @@ public class LoggingInServlet extends HttpServlet {
                 
                 if( customer != null ){
                     
-                    response.sendRedirect("faces/loggedIn.xhtml?id="+customer.getID());
+                    response.sendRedirect("faces/loggedIn.xhtml?id="+customer.getID()+"&fname="+customer.getFirstName()+"&lname="+customer.getLastName());
                 }else {
                     response.sendRedirect("faces/wrongLoggInInfo.xhtml");
                 }

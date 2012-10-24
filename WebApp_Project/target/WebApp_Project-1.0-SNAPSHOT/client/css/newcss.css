@@ -200,7 +200,6 @@ section#products p {padding: 15px; font-weight: bold;}
     background-color: lightgrey;
 }
 
-
 .dropzone {
     background: #c0c0c0;
     display: block;
@@ -322,6 +321,17 @@ section#products p {padding: 15px; font-weight: bold;}
 .cart-item p {float: left;}
 input {width: 20px;}
 p.input {float:right;}
+/*
+    Products Admin view
+*/
+.datatable {
+    background: #c0c0c0;
+    display: block;
+    padding: 10px;
+    border: 5px dashed #808080;
+    text-align: center;
+}
+
 
 form {top: 10px; }
 form input {

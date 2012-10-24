@@ -22,10 +22,9 @@
 		<!-- MAIN -->
                                 <!-- SignUp -->
                                 <div id="content">
-                                <!-- SignUp -->
                                     <div class="one-half">
                                     <!-- form -->
-                                    <h2>Logg in as: ${param.id}</h2>
+                                    <h2>Login as: ${param.fname} ${param.lname} ?</h2>
                                                         <h:form prependId="false" rendered="#{!accountLogin.loggedIn}">
                                                             <h:inputHidden id ="hidden" value="#{accountLogin.ID}" />
                                                             <h:commandButton class="button" type="submit" value="Yes" 
@@ -42,8 +41,7 @@
 							<!-- ENDS form -->
 				</div>
 				<!-- ENDS Signup -->
-
-			</div>
+                                </div>
 		<!-- ENDS MAIN -->
                 </ui:define></div>
 		

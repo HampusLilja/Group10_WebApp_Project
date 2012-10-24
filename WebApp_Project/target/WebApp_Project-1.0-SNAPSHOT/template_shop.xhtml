@@ -22,7 +22,9 @@
         <div id="body">
         	<!-- HEADER -->
 		<div id="header">
+                    <a href="index.xhtml">
                     <img src="client/img/logo.png"/>
+                    </a>
 		</div>
 		<!-- ENDS HEADER -->	
 
@@ -34,14 +36,19 @@
 						<li><a href="index.xhtml">Home</a></li>
 						<li><a href="shop.xhtml">Shop</a></li>
 						<li><a href="contact.xhtml">Contact</a></li>
-                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
+                                                <c:if test="#{!accountLogin.loggedIn}">
+                                                <li><a href="signup.xhtml">Login/Signup</a></li>
+                                                </c:if>
                                                 <li><a href="addProduct.xhtml">Add Product</a></li>
                                                 <c:if test="#{accountLogin.loggedIn}">
                                                         <c:if test="#{accountLogin.admin}">
                                                             <li><a href="customers.xhtml">Customers</a></li>
                                                         </c:if>
                                                 </c:if>
-						</ul>
+                                                <c:if test="#{accountLogin.loggedIn}">
+                                                <li><a href="signup.xhtml">Logout</a></li>
+                                                </c:if>
+                                                </ul>
 					</nav>
 				<!-- Navigation -->
 					

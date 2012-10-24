@@ -17,9 +17,10 @@
   
                         <ui:define name="maincontent"></ui:define>
                         <div id="main" align="justify">
-                <ui:define name="info_main">                                            
+                <ui:define name="info_main">
+                    
                     <h:body>
-                        <h:dataTable value="${products.all}" var="p" border="1" >
+                        <h:dataTable class="datatable" value="${products.all}" var="p" border="0">
                             <h:column>
                                 <f:facet name="header">ID</f:facet>
                                 #{p.id}
@@ -47,7 +48,7 @@
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{productConversation.actionListener(p.id, p.name, p.amount, 
+                                    <h:commandLink class="button" actionListener="#{productConversation.actionListener(p.id, p.name, p.amount, 
                                                                      p.price, p.alcoholProof, p.type)}"
                                                      action="editProduct" >Edit</h:commandLink>
                                 </h:form>
@@ -55,12 +56,12 @@
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{productConversation.deleteActionListener(p.id, p.name, p.amount, 
+                                    <h:commandLink class="button" actionListener="#{productConversation.deleteActionListener(p.id, p.name, p.amount, 
                                                                      p.price, p.alcoholProof, p.type)}"
                                                     action="deleteProduct" >Delete</h:commandLink>
                                 </h:form>
                             </h:column>
-
+                                
                         </h:dataTable></h:body>
                              
       		<!-- ENDS MAIN -->

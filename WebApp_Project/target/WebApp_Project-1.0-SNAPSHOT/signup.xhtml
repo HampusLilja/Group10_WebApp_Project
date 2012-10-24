@@ -29,7 +29,7 @@
                                                         <form id="loginForm" action="/WebApp_Project/loggedin" method="POST">
                                                             <input type="hidden" name="action" value="login" />
                                                             <label>Email:</label><br/>
-                                                                       <input id="email2" placeholder="some@email.com" required="true" name="username"/><br/>
+                                                                       <input id="email" placeholder="some@email.com" required="true" name="username"/><br/>
                                                                        <label>Password:</label><br/>
                                                                        <input id="password" type="password" required="true" name="password"/><br/>
                                                                        <button type="submit" class="button">Login</button>
@@ -37,7 +37,7 @@
                                                         </form>
                                     </c:if>
                                     <c:if test="#{accountLogin.loggedIn}">
-                                        <h2>LoggedIn</h2>
+                                        <h2>You are logged in</h2>
                                     </c:if>
 							<!-- ENDS form -->
                                     </div>
@@ -89,9 +89,9 @@
                                                         </h:body>
                                         </c:if>
                                         <c:if test="#{accountLogin.loggedIn}">
-                                        <h2>Loggout to Sign up</h2>
+                                        <h2>Want to logout?</h2>
                                         <h:form id="logoutform2">
-                                                        <h:commandButton value ="Logout" action="/signup.xhtml?faces-redirect=true" 
+                                                        <h:commandButton class="button" value ="Logout" action="/signup.xhtml?faces-redirect=true" 
                                                                          actionListener="#{accountLogin.logout}" rendered="#{accountLogin.loggedIn}"/>
                                                     </h:form>
                                         </c:if>

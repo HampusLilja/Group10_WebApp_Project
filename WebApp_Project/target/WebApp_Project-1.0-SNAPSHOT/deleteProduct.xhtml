@@ -36,7 +36,7 @@
                                                                 <h:inputText value="#{productConversation.alcoholProof}" readonly="true" /><br/>
                                                                 <h:outputLabel value="Type: " /><br/>
                                                                 <h:inputText value="#{productConversation.type}" readonly="true" /><br/><br/>
-                                                                <h:commandButton id="deleteButton" value="Delete" 
+                                                                <h:commandButton class="button" id="deleteButton" value="Delete" 
                                                                                  actionListener="#{deleteProduct.deleteProduct(productConversation.id)}"
                                                                                  action="#{productConversation.action()}" />
 
