@@ -175,7 +175,9 @@ canvas{
   border:1px solid red;
 }
 
-
+/*
+    Shop.xhtml section
+*/
 section#products {}
 section#products p {padding: 15px; font-weight: bold;}
 .product img {float: left;}
@@ -189,6 +191,7 @@ section#products p {padding: 15px; font-weight: bold;}
     padding: 10px;
     border: 1px solid #808080;    
     width: 190px;
+    
     margin-top: 30px;
     margin-right: 5px;
     position: fixed;
@@ -205,8 +208,28 @@ section#products p {padding: 15px; font-weight: bold;}
     border: 5px dashed #808080;
     text-align: center;
 }
+.dropzone-hover {
+    background: lightgreen;
+    display: block;
+    padding: 20px;
+    margin: 20px 0;
+    border: 5px dashed #808080;
+    text-align: center;
+}
 
-.cart-content {text-align: center;}
+.cart-content {
+    text-align: center;
+}
+.totalprice{
+    float:right;
+    font-weight: bold;
+    margin: 10px;
+}
+.totalitems{
+    float:right;
+    margin: 10px;
+    font-weight: bold;
+}
 
 .button {	
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
@@ -224,7 +247,9 @@ section#products p {padding: 15px; font-weight: bold;}
 	font:12px; 
 	width:100px;
 }
+
 .emptybutton {	
+        float: right;
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
 	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
 	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
@@ -237,11 +262,11 @@ section#products p {padding: 15px; font-weight: bold;}
 	cursor:pointer;
 	padding:6px 6px 4px;
 	margin: 10px;
-	font:12px; 
 	width:100px;
 }
 
-.emptybutton {	
+.buybutton{
+        float: right;
         background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
 	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
 	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
@@ -254,30 +279,25 @@ section#products p {padding: 15px; font-weight: bold;}
 	cursor:pointer;
 	padding:6px 6px 4px;
 	margin: 10px;
-	font:12px; 
-	width:100px;
-}
-
-.buybutton{	
-        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
-	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
-	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
-	border-color:#000; 
-	border-width:1px;
-        border-radius:4px 4px 4px 4px;
-	-moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-	color:#333;
-	cursor:pointer;
-	padding:6px 6px 4px;
-	margin: 10px;
-	font:12px; 
 	width:100px;
 }
 
 .div-remove {float: left;padding: 0 10px;font-size: 30px;line-height: 25px;}
 .div-remove a:hover {color: #ff0000;cursor: pointer;}
-.cart-item {line-height: 30px;clear:both;}
+.div-remove-text {margin-top: 0px;margin-left: 10px; font-weight: bold; color: white;line-height: 25px;}
+.div-remove-form {
+    float:right;
+    padding-left: 0px;
+        line-height: 20px;
+        text-align: right;
+        background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+}
+.cart-item {line-height: 30px;clear:both; padding-right: 5px;}
 
 
 #dialog-confirm {display: none; text-align: center; 
