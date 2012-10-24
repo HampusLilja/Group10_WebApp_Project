@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 public enum Group10 {
 
     INSTANCE;
-    private final IGroupMembers groupMembers = GroupMembers.newInstance();
+    private final IWishList wishList = WishList.newInstance();
     private final ICustomerList customerList = new CustomerList("group10_pu");
     private final IProductList productList = new ProductList("group10_pu");
 
@@ -15,8 +15,8 @@ public enum Group10 {
 
     }
     
-    public IGroupMembers getGroupMembers() {
-        return groupMembers;
+    public IWishList getWishList() {
+        return wishList;
     }
     
     public ICustomerList getCustomerList() {

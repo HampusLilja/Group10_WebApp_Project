@@ -50,12 +50,12 @@ Table.prototype = (function(){
                        
             $(this.parent).find('tr')
             .on('click', function(){
-                var member = {};
-                member.pnumb =  $(this).find('td').eq(0).html();
-                member.name = $(this).find('td').eq(1).html();
-                                             
+                var wish = {};
+                wish.anumb =  $(this).find('td').eq(0).html();
+                wish.name = $(this).find('td').eq(1).html();
+                wish.size = $(this).find('td').eq(2).html();                             
                 if( self.handler ){
-                    self.handler(member);
+                    self.handler(wish);
                 }
             });        
         },
@@ -74,6 +74,7 @@ Table.prototype = (function(){
             html += "</tr></thead><tbody>";
             var tLen = this.rows.length;
             for(var j = 0; j < tLen; j++) {
+                
                 html += "<tr>";
                 for (var prop in this.rows[j]) {
                     html += "<td>" + this.rows[j][prop] + "</td>";

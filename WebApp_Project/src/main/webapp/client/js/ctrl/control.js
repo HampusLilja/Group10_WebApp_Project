@@ -11,13 +11,13 @@ $(document).ready(function(){
  
 var control = (function (){
 
-var proxy = new MemberResourceProxy("http://localhost:8080/WebApp_Project/rs/members");
-    var selectedMember;
+var proxy = new WishResourceProxy("http://localhost:8080/WebApp_Project/rs/wish");
+    var selectedWish;
     var table;
     
     return {
         init: function(){ 
-            table = new Table(["PersonNumber", "Name"]); 
+            table = new Table(["ArticleNumber", "Name", "Size"]); 
             table.addHandler(control.tableListener);
             table.setParent('#pageSection'); 
         },
@@ -31,21 +31,36 @@ var proxy = new MemberResourceProxy("http://localhost:8080/WebApp_Project/rs/mem
                 d.render();
             }else if( this.id === "btnList"){
                 deferred = proxy.getAll();
-                deferred.done(function(members){
+                deferred.done(function(wish){
                     table.clear();
-                    table.addRows(members);
+                    table.addRows(wish);
                     table.render(); 
                 }); 
                 deferred.fail(function(){
                     alert("Failed")
                 });
-            } else if( this.id === "btnDel"){
-                if( ! selectedMember){
+            }else if( this.id === "btnSend"){
+                if( ! selectedWish){
                     return;
                 }
-                deferred = proxy.remove(selectedMember.pnumb);
+                deferred = proxy.send(selectedWish.anumb);
                 deferred.done(function(){
-                    selectedMember = null;
+                                      selectedWish = null;
+                    alert("Done");
+                });
+                deferred.fail(function(xhr){
+                    alert("Fail" + xhr.status);
+                });
+                
+            } 
+            
+            else if( this.id === "btnDel"){
+                if( ! selectedWish){
+                    return;
+                }
+                deferred = proxy.remove(selectedWish.anumb);
+                deferred.done(function(){
+                    selectedWish = null;
                     alert("Done");
                 });
                 deferred.fail(function(xhr){
@@ -54,8 +69,8 @@ var proxy = new MemberResourceProxy("http://localhost:8080/WebApp_Project/rs/mem
             }
         }, 
         
-        tableListener: function( member ){
-            selectedMember = member;
+        tableListener: function( wish ){
+            selectedWish = wish;
         },
         
         dialogListener: function(action, data ){
