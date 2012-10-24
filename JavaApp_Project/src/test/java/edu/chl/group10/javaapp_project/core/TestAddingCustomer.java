@@ -28,7 +28,7 @@ public class TestAddingCustomer {
     public void testAddingCustomer(){
         ICustomerList cl = Group10.INSTANCE.getCustomerList();
         Customer c1 = new Customer("Fname", "Lname", new Address("street", 1, 112, "town"), 
-                "Email", "Password");
+                "Email", "Password", false);
         Customer c2;
 
         cl.add(c1);

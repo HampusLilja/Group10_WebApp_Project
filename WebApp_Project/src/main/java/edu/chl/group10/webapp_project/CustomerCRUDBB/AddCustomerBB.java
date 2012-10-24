@@ -2,16 +2,19 @@ package edu.chl.group10.webapp_project.CustomerCRUDBB;
 
 import edu.chl.group10.core.Address;
 import edu.chl.group10.core.Customer;
+<<<<<<< HEAD
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+=======
+>>>>>>> loginBranch
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  *
- * @author Herzog & Lilja
+ * @author Group10
  */
 
 @Named("addCustomer")
@@ -28,6 +31,7 @@ public class AddCustomerBB {
 
     private String email;
     private String password;
+    private boolean isAdmin;
     
     @Inject
     private CustomerListBean customerList;
@@ -37,7 +41,8 @@ public class AddCustomerBB {
     }
 
     public void addCustomer(String firstName, String lastName, String street, 
-            int number, int zip, String town, String email, String password) {
+            int number, int zip, String town, String email, String password, 
+            boolean admin) {
         this.firstName = firstName;
         this.lastName = lastName;
         String hashedPassword = hash(password);
@@ -47,8 +52,14 @@ public class AddCustomerBB {
         this.town = town;
         this.address = new Address(street, number, zip, town);
         this.email = email;
+        this.isAdmin = admin;
         
+<<<<<<< HEAD
        customerList.add(new Customer(firstName, lastName, address, email, hashedPassword));
+=======
+       customerList.add(new Customer(firstName, lastName, address, email, 
+               password, isAdmin));
+>>>>>>> loginBranch
 
     }
     
@@ -82,6 +93,10 @@ public class AddCustomerBB {
     
     public String getTown(){
         return town;
+    }
+    
+    public boolean getIsAdmin(){
+        return isAdmin;
     }
     
     public long getID(){
@@ -126,6 +141,10 @@ public class AddCustomerBB {
     
     public void setEmail(String email){
         this.email = email;
+    }
+    
+    public void setIsAdmin(boolean admin){
+        this.isAdmin = admin;
     }
     
     public void setID(long id){

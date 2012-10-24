@@ -26,28 +26,30 @@
                                                             <h:form id="editCustomerDetailsForm">
 
                                                                 <h:outputLabel value="ID: " /><br/>
-                                                                <h:inputText value="#{conversation.ID}" required="true" readonly="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.ID}" required="true" readonly="true"/><br/>
                                                                 <h:outputLabel value="First Name: " /><br/>
-                                                                <h:inputText value="#{conversation.firstName}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.firstName}" required="true"/><br/>
                                                                 <h:outputLabel value="Last Name: " /><br/>
-                                                                <h:inputText value="#{conversation.lastName}" required="true"/><br/><br/>
+                                                                <h:inputText value="#{customerConversation.lastName}" required="true"/><br/><br/>
 
                                                                 <h:outputLabel value="Street: " /><br/>
-                                                                <h:inputText value="#{conversation.street}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.street}" required="true"/><br/>
                                                                 <h:outputLabel value="Number: " /><br/>
-                                                                <h:inputText value="#{conversation.number}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.number}" required="true"/><br/>
                                                                 <h:outputLabel value="Zip: " /><br/>
-                                                                <h:inputText value="#{conversation.zip}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.zip}" required="true"/><br/>
                                                                 <h:outputLabel value="Town: " /><br/>
-                                                                <h:inputText value="#{conversation.town}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.town}" required="true"/><br/>
                                                                 <h:outputLabel value="Email: " /><br/>
-                                                                <h:inputText value="#{conversation.email}" required="true"/><br/>
+                                                                <h:inputText value="#{customerConversation.email}" required="true"/><br/>
 
                                                                 <h:commandButton id="editCustomerButton" value="Update" 
-                                                                                      actionListener="#{editCustomer.editCustomerDetails(conversation.ID, conversation.firstName, 
-                                                                                      conversation.lastName, conversation.street, conversation.number,
-                                                                                      conversation.zip, conversation.town, conversation.email)}"
-                                                                                      action="#{conversation.action()}" />
+                                                                                      actionListener="#{editCustomer.editCustomerDetails(
+                                                                                                        customerConversation.ID, customerConversation.firstName,
+                                                                                                        customerConversation.lastName, customerConversation.street, 
+                                                                                                        customerConversation.number, customerConversation.zip, 
+                                                                                                        customerConversation.town, customerConversation.email)}"
+                                                                                      action="#{customerConversation.action()}" />
 
                                                             </h:form>
                                                         </h:body>

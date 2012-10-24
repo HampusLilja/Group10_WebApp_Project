@@ -61,6 +61,7 @@ public class ConversionBean implements Serializable {
         this.email = email;
     }
     
+<<<<<<< HEAD
     public void deleteActionListener(Long id, String firstName, String lastName, 
             String email) {
                 if (conv.isTransient()) {
@@ -126,6 +127,9 @@ public class ConversionBean implements Serializable {
     
         public void productActionListener(long id, String name, 
                 int amount, int price, int alcoholProof, String type) {
+=======
+        public void productActionListener(String name, int amount, int price, int alcoholProof, String type) {
+>>>>>>> loginBranch
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "ADDPRODUCT CONVERSATION BEGINS: "

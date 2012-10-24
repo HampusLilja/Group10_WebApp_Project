@@ -4,41 +4,22 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-    <head>
-        
-        <link rel="stylesheet" type="text/css" href="client/css/newcss.css"/>
-	
-        <title>Grupp 10</title>
-	
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
-        
-    </head>
-    <!-- body -->
-	<body>
-		<!-- HEADER -->
-		<div id="header">
-                    <img src="client/img/logo.png"/>
-		</div>
-		<!-- ENDS HEADER -->	
-  
-  		<!-- Menu -->
-			<menu>
-				<!-- Navigation -->
-					<nav>
-                                        	<ul>
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="shop.xhtml">Shop</a></li>
-						<li><a href="contact.xhtml">Contact</a></li>
-                                                <li><a href="signup.xhtml">Login/Sign up</a></li>
-						</ul>
-					</nav>
-				<!-- Navigation -->
-					
-			</menu>
-		<!-- ENDS Menu -->
 
-		<!-- MAIN -->
-                <div id="main">
+        <ui:composition template="./template_shop.xhtml">
+            <ui:define name="title"><title>&#169; Liquid Spirits</title></ui:define>
+            <!-- Define body -->
+            <ui:define name="body">
+                <body></body></ui:define>
+            <!-- Inserting default banner -->
+            <ui:define name="header">
+               
+            </ui:define>
+                
+            <!-- Defining main content -->
+            <ui:define name="maincontent"></ui:define>
+                <ui:define name="info_main">
+                    <div id="content">
+                            
                             
                     <h:body>
                         <h:dataTable var="c" value="#{customers.all}" border="1" >
@@ -55,8 +36,16 @@
                                 #{c.lastName}
                             </h:column>
                             <h:column>
+                                <f:facet name="header">Email</f:facet>
+                                #{c.email}
+                            </h:column>
+                            <h:column>
                                 <f:facet name="header">Password</f:facet>
                                 #{c.password}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Admin</f:facet>
+                                #{c.isAdmin}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Address</f:facet>
@@ -65,10 +54,10 @@
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{conversation.addressActionListener(
+                                    <h:commandLink actionListener="#{customerConversation.editCustomerActionListener(
                                                                      c.ID, c.firstName, c.lastName, 
                                                                      c.address.street, c.address.number, 
-                                                                     c.address.zip, c.address.town)}"
+                                                                     c.address.zip, c.address.town, c.email)}"
                                     action="editCustomer" >Edit</h:commandLink>
                                 </h:form>
                             </h:column>
@@ -76,7 +65,7 @@
                             <h:column>
                                 <f:facet name="header">Delete</f:facet>
                                 <h:form>
-                                    <h:commandLink actionListener="#{conversation.deleteActionListener(
+                                    <h:commandLink actionListener="#{customerConversation.deleteActionListener(
                                                                      c.ID, c.firstName, c.lastName,
                                                                      c.email)}"
                                     action="deleteCustomer" >Delete</h:commandLink>
@@ -87,16 +76,9 @@
                     </h:body>
                     
                 </div>
-		<!-- ENDS MAIN -->
-  
+                </ui:define>
 		
-        <!-- FOOTER -->
-		<footer>
-                    <p> Footer content goes here </p>
-                    <p>&#169; Grupp 10 Webbapplikationer</p>
-		</footer>
-		<!-- ENDS FOOTER -->
-
-    </body>
-	<!-- ENDS body -->
+                <!-- Inserting default footer -->
+                <ui:define name="footer"></ui:define>
+                         </ui:composition>
 </html>

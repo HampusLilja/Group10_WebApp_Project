@@ -23,6 +23,7 @@ public class Customer implements Serializable{
     private String lastName;
     private String password;
     private String email;
+    private boolean isAdmin;
     private transient ShoppingCart cart;
     
     @Embedded protected Address address;
@@ -31,23 +32,25 @@ public class Customer implements Serializable{
     }
     
     public Customer(String firstName, String lastName, Address address, 
-            String email, String password){
+            String email, String password, boolean admin){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.email = email;
         this.password = password;
+        this.isAdmin = admin;
         cart = new ShoppingCart();
     }
     
     public Customer(Long id, String firstName, String lastName, Address address, 
-            String email, String password){
+            String email, String password, boolean admin){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.email = email;
         this.password = password;
+        this.isAdmin = admin;
     }
         
     public ShoppingCart getCart() {
@@ -72,6 +75,10 @@ public class Customer implements Serializable{
     
     public String getPassword(){
         return password;
+    }
+    
+    public boolean getIsAdmin() {
+        return isAdmin;
     }
 
     public Long getID() {

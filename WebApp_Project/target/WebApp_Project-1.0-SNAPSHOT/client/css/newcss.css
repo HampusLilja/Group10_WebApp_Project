@@ -139,6 +139,7 @@ nav{
 }
 
 footer {
+<<<<<<< HEAD
     padding-top: 15px;
     text-align: center;
     background: #2A2D30;
@@ -148,6 +149,16 @@ footer {
     margin-bottom: 5px; /* negative value of footer height */
     height: 30px;
     clear: both;
+=======
+    position: absolute;
+    bottom: 0;
+    background: #2A2D30;
+    color: white;
+    width: 100%;
+    margin-top: -170px; /* negative value of footer height */
+    height: 60px;
+    clear:both;
+>>>>>>> loginBranch
 }
 [required] {
     border-color: #88a;
