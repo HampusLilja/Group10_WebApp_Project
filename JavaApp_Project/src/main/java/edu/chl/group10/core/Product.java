@@ -1,5 +1,6 @@
 package edu.chl.group10.core;
 
+import java.io.File;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
+ * 
+ * 
+ * 
  *
+ * 
  * @author Herzog
  */
 @Entity
@@ -20,6 +25,7 @@ public class Product implements Serializable{
    private int price;
    private int alcoholProof;
    private String type; //eg. rum, vodka
+   private String link;
 
     public Product() {
     }
@@ -30,6 +36,7 @@ public class Product implements Serializable{
     this.price = price;
     this.alcoholProof = alcoholProof; 
     this.type = type;
+    this.link = "client/img/" + name + ".jpg";
     }
     
     public Product(long id, String name, int amount,int price, int alcoholProof, String type) {
@@ -39,6 +46,7 @@ public class Product implements Serializable{
     this.price = price;
     this.alcoholProof = alcoholProof; 
     this.type = type;
+    this.link = "client/img/" + name + ".jpg";
     }
     public long getId(){
         return id;
@@ -49,6 +57,12 @@ public class Product implements Serializable{
     }
     public String getName(){
         return name;
+    }
+    public void setLink(String link){
+        this.link = link;
+    }
+    public String getLink(){
+        return link;
     }
     public void setAmount(int amount){
          this.amount = amount;

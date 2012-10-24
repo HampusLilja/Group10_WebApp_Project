@@ -21,6 +21,7 @@
                 <ui:define name="info_main">
               
                 <div id="content" align="justify">
+<<<<<<< HEAD
                     <div class="one-half">
                                 <script type="text/javascript" src="client/js/PreviewImageJavaScript.js"></script>
 
@@ -36,6 +37,13 @@
         <button type="submit" class="button">Upload</button>
                 </form>
              
+=======
+   
+                
+                
+                <div id="main" align="justify">
+                    <div class="one-half">
+>>>>>>> imageupload
                             <h:body>
                             <h:form id="addProductForm">
                             <h2>Add product</h2>
@@ -59,13 +67,17 @@
                             <f:selectItem itemValue="Gin"/>
                             <f:selectItem itemValue="Other"/>
 			    </h:selectOneMenu><br/>
-
+  
                             <h:commandButton class="button" id="submitButton" value="Submit" actionListener="#{addProduct.addProduct(
                                                                      addProduct.name, addProduct.amount, 
                                                                      addProduct.price, addProduct.alcoholProof, 
                                                                      addProduct.type)}"
-                                                                    action="products?faces-redirect=true" />
-
+                                                                    action="addPictureToProduct?faces-redirect=true" >
+                              <f:param name="name" value="imagename" />                                      
+                            </h:commandButton>
+                            
+                      
+             
                             </h:form>
                             </h:body>
                     </div></div>
