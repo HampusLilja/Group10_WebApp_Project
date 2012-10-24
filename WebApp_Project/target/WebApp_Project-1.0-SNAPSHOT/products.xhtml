@@ -10,7 +10,7 @@
 	
         <title>Grupp 10</title>
 	
-        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min"></script>
+        <script type="text/javascript" src="client/js/lib/jquery-1.7.1.min.js"></script>
         
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
@@ -68,6 +68,10 @@
                             <h:column>  
                                 <f:facet name="header">Type</f:facet>
                                 #{p.type}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Picture</f:facet>
+                                <img src="#{p.link}" width="96" height="96"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Edit</f:facet>

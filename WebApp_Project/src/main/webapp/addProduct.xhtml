@@ -23,16 +23,7 @@
 		<!-- MAIN -->
                 <div id="content" align="justify">
    
-                <form action="upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" style="display:none" id="upload-image"></input>
-                <input type="text" name="photoname" size="20"/>
-                                <div id="upload" class="drop-area">
-                                        Upload File
-                                </div>
-                                <div id="thumbnail"></div>
-                                <p/>
-        <button type="submit" class="button">Upload</button>
-                </form>
+                
                 
                 <div id="main" align="justify">
                     <div class="one-half">
@@ -59,13 +50,17 @@
                             <f:selectItem itemValue="Gin"/>
                             <f:selectItem itemValue="Other"/>
 			    </h:selectOneMenu><br/>
-
+  
                             <h:commandButton class="button" id="submitButton" value="Submit" actionListener="#{addProduct.addProduct(
                                                                      addProduct.name, addProduct.amount, 
                                                                      addProduct.price, addProduct.alcoholProof, 
                                                                      addProduct.type)}"
-                                                                    action="products?faces-redirect=true" />
-
+                                                                    action="addPictureToProduct?faces-redirect=true" >
+                              <f:param name="name" value="imagename" />                                      
+                            </h:commandButton>
+                            
+                      
+             
                             </h:form>
                             </h:body>
                     </div></div>

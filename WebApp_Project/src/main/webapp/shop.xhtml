@@ -48,7 +48,7 @@
                                     <c:forEach items="${products.all}" var="product">
                                         <div class="shopitems">  
 				<div class="product" id="${product.id}" title="${product.name}">
-					<img src="client/img/dricka.jpg" width="135" height="150" alt="${product.name}"/>
+                                    <img src="${product.link}" width="135" height="150" alt="${product.name}"/>
                                         <p class="product-title">${product.name}</p>
                                                 Amount: ${product.amount}cl<br/>
                                                 Alcohol: ${product.alcoholProof}%<br/>
