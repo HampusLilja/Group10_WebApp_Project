@@ -28,12 +28,13 @@ public class ProductConversionBean implements Serializable {
     private int price;
     private int alcoholProof;
     private String type; //eg. rum, vodka
+    private boolean pic;
 
 
     
     
         public void actionListener(long id, String name, 
-                int amount, int price, int alcoholProof, String type) {
+                int amount, int price, int alcoholProof, String type, boolean pic) {
         if (conv.isTransient()) {
             conv.begin();
              Logger.getAnonymousLogger().log(Level.INFO, "ADDPRODUCT CONVERSATION BEGINS: "
@@ -47,6 +48,7 @@ public class ProductConversionBean implements Serializable {
         this.price = price;
         this.alcoholProof = alcoholProof; 
         this.type = type;
+        this.pic = pic;
     }
     public void deleteActionListener(long id,String name, 
                 int amount, int price, int alcoholProof, String type){
@@ -123,5 +125,12 @@ public class ProductConversionBean implements Serializable {
     }
     public String getType(){
         return type;
+    }
+    
+    public void setPic(boolean pic){
+        this.pic = pic;
+    }
+    public boolean getPic(){
+        return pic;
     }
 }

@@ -28,14 +28,15 @@
                     <div id="main" align="justify">
                      <form action="upload" method="post" enctype="multipart/form-data">
                         <input type="file" name="file" style="display:none" id="upload-image"></input>
-                        <input type="text" name="photoname" value="${param.name}" size="20"/>
+                        <input type="text" readonly="true" name="photoname" value="${param.name}" size="20"/>
                                 <div id="upload" class="drop-area">
                                         Upload File
                                 </div>
                                 <div id="thumbnail"></div>
                                 <p/>
                     <button type="submit" class="button">Upload</button>
-                     </form>   
+                     </form>
+                        <a href="products.xhtml">Do not Upload</a>
                         
                     </div>
                 

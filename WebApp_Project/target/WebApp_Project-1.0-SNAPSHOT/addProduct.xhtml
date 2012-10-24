@@ -25,7 +25,7 @@
                 <div id="content" align="justify">
                     <div class="one-half">
                             <h:body>
-                            <h:form id="addProductForm">
+                            <h:form id="addProductForm" prependId="false">
                             <h2>Add product</h2>
                             <h:outputLabel value="Name: " /><br/>
                             <h:inputText value="#{addProduct.name}" required="true" /><br/>
@@ -51,9 +51,8 @@
                             <h:commandButton class="button" id="submitButton" value="Submit" actionListener="#{addProduct.addProduct(
                                                                      addProduct.name, addProduct.amount, 
                                                                      addProduct.price, addProduct.alcoholProof, 
-                                                                     addProduct.type)}"
-                                                                    action="addPictureToProduct?faces-redirect=true" >
-                              <f:param name="name" value="imagename" />                                      
+                                                                     addProduct.type, addProduct.pic)}"
+                                                                     action="#{addProduct.submit()}" >                                                                   
                             </h:commandButton>
                             
                       

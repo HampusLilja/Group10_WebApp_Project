@@ -26,20 +26,22 @@ public class Product implements Serializable{
    private int alcoholProof;
    private String type; //eg. rum, vodka
    private String link;
+   private boolean pic;
 
     public Product() {
     }
    
-    public Product(String name, int amount,int price, int alcoholProof, String type) {
+    public Product(String name, int amount,int price, int alcoholProof, String type, boolean pic) {
     this.name = name;
     this.amount = amount;
     this.price = price;
     this.alcoholProof = alcoholProof; 
     this.type = type;
     this.link = "client/img/" + name + ".jpg";
+    this.pic = pic;
     }
     
-    public Product(long id, String name, int amount,int price, int alcoholProof, String type) {
+    public Product(long id, String name, int amount,int price, int alcoholProof, String type, boolean pic) {
     this.id = id;
     this.name = name;
     this.amount = amount;
@@ -47,6 +49,7 @@ public class Product implements Serializable{
     this.alcoholProof = alcoholProof; 
     this.type = type;
     this.link = "client/img/" + name + ".jpg";
+    this.pic = pic;
     }
     public long getId(){
         return id;
@@ -76,6 +79,15 @@ public class Product implements Serializable{
     public int getPrice(){
         return price;
     }
+    
+    public void setPic(boolean pic){
+        this.pic = pic;
+    }
+    
+    public boolean getPic(){
+        return pic;
+    }
+    
     public void setAlcoholProof(int alcoholProof){ 
     this.alcoholProof = alcoholProof; 
     }

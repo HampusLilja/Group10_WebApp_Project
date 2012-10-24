@@ -31,6 +31,10 @@ public class ProductListBean implements Serializable {
         return plist.getAllByType(type);
     }
     
+    public List<Product> getByName(String name){
+        return plist.getByName(name);
+    }
+    
     public Product find(long id){
         return plist.find(id);
     }

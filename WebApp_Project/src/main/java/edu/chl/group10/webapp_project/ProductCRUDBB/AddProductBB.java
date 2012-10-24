@@ -23,6 +23,7 @@ public class AddProductBB {
     private int price;
     private int alcoholProof;
     private String type; //eg. rum, vodka
+    private boolean pic;
    
     @Inject
     private ProductListBean productList;
@@ -31,14 +32,15 @@ public class AddProductBB {
     
     }
     
-    public void addProduct(String name, int amount, int price, int alcoholProof, String type) {
+    public void addProduct(String name, int amount, int price, int alcoholProof, String type, boolean pic) {
         this.name = name;
         this.amount = amount;
         this.price = price;
         this.alcoholProof = alcoholProof; 
         this.type = type;
+        this.pic = pic;
         
-       productList.add(new Product(id, name, amount, price, alcoholProof, type));
+       productList.add(new Product(id, name, amount, price, alcoholProof, type, pic));
     }
     public long getId(){
         return id;
@@ -73,5 +75,18 @@ public class AddProductBB {
     }
     public String getType(){
         return type;
+    }
+    
+    public void setPic(boolean pic){
+        this.pic = pic;
+    }
+    
+    public boolean getPic(){
+        return pic;
+    }
+    
+    public String submit() {
+        
+        return "addPictureToProduct?faces-redirect=true&name=" + name;
     }
 }
